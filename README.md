@@ -93,9 +93,9 @@ Contributions, suggestions, and feedback are welcome!
 
 **Your Name**
 
-- Portfolio: [your-website-link]
+- Portfolio: [https://www.instagram.com/_that_awkwardpause?igsh=MTRtZjRpbG5jZTU3dA==]
 - GitHub: [prasadev-in.github.io]
-- LinkedIn: [your-linkedin-link]
+- LinkedIn: [https://www.linkedin.com/in/prasad-shejole-504168252?utm_source=share_via&utm_content=profile&utm_medium=member_android]
 - Email: [prasadshejole@gmail.com]
 
 ## 📄 License
