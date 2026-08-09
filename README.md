@@ -49,17 +49,11 @@
             right: 0;
             bottom: 0;
             background-image: 
-                /* Medical icons */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
-                /* Stethoscope */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4.5 12.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M12.5 8.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M8.5 12.5v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4'/%3E%3C/svg%3E"),
-                /* DNA helix */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4 4c0 0 2-1 8-1s8 1 8 1'/%3E%3Cpath d='M4 20c0 0 2 1 8 1s8-1 8-1'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M8 6c0 0-1 2-1 6s1 6 1 6'/%3E%3Cpath d='M16 6c0 0 1 2 1 6s-1 6-1 6'/%3E%3C/svg%3E"),
-                /* Plus/medical cross */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E"),
-                /* Artistic circles */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.06'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E"),
-                /* Paint brush artistic element */
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.07'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.5 7.5'/%3E%3Cpath d='M13.5 6.5l4 4'/%3E%3C/svg%3E");
             background-size: 180px 180px, 200px 200px, 160px 160px, 140px 140px, 220px 220px, 150px 150px;
             background-position: 
@@ -75,7 +69,6 @@
             border-radius: 40px;
         }
 
-        /* Make all content appear above background */
         .cv-card > * {
             position: relative;
             z-index: 1;
@@ -173,7 +166,6 @@
             margin-top: 0.4rem;
         }
 
-        /* ----- left column: about, education, contact ----- */
         .profile-section {
             display: flex;
             flex-direction: column;
@@ -187,7 +179,6 @@
             margin-bottom: 0.2rem;
         }
 
-        /* PROFILE IMAGE STYLES */
         .profile-image-container {
             width: 80px;
             height: 80px;
@@ -304,13 +295,11 @@
             transition: color 0.3s ease;
         }
 
-        /* Flag icons for phone numbers */
         .flag-icon {
             font-size: 1.2rem;
             margin-right: 0.2rem;
         }
 
-        /* ----- right column: skills & expertise ----- */
         .skills-section {
             display: flex;
             flex-direction: column;
@@ -337,7 +326,6 @@
             transition: color 0.3s ease;
         }
 
-        /* UNIFIED SKILL TAGS - ALL NOW LOOK THE SAME */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -365,7 +353,6 @@
             transition: color 0.3s ease;
         }
 
-        /* Remove the highlight class distinction - all tags look the same now */
         .skill-tag.highlight {
             background: #e9edf2;
             border-color: #d1d5db;
@@ -383,7 +370,6 @@
             box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
         }
 
-        /* Dark theme background - more subtle medical elements */
         body.dark .cv-card::before {
             background-image: 
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
@@ -398,7 +384,6 @@
             border-bottom-color: #30363d;
         }
 
-        /* FIX: Dark theme header color */
         body.dark .cv-header h1 {
             color: #58a6ff;
         }
@@ -453,7 +438,6 @@
             color: #58a6ff;
         }
 
-        /* FIX: Dark theme avatar name color */
         body.dark .avatar-badge h2 {
             color: #58a6ff;
         }
@@ -487,7 +471,6 @@
             color: #8b949e;
         }
 
-        /* small footer */
         .cv-footer {
             margin-top: 2rem;
             padding-top: 1rem;
@@ -505,7 +488,7 @@
             margin-right: 0.3rem;
         }
 
-        /* ---------- IMPROVED MOBILE RESPONSIVENESS ---------- */
+        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 1024px) {
             .cv-card {
                 padding: 1.8rem 1.5rem;
@@ -736,10 +719,8 @@
             <!-- LEFT: about, education, contact -->
             <div class="profile-section">
                 <div class="avatar-badge">
-                    <!-- PROFILE IMAGE - Using your uploaded image -->
                     <div class="profile-image-container">
                         <img src="IMG-20260809-WA0001.jpg" alt="Prasad Shejole" id="profileImage">
-                        <!-- Fallback icon shows if image fails to load -->
                         <div class="fallback-icon" style="display: none;"><i class="fas fa-user-md"></i></div>
                     </div>
                     
@@ -755,7 +736,7 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-                    <p>"A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.".</p>
+                    <p>A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.</p>
                 </div>
 
                 <div class="info-block">
@@ -767,19 +748,19 @@
                     </ul>
                 </div>
 
+                <!-- CONTACT SECTION MOVED TO LAST -->
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasadshejole@gmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadev-in</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @_that_awkwardpause</div>
-                    <!-- TWO PHONE NUMBERS WITH FLAGS -->
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
                     <div class="contact-item">
                         <span class="flag-icon">🇮🇳</span>
-                        <i class="fas fa-phone-alt"></i> +917249756968
+                        <i class="fas fa-phone-alt"></i> +91 98765 12345
                     </div>
                     <div class="contact-item">
                         <span class="flag-icon">🇷🇺</span>
-                        <i class="fas fa-phone-alt"></i> +79960848472
+                        <i class="fas fa-phone-alt"></i> +7 987 654 3210
                     </div>
                 </div>
             </div>
@@ -837,7 +818,6 @@
             const lightBtn = document.getElementById('lightBtn');
             const darkBtn = document.getElementById('darkBtn');
 
-            // Apply theme function
             function setTheme(theme) {
                 if (theme === 'dark') {
                     body.classList.add('dark');
@@ -851,15 +831,11 @@
                     lightBtn.classList.add('active');
                 }
 
-                // Save preference
                 try {
                     localStorage.setItem('cv-theme-pref', theme);
-                } catch (e) {
-                    // ignore
-                }
+                } catch (e) {}
             }
 
-            // Load saved theme
             function loadTheme() {
                 let saved = 'light';
                 try {
@@ -867,13 +843,10 @@
                     if (stored === 'dark' || stored === 'light') {
                         saved = stored;
                     }
-                } catch (e) {
-                    // ignore
-                }
+                } catch (e) {}
                 setTheme(saved);
             }
 
-            // Event listeners
             lightBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 setTheme('light');
@@ -884,10 +857,8 @@
                 setTheme('dark');
             });
 
-            // Initialize
             loadTheme();
 
-            // Handle profile image loading - show fallback if image fails
             const profileImg = document.getElementById('profileImage');
             const fallbackIcon = document.querySelector('.fallback-icon');
             
@@ -899,7 +870,6 @@
                     }
                 });
                 
-                // If image loads successfully, hide fallback
                 profileImg.addEventListener('load', function() {
                     if (fallbackIcon) {
                         fallbackIcon.style.display = 'none';
