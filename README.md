@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MBBS student · marketing · editing · events</title>
+  <title>MBBS · CV & skills · theme</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -26,7 +26,7 @@
       color: #1e293b;
     }
 
-    /* main card – CV container */
+    /* main card – acts as CV container */
     .cv-card {
       max-width: 1150px;
       width: 100%;
@@ -164,11 +164,6 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      flex-wrap: wrap;
-    }
-
-    .subhead i {
-      color: #0b6e4f;
     }
 
     .info-block {
@@ -447,8 +442,8 @@
     <!-- header with theme switcher -->
     <div class="cv-header">
       <h1>
-        <i class="fas fa-user-graduate"></i> 
-        Riya Sharma · CV
+        <i class="fas fa-user-md"></i> 
+        Dr. Ayesha · CV
       </h1>
       <div class="theme-controls">
         <span class="theme-label"><i class="fas fa-palette"></i> Theme</span>
@@ -464,91 +459,87 @@
       <!-- LEFT: about, education, contact -->
       <div class="profile-section">
         <div class="avatar-badge">
-          <div class="avatar-icon"><i class="fas fa-user-md"></i></div>
+          <div class="avatar-icon"><i class="fas fa-stethoscope"></i></div>
           <div>
-            <h2>Riya Sharma</h2>
-            <div class="subhead">
-              <i class="fas fa-graduation-cap"></i> MBSS student · 2nd year
-              <span style="margin:0 0.3rem;">·</span>
-              <i class="fas fa-bullhorn"></i> marketing · editing
-            </div>
+            <h2>Ayesha Khan</h2>
+            <div class="subhead"><i class="fas fa-graduation-cap"></i> MBBS · 3rd year</div>
           </div>
         </div>
 
         <div class="info-block">
-          <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-          <p>MBBS student with a creative edge. I blend medical knowledge with digital marketing, content creation, and event management. I believe in building a brand that connects health with modern communication.</p>
+          <h3><i class="fas fa-user-graduate"></i> About</h3>
+          <p>Medical student with a strong passion for digital health, medical informatics, and data-driven patient care. Combining clinical knowledge with programming skills to build useful tools for healthcare.</p>
         </div>
 
         <div class="info-block">
           <h3><i class="fas fa-university"></i> Education</h3>
           <ul>
-            <li><i class="fas fa-graduation-cap"></i> MBBS · 2024 – present</li>
-            <li><i class="fas fa-flask"></i> Pre-medical · 2021 – 2024</li>
-            <li><i class="fas fa-certificate"></i> Digital marketing certification</li>
+            <li><i class="fas fa-graduation-cap"></i> MBBS · 2023 – present</li>
+            <li><i class="fas fa-flask"></i> Pre-medical · 2020 – 2023</li>
+            <li><i class="fas fa-certificate"></i> BLS / ACLS certified</li>
           </ul>
         </div>
 
         <div class="info-block">
           <h3><i class="fas fa-address-card"></i> Contact</h3>
-          <div class="contact-item"><i class="fas fa-envelope"></i> riya.sharma@medmail.com</div>
-          <div class="contact-item"><i class="fab fa-github"></i> github.com/riyamedia</div>
-          <div class="contact-item"><i class="fab fa-instagram"></i> @riya.creates</div>
-          <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
+          <div class="contact-item"><i class="fas fa-envelope"></i> ayesha.khan@medmail.com</div>
+          <div class="contact-item"><i class="fab fa-github"></i> github.com/ayesha-md</div>
+          <div class="contact-item"><i class="fab fa-linkedin"></i> linkedin.com/in/ayesha-md</div>
+          <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 43210</div>
         </div>
       </div>
 
-      <!-- RIGHT: core skills (marketing, editing, design, event) -->
+      <!-- RIGHT: skills, technical, GitHub repos -->
       <div class="skills-section">
         <div class="skill-category">
-          <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
+          <h3><i class="fas fa-heartbeat"></i> Clinical & soft skills</h3>
           <div class="skill-tags">
-            <span class="skill-tag highlight"><i class="fab fa-instagram"></i> Instagram strategy</span>
-            <span class="skill-tag highlight"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
-            <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & insights</span>
-            <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
-            <span class="skill-tag"><i class="fas fa-hashtag"></i> Hashtag research</span>
-            <span class="skill-tag"><i class="fas fa-people-arrows"></i> Community engagement</span>
+            <span class="skill-tag highlight"><i class="fas fa-check-circle"></i> Patient care</span>
+            <span class="skill-tag highlight"><i class="fas fa-check-circle"></i> Medical history</span>
+            <span class="skill-tag"><i class="fas fa-comment-medical"></i> Empathy</span>
+            <span class="skill-tag"><i class="fas fa-users"></i> Teamwork</span>
+            <span class="skill-tag"><i class="fas fa-clock"></i> Time management</span>
+            <span class="skill-tag"><i class="fas fa-book-medical"></i> Evidence-based practice</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3><i class="fas fa-pen-fancy"></i> Editing & content creation</h3>
+          <h3><i class="fas fa-code"></i> Tech & data skills</h3>
           <div class="skill-tags">
-            <span class="skill-tag highlight"><i class="fas fa-video"></i> CapCut (pro)</span>
-            <span class="skill-tag highlight"><i class="fas fa-paint-brush"></i> Canva (expert)</span>
-            <span class="skill-tag"><i class="fas fa-cut"></i> Video editing</span>
-            <span class="skill-tag"><i class="fas fa-image"></i> Thumbnail design</span>
-            <span class="skill-tag"><i class="fas fa-vector-square"></i> Brand identity</span>
-            <span class="skill-tag"><i class="fas fa-film"></i> Reels / shorts</span>
+            <span class="skill-tag highlight"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag highlight"><i class="fas fa-database"></i> SQL / NoSQL</span>
+            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="skill-tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+            <span class="skill-tag"><i class="fas fa-chart-line"></i> Data analysis</span>
+            <span class="skill-tag"><i class="fas fa-microscope"></i> Bioinformatics (basic)</span>
+            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+            <span class="skill-tag"><i class="fas fa-flask"></i> R / ggplot</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3><i class="fas fa-calendar-check"></i> Event management</h3>
+          <h3><i class="fas fa-microchip"></i> Digital health & AI</h3>
           <div class="skill-tags">
-            <span class="skill-tag highlight"><i class="fas fa-tasks"></i> Planning & logistics</span>
-            <span class="skill-tag highlight"><i class="fas fa-users"></i> Team coordination</span>
-            <span class="skill-tag"><i class="fas fa-handshake"></i> Vendor management</span>
-            <span class="skill-tag"><i class="fas fa-clock"></i> Timeline execution</span>
-            <span class="skill-tag"><i class="fas fa-trophy"></i> Medical conferences</span>
-            <span class="skill-tag"><i class="fas fa-microphone"></i> Hosting / emcee</span>
+            <span class="skill-tag highlight"><i class="fas fa-robot"></i> ML basics</span>
+            <span class="skill-tag"><i class="fas fa-brain"></i> LLM prompting</span>
+            <span class="skill-tag"><i class="fas fa-x-ray"></i> DICOM / medical imaging</span>
+            <span class="skill-tag"><i class="fas fa-tablets"></i> Clinical decision support</span>
           </div>
         </div>
 
         <!-- GitHub repository showcase (theme-ready) -->
         <div class="skill-category repo-showcase">
-          <h3><i class="fab fa-github"></i> Featured GitHub repos</h3>
+          <h3><i class="fab fa-github"></i> GitHub repos</h3>
           <div class="mini-repo">
-            <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
+            <span><i class="fas fa-book-open"></i> med-notes · digital health toolkit</span>
             <a href="#"><i class="fab fa-github"></i> View</a>
           </div>
           <div class="mini-repo">
-            <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
+            <span><i class="fas fa-chart-pie"></i> vitals-dashboard · patient data viz</span>
             <a href="#"><i class="fab fa-github"></i> View</a>
           </div>
           <div class="mini-repo">
-            <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
+            <span><i class="fas fa-file-prescription"></i> rx-analyzer · drug interaction</span>
             <a href="#"><i class="fab fa-github"></i> View</a>
           </div>
         </div>
@@ -557,8 +548,8 @@
 
     <!-- footer : theme note + social -->
     <div class="cv-footer">
-      <span><i class="fas fa-palette"></i> Switch theme · light / dark</span>
-      <span><i class="fas fa-graduation-cap"></i> MBBS · marketing · editing · events</span>
+      <span><i class="fas fa-palette"></i> Theme ready · click light/dark</span>
+      <span><i class="fas fa-graduation-cap"></i> MBBS · skills · GitHub</span>
     </div>
   </div>
 
@@ -617,6 +608,7 @@
       document.querySelectorAll('.mini-repo a').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
+          // you can replace with actual repo URL
           console.log('🔗 repo link clicked (demo)');
         });
       });
