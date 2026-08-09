@@ -36,6 +36,49 @@
             padding: 2rem 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
             transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ---------- BACKGROUND WITH MEDICAL & ARTISTIC ELEMENTS ---------- */
+        .cv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                /* Medical icons */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
+                /* Stethoscope */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4.5 12.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M12.5 8.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M8.5 12.5v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4'/%3E%3C/svg%3E"),
+                /* DNA helix */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4 4c0 0 2-1 8-1s8 1 8 1'/%3E%3Cpath d='M4 20c0 0 2 1 8 1s8-1 8-1'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M8 6c0 0-1 2-1 6s1 6 1 6'/%3E%3Cpath d='M16 6c0 0 1 2 1 6s-1 6-1 6'/%3E%3C/svg%3E"),
+                /* Plus/medical cross */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E"),
+                /* Artistic circles */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.06'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E"),
+                /* Paint brush artistic element */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.07'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.5 7.5'/%3E%3Cpath d='M13.5 6.5l4 4'/%3E%3C/svg%3E");
+            background-size: 180px 180px, 200px 200px, 160px 160px, 140px 140px, 220px 220px, 150px 150px;
+            background-position: 
+                10% 15%, 
+                85% 10%, 
+                50% 80%, 
+                5% 70%, 
+                90% 75%, 
+                45% 25%;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: 40px;
+        }
+
+        /* Make all content appear above background */
+        .cv-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         /* ---------- header / theme toggle ---------- */
@@ -61,7 +104,7 @@
         }
 
         .cv-header h1 i {
-            color: #dc2626;
+            color: #0b6e4f;
             font-size: 2rem;
             transition: color 0.3s ease;
         }
@@ -113,7 +156,7 @@
         .theme-btn.active {
             background: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            color: #dc2626;
+            color: #0b6e4f;
         }
 
         .theme-btn:hover:not(.active) {
@@ -148,11 +191,11 @@
             height: 80px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #dc2626;
+            border: 3px solid #0b6e4f;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             flex-shrink: 0;
             transition: all 0.3s ease;
-            background: #fee2e2;
+            background: #d9e6f2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -171,7 +214,7 @@
 
         .profile-image-container .fallback-icon {
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #0b6e4f;
         }
 
         .avatar-badge h2 {
@@ -193,16 +236,17 @@
         }
 
         .subhead i {
-            color: #dc2626;
+            color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
         .info-block {
-            background: #f8fafc;
+            background: rgba(248, 250, 252, 0.9);
             padding: 1.2rem 1.2rem;
             border-radius: 20px;
             border: 1px solid #e9edf2;
             transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
         }
 
         .info-block h3 {
@@ -212,7 +256,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #dc2626;
+            color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
@@ -238,7 +282,7 @@
 
         .info-block ul li i {
             width: 1.4rem;
-            color: #dc2626;
+            color: #0b6e4f;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
@@ -252,7 +296,7 @@
 
         .contact-item i {
             width: 1.6rem;
-            color: #dc2626;
+            color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
@@ -264,11 +308,12 @@
         }
 
         .skill-category {
-            background: #f8fafc;
+            background: rgba(248, 250, 252, 0.9);
             padding: 1.2rem 1.2rem;
             border-radius: 20px;
             border: 1px solid #e9edf2;
             transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
         }
 
         .skill-category h3 {
@@ -278,10 +323,11 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #dc2626;
+            color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
+        /* UNIFIED SKILL TAGS - ALL NOW LOOK THE SAME */
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
@@ -290,7 +336,7 @@
 
         .skill-tag {
             background: #e9edf2;
-            padding: 0.25rem 0.8rem;
+            padding: 0.3rem 0.9rem;
             border-radius: 30px;
             font-size: 0.8rem;
             font-weight: 500;
@@ -298,19 +344,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.3rem;
-            border: 1px solid transparent;
+            border: 1px solid #d1d5db;
             transition: all 0.3s ease;
         }
 
         .skill-tag i {
-            color: #dc2626;
+            color: #0b6e4f;
             font-size: 0.75rem;
             transition: color 0.3s ease;
         }
 
+        /* Remove the highlight class distinction - all tags look the same now */
         .skill-tag.highlight {
-            background: #fee2e2;
-            border-color: #fca5a5;
+            background: #e9edf2;
+            border-color: #d1d5db;
         }
 
         .repo-showcase {
@@ -318,7 +365,7 @@
         }
 
         .repo-showcase .mini-repo {
-            background: #f1f5f9;
+            background: rgba(241, 245, 249, 0.9);
             padding: 0.7rem 1rem;
             border-radius: 16px;
             display: flex;
@@ -345,12 +392,12 @@
             object-fit: cover;
             border: 1px solid #e2e8f0;
             flex-shrink: 0;
-            background: #fee2e2;
+            background: #d9e6f2;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
-            color: #dc2626;
+            color: #0b6e4f;
         }
 
         .repo-thumb-image img {
@@ -366,12 +413,12 @@
 
         .mini-repo span i {
             margin-right: 0.4rem;
-            color: #dc2626;
+            color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
         .mini-repo a {
-            color: #dc2626;
+            color: #0b6e4f;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.8rem;
@@ -382,7 +429,7 @@
             margin-right: 0.2rem;
         }
 
-        /* ---------- DARK THEME (Keep colors as they were) ---------- */
+        /* ---------- DARK THEME ---------- */
         body.dark {
             background: #0d1117;
             color: #e6edf3;
@@ -392,6 +439,17 @@
             background: #161b22;
             border-color: #30363d;
             box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Dark theme background - more subtle medical elements */
+        body.dark .cv-card::before {
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M4.5 12.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M12.5 8.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M8.5 12.5v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M4 4c0 0 2-1 8-1s8 1 8 1'/%3E%3Cpath d='M4 20c0 0 2 1 8 1s8-1 8-1'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M8 6c0 0-1 2-1 6s1 6 1 6'/%3E%3Cpath d='M16 6c0 0 1 2 1 6s-1 6-1 6'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.05'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.05'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.5 7.5'/%3E%3Cpath d='M13.5 6.5l4 4'/%3E%3C/svg%3E");
         }
 
         body.dark .cv-header {
@@ -430,8 +488,9 @@
 
         body.dark .info-block,
         body.dark .skill-category {
-            background: #1c2128;
+            background: rgba(28, 33, 40, 0.9);
             border-color: #30363d;
+            backdrop-filter: blur(2px);
         }
 
         body.dark .info-block h3,
@@ -454,11 +513,12 @@
         body.dark .skill-tag {
             background: #30363d;
             color: #e6edf3;
+            border-color: #40464f;
         }
 
         body.dark .skill-tag.highlight {
-            background: #1f2a3a;
-            border-color: #58a6ff40;
+            background: #30363d;
+            border-color: #40464f;
         }
 
         body.dark .skill-tag i {
@@ -466,7 +526,7 @@
         }
 
         body.dark .repo-showcase .mini-repo {
-            background: #21262d;
+            background: rgba(33, 38, 45, 0.9);
             border-color: #30363d;
         }
 
@@ -666,7 +726,7 @@
             
             .skill-tag {
                 font-size: 0.75rem;
-                padding: 0.2rem 0.7rem;
+                padding: 0.25rem 0.7rem;
             }
             
             .skill-tag i {
@@ -746,7 +806,7 @@
             
             .skill-tag {
                 font-size: 0.7rem;
-                padding: 0.15rem 0.6rem;
+                padding: 0.2rem 0.6rem;
             }
         }
     </style>
@@ -809,7 +869,9 @@
                     <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
                     <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
                     <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
+                    <!-- TWO PHONE NUMBERS -->
                     <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 87654 32100</div>
                 </div>
             </div>
 
@@ -818,8 +880,8 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag highlight"><i class="fab fa-instagram"></i> Instagram strategy</span>
-                        <span class="skill-tag highlight"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
+                        <span class="skill-tag"><i class="fab fa-instagram"></i> Instagram strategy</span>
+                        <span class="skill-tag"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
                         <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & insights</span>
                         <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
                         <span class="skill-tag"><i class="fas fa-hashtag"></i> Hashtag research</span>
@@ -830,8 +892,8 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-pen-fancy"></i> Editing & content creation</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag highlight"><i class="fas fa-video"></i> CapCut (pro)</span>
-                        <span class="skill-tag highlight"><i class="fas fa-paint-brush"></i> Canva (expert)</span>
+                        <span class="skill-tag"><i class="fas fa-video"></i> CapCut (pro)</span>
+                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva (expert)</span>
                         <span class="skill-tag"><i class="fas fa-cut"></i> Video editing</span>
                         <span class="skill-tag"><i class="fas fa-image"></i> Thumbnail design</span>
                         <span class="skill-tag"><i class="fas fa-vector-square"></i> Brand identity</span>
@@ -842,8 +904,8 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-calendar-check"></i> Event management</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag highlight"><i class="fas fa-tasks"></i> Planning & logistics</span>
-                        <span class="skill-tag highlight"><i class="fas fa-users"></i> Team coordination</span>
+                        <span class="skill-tag"><i class="fas fa-tasks"></i> Planning & logistics</span>
+                        <span class="skill-tag"><i class="fas fa-users"></i> Team coordination</span>
                         <span class="skill-tag"><i class="fas fa-handshake"></i> Vendor management</span>
                         <span class="skill-tag"><i class="fas fa-clock"></i> Timeline execution</span>
                         <span class="skill-tag"><i class="fas fa-trophy"></i> Medical conferences</span>
