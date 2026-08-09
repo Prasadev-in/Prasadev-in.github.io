@@ -769,17 +769,17 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasadshejole@gmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadev-in</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @_that_awkwardpause</div>
                     <!-- TWO PHONE NUMBERS WITH FLAGS -->
                     <div class="contact-item">
                         <span class="flag-icon">🇮🇳</span>
-                        <i class="fas fa-phone-alt"></i> +91 98765 12345
+                        <i class="fas fa-phone-alt"></i> +917249756968
                     </div>
                     <div class="contact-item">
                         <span class="flag-icon">🇷🇺</span>
-                        <i class="fas fa-phone-alt"></i> +7 987 654 3210
+                        <i class="fas fa-phone-alt"></i> +79960848472
                     </div>
                 </div>
             </div>
