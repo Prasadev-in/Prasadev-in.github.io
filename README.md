@@ -45,12 +45,7 @@ Add screenshots of your website here.
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and feedback are welcome!
-
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Submit a pull request
+Contributions, suggestions, and feedback are welcome!!!
 
 ## 📞 Contact
 
@@ -63,5 +58,5 @@ Contributions, suggestions, and feedback are welcome!
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the PAS License.
 
