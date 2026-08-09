@@ -3,7 +3,7 @@
 # 👋 Hello, I'm [Prasad Shejole]
 
 Welcome to side of me which you would have never seen!  
-This website contains my portfolio website where I showcase my work, skills, and experience.
+This website contains my portfolio  where I showcase my work, skills, and experience.
 
 ## 🌎 Website
 
@@ -30,43 +30,6 @@ This website is designed to introduce myself, display my projects, and provide a
 - [Framework/Library]
 - [Other Tools]
 
-## 📁 Folder Structure
-
-```
-project-name/
-│
-├── index.html
-├── assets/
-│   ├── images/
-│   └── icons/
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── README.md
-```
-
-## 💻 Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-```
-
-Navigate to the project folder:
-
-```bash
-cd your-repository
-```
-
-Open the project:
-
-```bash
-open index.html
-```
-
-(or run it with your preferred development server)
 
 ## 📷 Screenshots
 
@@ -91,7 +54,7 @@ Contributions, suggestions, and feedback are welcome!
 
 ## 📞 Contact
 
-**Your Name**
+**PRASAD SHEJOLE**
 
 - Portfolio: [https://www.instagram.com/_that_awkwardpause?igsh=MTRtZjRpbG5jZTU3dA==]
 - GitHub: [prasadev-in.github.io]
