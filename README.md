@@ -1,6 +1,6 @@
 # The <sup>First question</sup> that comes to your mind.....
 ## ~~WHO AM I~~?
-# 👋 Hello, I'm [Your Name]
+# 👋 Hello, I'm [Prasad Shejole]
 
 Welcome to side of me which you would have never seen!  
 This website contains my portfolio website where I showcase my work, skills, and experience.
