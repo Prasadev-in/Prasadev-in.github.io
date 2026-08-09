@@ -142,17 +142,36 @@
             margin-bottom: 0.2rem;
         }
 
-        .avatar-icon {
+        /* PROFILE IMAGE STYLES */
+        .profile-image-container {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #0b6e4f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
             background: #d9e6f2;
-            width: 70px;
-            height: 70px;
-            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
+        }
+
+        .profile-image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-image-container .fallback-icon {
+            font-size: 2.8rem;
             color: #0b6e4f;
-            transition: all 0.3s ease;
         }
 
         .avatar-badge h2 {
@@ -312,6 +331,35 @@
             transition: all 0.3s ease;
         }
 
+        /* Project thumbnail image in repo cards */
+        .repo-thumb {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .repo-thumb-image {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid #e2e8f0;
+            flex-shrink: 0;
+            background: #d9e6f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #0b6e4f;
+        }
+
+        .repo-thumb-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
         .mini-repo span i {
             margin-right: 0.4rem;
             color: #0b6e4f;
@@ -422,7 +470,17 @@
             color: #58a6ff;
         }
 
-        body.dark .avatar-icon {
+        body.dark .profile-image-container {
+            border-color: #58a6ff;
+            background: #21262d;
+        }
+
+        body.dark .profile-image-container .fallback-icon {
+            color: #58a6ff;
+        }
+
+        body.dark .repo-thumb-image {
+            border-color: #30363d;
             background: #21262d;
             color: #58a6ff;
         }
@@ -476,6 +534,10 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            .profile-image-container {
+                width: 70px;
+                height: 70px;
+            }
         }
     </style>
 </head>
@@ -501,7 +563,13 @@
             <!-- LEFT: about, education, contact -->
             <div class="profile-section">
                 <div class="avatar-badge">
-                    <div class="avatar-icon"><i class="fas fa-user-md"></i></div>
+                    <!-- PROFILE IMAGE - Replace the src with your image URL -->
+                    <div class="profile-image-container">
+                        <img src="https://via.placeholder.com/90/0b6e4f/ffffff?text=P" alt="Prasad Shejole" id="profileImage">
+                        <!-- Fallback icon shows if image fails to load -->
+                        <div class="fallback-icon" style="display: none;"><i class="fas fa-user-md"></i></div>
+                    </div>
+                    
                     <div>
                         <h2>Prasad Shejole</h2>
                         <div class="subhead">
@@ -528,10 +596,10 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasadshejole@gmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadev-in</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @_that_awkwardpause</div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +79960848472</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
                 </div>
             </div>
 
@@ -573,19 +641,40 @@
                     </div>
                 </div>
 
-                <!-- GitHub repository showcase -->
+                <!-- GitHub repository showcase with image thumbnails -->
                 <div class="skill-category repo-showcase">
                     <h3><i class="fab fa-github"></i> Featured GitHub repos</h3>
+                    
                     <div class="mini-repo">
-                        <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
+                        <div class="repo-thumb">
+                            <!-- REPO THUMBNAIL 1 - Replace src with your image -->
+                            <div class="repo-thumb-image">
+                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=S" alt="Social Media Toolkit">
+                            </div>
+                            <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
+                        </div>
                         <a href="#"><i class="fab fa-github"></i> View</a>
                     </div>
+                    
                     <div class="mini-repo">
-                        <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
+                        <div class="repo-thumb">
+                            <!-- REPO THUMBNAIL 2 - Replace src with your image -->
+                            <div class="repo-thumb-image">
+                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=E" alt="Edit Templates">
+                            </div>
+                            <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
+                        </div>
                         <a href="#"><i class="fab fa-github"></i> View</a>
                     </div>
+                    
                     <div class="mini-repo">
-                        <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
+                        <div class="repo-thumb">
+                            <!-- REPO THUMBNAIL 3 - Replace src with your image -->
+                            <div class="repo-thumb-image">
+                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=E" alt="Event Manager">
+                            </div>
+                            <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
+                        </div>
                         <a href="#"><i class="fab fa-github"></i> View</a>
                     </div>
                 </div>
@@ -662,6 +751,26 @@
                     alert('🔗 This is a demo link. Replace with your actual GitHub repo URL.');
                 });
             });
+
+            // Handle profile image loading - show fallback if image fails
+            const profileImg = document.getElementById('profileImage');
+            const fallbackIcon = document.querySelector('.fallback-icon');
+            
+            if (profileImg) {
+                profileImg.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    if (fallbackIcon) {
+                        fallbackIcon.style.display = 'flex';
+                    }
+                });
+                
+                // If image loads successfully, hide fallback
+                profileImg.addEventListener('load', function() {
+                    if (fallbackIcon) {
+                        fallbackIcon.style.display = 'none';
+                    }
+                });
+            }
         })();
     </script>
 </body>
