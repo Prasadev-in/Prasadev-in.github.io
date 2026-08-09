@@ -279,16 +279,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #0b6e4f;
             transition: all 0.3s ease;
             border: 1px solid #e9edf2;
         }
 
-        .project-item img {
+        .project-item img,
+        .project-item video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .project-item video {
+            background: #000;
         }
 
         .project-item .project-icon {
@@ -321,6 +324,30 @@
 
         .project-item:hover .project-overlay {
             transform: translateY(0);
+        }
+
+        /* Coming Soon overlay */
+        .project-item.coming-soon {
+            position: relative;
+        }
+
+        .project-item.coming-soon::after {
+            content: 'COMING SOON';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: rgba(0,0,0,0.6);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            letter-spacing: 2px;
+        }
+
+        .project-item.coming-soon .project-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         }
 
         /* ---------- DOWNLOAD CV BUTTON ---------- */
@@ -1357,44 +1384,48 @@
                     </div>
                 </div>
 
-                <!-- PROJECT GALLERY - IMAGE READY -->
+                <!-- PROJECT GALLERY - WITH YOUR IMAGES AND VIDEOS -->
                 <div class="skill-category">
                     <h3><i class="fas fa-images"></i> Project Gallery</h3>
                     <div class="project-gallery" id="projectGallery">
-                        <!-- Project 1 -->
+                        <!-- Project 1: Social Media Campaign - IMG_003 -->
                         <div class="project-item" data-project="Social Media Campaign">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Social+Media" alt="Social Media Campaign" loading="lazy">
+                            <img src="IMG_003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
                             <div class="project-overlay">Social Media Campaign</div>
                         </div>
-                        <!-- Project 2 -->
+                        
+                        <!-- Project 2: Video Edit - vid_004 -->
                         <div class="project-item" data-project="Video Edit">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Video+Edit" alt="Video Edit" loading="lazy">
+                            <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                            <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
                             <div class="project-overlay">Video Edit</div>
                         </div>
-                        <!-- Project 3 -->
+                        
+                        <!-- Project 3: Event Design - vid_008 -->
                         <div class="project-item" data-project="Event Design">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Event+Design" alt="Event Design" loading="lazy">
+                            <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+                            <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
                             <div class="project-overlay">Event Design</div>
                         </div>
-                        <!-- Project 4 -->
+                        
+                        <!-- Project 4: Canva Design - ahilyanagar -->
                         <div class="project-item" data-project="Canva Design">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Canva+Design" alt="Canva Design" loading="lazy">
+                            <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-icon" style="display:none;"><i class="fas fa-paint-brush"></i></div>
                             <div class="project-overlay">Canva Design</div>
                         </div>
-                        <!-- Project 5 -->
+                        
+                        <!-- Project 5: Thumbnail - img_0061 -->
                         <div class="project-item" data-project="Thumbnail">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Thumbnail" alt="Thumbnail" loading="lazy">
+                            <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
                             <div class="project-overlay">Thumbnail</div>
                         </div>
-                        <!-- Project 6 -->
-                        <div class="project-item" data-project="Brand Identity">
-                            <!-- Replace src with your image path -->
-                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Brand+Identity" alt="Brand Identity" loading="lazy">
+                        
+                        <!-- Project 6: Brand Identity - COMING SOON -->
+                        <div class="project-item coming-soon" data-project="Brand Identity">
+                            <div class="project-icon"><i class="fas fa-vector-square"></i></div>
                             <div class="project-overlay">Brand Identity</div>
                         </div>
                     </div>
@@ -1624,8 +1655,26 @@
             projectItems.forEach(item => {
                 item.addEventListener('click', function() {
                     const projectName = this.getAttribute('data-project');
-                    alert('🖼️ Project: ' + projectName + '\n\nThis is a demo. Replace with your actual project details!');
+                    const isComingSoon = this.classList.contains('coming-soon');
+                    
+                    if (isComingSoon) {
+                        alert('🚀 ' + projectName + '\n\nComing Soon! Exciting things are on the way.');
+                    } else {
+                        alert('🖼️ Project: ' + projectName + '\n\nClick to view full project details.\n(Replace this alert with your actual project showcase!)');
+                    }
                 });
+
+                // Handle video hover play/pause
+                const video = item.querySelector('video');
+                if (video) {
+                    item.addEventListener('mouseenter', function() {
+                        video.play();
+                    });
+                    item.addEventListener('mouseleave', function() {
+                        video.pause();
+                        video.currentTime = 0;
+                    });
+                }
             });
 
             // ---------- PDF DOWNLOAD CV BUTTON ----------
@@ -1634,7 +1683,6 @@
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
 
-                // Create a clean CV content for PDF
                 const cvContent = document.createElement('div');
                 cvContent.style.cssText = `
                     font-family: 'Inter', Arial, sans-serif;
@@ -1707,7 +1755,6 @@
                     </div>
                 `;
 
-                // Use html2pdf to generate PDF
                 const opt = {
                     margin: 10,
                     filename: 'Prasad_Shejole_CV.pdf',
