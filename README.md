@@ -101,6 +101,8 @@
             display: flex;
             align-items: center;
             gap: 0.7rem;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
         }
 
         .cv-header h1 i {
@@ -221,6 +223,8 @@
             font-size: 1.6rem;
             font-weight: 600;
             letter-spacing: -0.02em;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
         }
 
         .subhead {
@@ -300,6 +304,12 @@
             transition: color 0.3s ease;
         }
 
+        /* Flag icons for phone numbers */
+        .flag-icon {
+            font-size: 1.2rem;
+            margin-right: 0.2rem;
+        }
+
         /* ----- right column: skills & expertise ----- */
         .skills-section {
             display: flex;
@@ -346,6 +356,7 @@
             gap: 0.3rem;
             border: 1px solid #d1d5db;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .skill-tag i {
@@ -358,75 +369,6 @@
         .skill-tag.highlight {
             background: #e9edf2;
             border-color: #d1d5db;
-        }
-
-        .repo-showcase {
-            margin-top: 0.2rem;
-        }
-
-        .repo-showcase .mini-repo {
-            background: rgba(241, 245, 249, 0.9);
-            padding: 0.7rem 1rem;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem 1rem;
-            border: 1px solid #e2e8f0;
-            margin-top: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        /* Project thumbnail image in repo cards */
-        .repo-thumb {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .repo-thumb-image {
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 1px solid #e2e8f0;
-            flex-shrink: 0;
-            background: #d9e6f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #0b6e4f;
-        }
-
-        .repo-thumb-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .mini-repo span {
-            font-size: 0.85rem;
-        }
-
-        .mini-repo span i {
-            margin-right: 0.4rem;
-            color: #0b6e4f;
-            transition: color 0.3s ease;
-        }
-
-        .mini-repo a {
-            color: #0b6e4f;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .mini-repo a i {
-            margin-right: 0.2rem;
         }
 
         /* ---------- DARK THEME ---------- */
@@ -456,8 +398,9 @@
             border-bottom-color: #30363d;
         }
 
+        /* FIX: Dark theme header color */
         body.dark .cv-header h1 {
-            color: #f0f6fc;
+            color: #58a6ff;
         }
 
         body.dark .cv-header h1 i {
@@ -510,6 +453,11 @@
             color: #58a6ff;
         }
 
+        /* FIX: Dark theme avatar name color */
+        body.dark .avatar-badge h2 {
+            color: #58a6ff;
+        }
+
         body.dark .skill-tag {
             background: #30363d;
             color: #e6edf3;
@@ -525,31 +473,12 @@
             color: #58a6ff;
         }
 
-        body.dark .repo-showcase .mini-repo {
-            background: rgba(33, 38, 45, 0.9);
-            border-color: #30363d;
-        }
-
-        body.dark .mini-repo a {
-            color: #58a6ff;
-        }
-
         body.dark .profile-image-container {
             border-color: #58a6ff;
             background: #21262d;
         }
 
         body.dark .profile-image-container .fallback-icon {
-            color: #58a6ff;
-        }
-
-        body.dark .repo-thumb-image {
-            border-color: #30363d;
-            background: #21262d;
-            color: #58a6ff;
-        }
-
-        body.dark .mini-repo span i {
             color: #58a6ff;
         }
 
@@ -727,37 +656,11 @@
             .skill-tag {
                 font-size: 0.75rem;
                 padding: 0.25rem 0.7rem;
+                white-space: normal;
             }
             
             .skill-tag i {
                 font-size: 0.7rem;
-            }
-            
-            .repo-showcase .mini-repo {
-                padding: 0.6rem 0.8rem;
-                border-radius: 14px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.4rem;
-            }
-            
-            .repo-thumb {
-                width: 100%;
-            }
-            
-            .repo-thumb-image {
-                width: 32px;
-                height: 32px;
-                font-size: 0.8rem;
-            }
-            
-            .mini-repo span {
-                font-size: 0.8rem;
-            }
-            
-            .mini-repo a {
-                font-size: 0.75rem;
-                align-self: flex-start;
             }
             
             .cv-footer {
@@ -869,9 +772,15 @@
                     <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
                     <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
                     <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
-                    <!-- TWO PHONE NUMBERS -->
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 87654 32100</div>
+                    <!-- TWO PHONE NUMBERS WITH FLAGS -->
+                    <div class="contact-item">
+                        <span class="flag-icon">🇮🇳</span>
+                        <i class="fas fa-phone-alt"></i> +91 98765 12345
+                    </div>
+                    <div class="contact-item">
+                        <span class="flag-icon">🇷🇺</span>
+                        <i class="fas fa-phone-alt"></i> +7 987 654 3210
+                    </div>
                 </div>
             </div>
 
@@ -910,41 +819,6 @@
                         <span class="skill-tag"><i class="fas fa-clock"></i> Timeline execution</span>
                         <span class="skill-tag"><i class="fas fa-trophy"></i> Medical conferences</span>
                         <span class="skill-tag"><i class="fas fa-microphone"></i> Hosting / emcee</span>
-                    </div>
-                </div>
-
-                <!-- GitHub repository showcase -->
-                <div class="skill-category repo-showcase">
-                    <h3><i class="fab fa-github"></i> Featured GitHub repos</h3>
-                    
-                    <div class="mini-repo">
-                        <div class="repo-thumb">
-                            <div class="repo-thumb-image">
-                                <i class="fas fa-bullhorn" style="font-size: 1rem;"></i>
-                            </div>
-                            <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
-                        </div>
-                        <a href="#"><i class="fab fa-github"></i> View</a>
-                    </div>
-                    
-                    <div class="mini-repo">
-                        <div class="repo-thumb">
-                            <div class="repo-thumb-image">
-                                <i class="fas fa-video" style="font-size: 1rem;"></i>
-                            </div>
-                            <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
-                        </div>
-                        <a href="#"><i class="fab fa-github"></i> View</a>
-                    </div>
-                    
-                    <div class="mini-repo">
-                        <div class="repo-thumb">
-                            <div class="repo-thumb-image">
-                                <i class="fas fa-calendar-alt" style="font-size: 1rem;"></i>
-                            </div>
-                            <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
-                        </div>
-                        <a href="#"><i class="fab fa-github"></i> View</a>
                     </div>
                 </div>
             </div>
@@ -1012,14 +886,6 @@
 
             // Initialize
             loadTheme();
-
-            // Demo: prevent repo link navigation
-            document.querySelectorAll('.mini-repo a').forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('🔗 This is a demo link. Replace with your actual GitHub repo URL.');
-                });
-            });
 
             // Handle profile image loading - show fallback if image fails
             const profileImg = document.getElementById('profileImage');
