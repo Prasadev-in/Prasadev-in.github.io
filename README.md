@@ -300,6 +300,125 @@
             margin-right: 0.2rem;
         }
 
+        /* ---------- ABOUT ME COLLAPSIBLE STYLES ---------- */
+        .about-text-wrapper {
+            position: relative;
+            overflow: hidden;
+            max-height: 4.5em; /* Shows about 2-3 lines */
+            transition: max-height 0.4s ease;
+            cursor: pointer;
+        }
+
+        .about-text-wrapper.expanded {
+            max-height: 500px; /* Enough to show all text */
+        }
+
+        .about-text-wrapper p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #1e293b;
+            transition: color 0.3s ease;
+        }
+
+        /* Gradient fade effect when collapsed */
+        .about-text-wrapper:not(.expanded)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2.5em;
+            background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.95));
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* "Read More" button - hidden on desktop (hover works) */
+        .read-more-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #0b6e4f;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            margin-top: 0.2rem;
+            transition: color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .read-more-btn:hover {
+            color: #095a3f;
+            text-decoration: underline;
+        }
+
+        .read-more-btn i {
+            margin-left: 0.3rem;
+            font-size: 0.75rem;
+        }
+
+        /* ---------- DESKTOP HOVER BEHAVIOR ---------- */
+        @media (hover: hover) and (min-width: 851px) {
+            .about-text-wrapper {
+                max-height: 4.5em;
+                transition: max-height 0.5s ease;
+            }
+            
+            .about-text-wrapper:hover {
+                max-height: 500px;
+            }
+            
+            /* Remove gradient on hover */
+            .about-text-wrapper:hover::after {
+                opacity: 0;
+            }
+            
+            .read-more-btn {
+                display: none !important;
+            }
+        }
+
+        /* ---------- TABLET & MOBILE (touch devices) ---------- */
+        @media (max-width: 850px), (hover: none) {
+            .about-text-wrapper {
+                max-height: 4.5em;
+                cursor: default;
+            }
+            
+            .about-text-wrapper.expanded {
+                max-height: 500px;
+            }
+            
+            .about-text-wrapper:not(.expanded)::after {
+                background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.95));
+            }
+            
+            .read-more-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.3rem;
+            }
+        }
+
+        /* Dark theme adjustments for about me */
+        body.dark .about-text-wrapper p {
+            color: #c9d1d9;
+        }
+        
+        body.dark .about-text-wrapper:not(.expanded)::after {
+            background: linear-gradient(to bottom, transparent, rgba(28, 33, 40, 0.95));
+        }
+        
+        body.dark .read-more-btn {
+            color: #58a6ff;
+        }
+        
+        body.dark .read-more-btn:hover {
+            color: #79c0ff;
+        }
+
         .skills-section {
             display: flex;
             flex-direction: column;
@@ -655,6 +774,11 @@
                 padding-top: 0.8rem;
                 font-size: 0.7rem;
             }
+            
+            /* Mobile read more button */
+            .read-more-btn {
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 400px) {
@@ -734,9 +858,15 @@
                     </div>
                 </div>
 
+                <!-- ABOUT ME - COLLAPSIBLE SECTION -->
                 <div class="info-block">
                     <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-                    <p>A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.</p>
+                    <div class="about-text-wrapper" id="aboutText">
+                        <p>A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.</p>
+                    </div>
+                    <button class="read-more-btn" id="readMoreBtn">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
 
                 <div class="info-block">
@@ -748,7 +878,7 @@
                     </ul>
                 </div>
 
-                <!-- CONTACT SECTION MOVED TO LAST -->
+                <!-- CONTACT SECTION -->
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
                     <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
@@ -817,7 +947,11 @@
             const body = document.body;
             const lightBtn = document.getElementById('lightBtn');
             const darkBtn = document.getElementById('darkBtn');
+            const aboutText = document.getElementById('aboutText');
+            const readMoreBtn = document.getElementById('readMoreBtn');
+            let isExpanded = false;
 
+            // Theme functions
             function setTheme(theme) {
                 if (theme === 'dark') {
                     body.classList.add('dark');
@@ -859,6 +993,7 @@
 
             loadTheme();
 
+            // Profile image fallback
             const profileImg = document.getElementById('profileImage');
             const fallbackIcon = document.querySelector('.fallback-icon');
             
@@ -876,6 +1011,45 @@
                     }
                 });
             }
+
+            // ---------- ABOUT ME COLLAPSIBLE LOGIC ----------
+            function toggleAbout(expand) {
+                isExpanded = expand !== undefined ? expand : !isExpanded;
+                
+                if (isExpanded) {
+                    aboutText.classList.add('expanded');
+                    readMoreBtn.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                } else {
+                    aboutText.classList.remove('expanded');
+                    readMoreBtn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                }
+            }
+
+            // Read More button click handler (for mobile/tablet)
+            readMoreBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleAbout();
+            });
+
+            // For desktop: hover behavior is handled by CSS
+            // But we need to sync the button state if user hovers on desktop
+            // and then clicks on mobile (when resizing)
+            
+            // Handle window resize - reset expansion if going to desktop
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    // If on desktop (hover capable) and expanded via click, collapse
+                    if (window.matchMedia('(hover: hover) and (min-width: 851px)').matches && isExpanded) {
+                        toggleAbout(false);
+                    }
+                }, 300);
+            });
+
+            // Initialize - ensure collapsed on load
+            toggleAbout(false);
+
         })();
     </script>
 </body>
