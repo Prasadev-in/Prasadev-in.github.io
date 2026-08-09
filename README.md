@@ -755,7 +755,7 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-                    <p>I am a 4th year MBBS student, pursuing my degree in Russia. But this page is not for that — this page introduces my creative side to you, the side that most of the people are deprived from.</p>
+                    <p>"A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.".</p>
                 </div>
 
                 <div class="info-block">
