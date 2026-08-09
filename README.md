@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +12,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -157,6 +162,180 @@
             background: rgba(255, 255, 255, 0.6);
         }
 
+        /* ---------- TYPING ANIMATION ---------- */
+        .typing-container {
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 450;
+            color: #475569;
+            transition: color 0.3s ease;
+            min-height: 1.5em;
+        }
+
+        .typing-text {
+            display: inline;
+            border-right: 2px solid #0b6e4f;
+            padding-right: 4px;
+            animation: blink 0.8s step-end infinite;
+            transition: border-color 0.3s ease;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* ---------- ANIMATED STATISTICS COUNTERS ---------- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.8rem 0.5rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #475569;
+            margin-top: 0.2rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        /* ---------- SKILL PROGRESS BARS ---------- */
+        .skill-progress {
+            margin-top: 0.2rem;
+        }
+
+        .skill-progress-item {
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-progress-item .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.15rem;
+            transition: color 0.3s ease;
+        }
+
+        .progress-bar-track {
+            width: 100%;
+            height: 6px;
+            background: #e9edf2;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #0b6e4f, #0f8b63);
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* ---------- PROJECT GALLERY ---------- */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+            background: linear-gradient(135deg, #d9e6f2, #e9edf2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #0b6e4f;
+            transition: all 0.3s ease;
+            border: 1px solid #e9edf2;
+        }
+
+        .project-item:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-item .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 500;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .project-item:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        /* ---------- DOWNLOAD CV BUTTON ---------- */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: #0b6e4f;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+            margin-top: 0.3rem;
+        }
+
+        .download-btn:hover {
+            background: #095a3f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(11, 110, 79, 0.25);
+        }
+
+        .download-btn i {
+            font-size: 0.9rem;
+        }
+
         /* ---------- grid: left (profile) + right (skills) ---------- */
         .cv-grid {
             display: grid;
@@ -227,6 +406,7 @@
             gap: 0.4rem;
             flex-wrap: wrap;
             transition: color 0.3s ease;
+            min-height: 1.8em;
         }
 
         .subhead i {
@@ -303,13 +483,13 @@
         .about-text-wrapper {
             position: relative;
             overflow: hidden;
-            max-height: 4.5em; /* Shows about 2-3 lines */
+            max-height: 4.5em;
             transition: max-height 0.4s ease;
             cursor: pointer;
         }
 
         .about-text-wrapper.expanded {
-            max-height: 500px; /* Enough to show all text */
+            max-height: 500px;
         }
 
         .about-text-wrapper p {
@@ -320,7 +500,6 @@
             transition: color 0.3s ease;
         }
 
-        /* Gradient fade effect when collapsed */
         .about-text-wrapper:not(.expanded)::after {
             content: '';
             position: absolute;
@@ -333,7 +512,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* "Read More" button - hidden on desktop (hover works) */
         .read-more-btn {
             display: none;
             background: none;
@@ -358,7 +536,7 @@
             font-size: 0.75rem;
         }
 
-        /* ---------- DESKTOP HOVER BEHAVIOR ---------- */
+        /* Desktop hover behavior */
         @media (hover: hover) and (min-width: 851px) {
             .about-text-wrapper {
                 max-height: 4.5em;
@@ -369,7 +547,6 @@
                 max-height: 500px;
             }
             
-            /* Remove gradient on hover */
             .about-text-wrapper:hover::after {
                 opacity: 0;
             }
@@ -379,7 +556,7 @@
             }
         }
 
-        /* ---------- TABLET & MOBILE (touch devices) ---------- */
+        /* Tablet & Mobile */
         @media (max-width: 850px), (hover: none) {
             .about-text-wrapper {
                 max-height: 4.5em;
@@ -399,23 +576,6 @@
                 align-items: center;
                 gap: 0.3rem;
             }
-        }
-
-        /* Dark theme adjustments for about me */
-        body.dark .about-text-wrapper p {
-            color: #c9d1d9;
-        }
-        
-        body.dark .about-text-wrapper:not(.expanded)::after {
-            background: linear-gradient(to bottom, transparent, rgba(28, 33, 40, 0.95));
-        }
-        
-        body.dark .read-more-btn {
-            color: #58a6ff;
-        }
-        
-        body.dark .read-more-btn:hover {
-            color: #79c0ff;
         }
 
         .skills-section {
@@ -547,7 +707,9 @@
         body.dark .info-block p,
         body.dark .info-block li,
         body.dark .contact-item,
-        body.dark .subhead {
+        body.dark .subhead,
+        body.dark .stat-label,
+        body.dark .skill-progress-item .skill-name {
             color: #c9d1d9;
         }
 
@@ -589,6 +751,63 @@
             color: #8b949e;
         }
 
+        body.dark .stat-item {
+            background: rgba(33, 38, 45, 0.5);
+            border-color: #30363d;
+        }
+
+        body.dark .stat-number {
+            color: #58a6ff;
+        }
+
+        body.dark .progress-bar-track {
+            background: #30363d;
+        }
+
+        body.dark .progress-bar-fill {
+            background: linear-gradient(90deg, #58a6ff, #79c0ff);
+        }
+
+        body.dark .project-item {
+            background: linear-gradient(135deg, #21262d, #30363d);
+            border-color: #30363d;
+            color: #58a6ff;
+        }
+
+        body.dark .download-btn {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+
+        body.dark .download-btn:hover {
+            background: #79c0ff;
+            box-shadow: 0 6px 16px rgba(88, 166, 255, 0.25);
+        }
+
+        body.dark .typing-text {
+            border-color: #58a6ff;
+        }
+
+        body.dark .typing-container {
+            color: #8b949e;
+        }
+
+        body.dark .about-text-wrapper p {
+            color: #c9d1d9;
+        }
+        
+        body.dark .about-text-wrapper:not(.expanded)::after {
+            background: linear-gradient(to bottom, transparent, rgba(28, 33, 40, 0.95));
+        }
+        
+        body.dark .read-more-btn {
+            color: #58a6ff;
+        }
+        
+        body.dark .read-more-btn:hover {
+            color: #79c0ff;
+        }
+
         .cv-footer {
             margin-top: 2rem;
             padding-top: 1rem;
@@ -613,6 +832,12 @@
             }
             .cv-grid {
                 gap: 1.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .project-gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -646,6 +871,12 @@
             }
             .skill-category {
                 padding: 1rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .project-gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -774,9 +1005,37 @@
                 font-size: 0.7rem;
             }
             
-            /* Mobile read more button */
             .read-more-btn {
                 font-size: 0.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            
+            .stat-number {
+                font-size: 1.2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.6rem;
+            }
+            
+            .project-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            
+            .project-item {
+                font-size: 1.5rem;
+            }
+            
+            .download-btn {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -817,6 +1076,16 @@
                 font-size: 0.7rem;
                 padding: 0.2rem 0.6rem;
             }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+            
+            .project-gallery {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
         }
     </style>
 </head>
@@ -839,7 +1108,7 @@
 
         <!-- main grid: profile + skills -->
         <div class="cv-grid">
-            <!-- LEFT: about, education, contact -->
+            <!-- LEFT: profile, about, stats, education, contact -->
             <div class="profile-section">
                 <div class="avatar-badge">
                     <div class="profile-image-container">
@@ -850,7 +1119,10 @@
                     <div>
                         <h2>Prasad Shejole</h2>
                         <div class="subhead">
-                            <i class="fas fa-graduation-cap"></i> MBBS student · 4th year
+                            <i class="fas fa-graduation-cap"></i> 
+                            <span class="typing-container">
+                                <span class="typing-text" id="typingText">MBBS student · 4th year</span>
+                            </span>
                             <span style="margin:0 0.3rem;">·</span>
                             <i class="fas fa-bullhorn"></i> marketing · editing
                         </div>
@@ -868,6 +1140,30 @@
                     </button>
                 </div>
 
+                <!-- ANIMATED STATISTICS COUNTERS -->
+                <div class="info-block">
+                    <h3><i class="fas fa-chart-line"></i> Quick Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-label">MBBS Year</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="25">0</span>
+                            <span class="stat-label">Events Managed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Videos Edited</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EDUCATION -->
                 <div class="info-block">
                     <h3><i class="fas fa-university"></i> Education</h3>
                     <ul>
@@ -875,6 +1171,14 @@
                         <li><i class="fas fa-flask"></i> Pre-medical · 2020 – 2022</li>
                         <li><i class="fas fa-certificate"></i> Digital marketing</li>
                     </ul>
+                </div>
+
+                <!-- DOWNLOAD CV BUTTON -->
+                <div class="info-block">
+                    <h3><i class="fas fa-download"></i> Resume</h3>
+                    <button class="download-btn" id="downloadBtn">
+                        <i class="fas fa-file-pdf"></i> Download CV
+                    </button>
                 </div>
 
                 <!-- CONTACT SECTION -->
@@ -894,41 +1198,165 @@
                 </div>
             </div>
 
-            <!-- RIGHT: core skills -->
+            <!-- RIGHT: skills with progress bars + project gallery -->
             <div class="skills-section">
+                <!-- Social Media Marketing with Progress Bars -->
                 <div class="skill-category">
                     <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fab fa-instagram"></i> Instagram strategy</span>
-                        <span class="skill-tag"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
-                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & insights</span>
-                        <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
-                        <span class="skill-tag"><i class="fas fa-hashtag"></i> Hashtag research</span>
-                        <span class="skill-tag"><i class="fas fa-people-arrows"></i> Community engagement</span>
+                    <div class="skill-progress">
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Instagram Strategy</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>LinkedIn Branding</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Analytics & Insights</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Community Engagement</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Editing & Content Creation with Progress Bars -->
                 <div class="skill-category">
                     <h3><i class="fas fa-pen-fancy"></i> Editing & content creation</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-video"></i> CapCut (pro)</span>
-                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva (expert)</span>
-                        <span class="skill-tag"><i class="fas fa-cut"></i> Video editing</span>
-                        <span class="skill-tag"><i class="fas fa-image"></i> Thumbnail design</span>
-                        <span class="skill-tag"><i class="fas fa-vector-square"></i> Brand identity</span>
-                        <span class="skill-tag"><i class="fas fa-film"></i> Reels / shorts</span>
+                    <div class="skill-progress">
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>CapCut (Pro)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Canva (Expert)</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Video Editing</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Thumbnail Design</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="88"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Event Management with Progress Bars -->
                 <div class="skill-category">
                     <h3><i class="fas fa-calendar-check"></i> Event management</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-tasks"></i> Planning & logistics</span>
-                        <span class="skill-tag"><i class="fas fa-users"></i> Team coordination</span>
-                        <span class="skill-tag"><i class="fas fa-handshake"></i> Vendor management</span>
-                        <span class="skill-tag"><i class="fas fa-clock"></i> Timeline execution</span>
-                        <span class="skill-tag"><i class="fas fa-trophy"></i> Medical conferences</span>
-                        <span class="skill-tag"><i class="fas fa-microphone"></i> Hosting / emcee</span>
+                    <div class="skill-progress">
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Planning & Logistics</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Team Coordination</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Timeline Execution</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill-progress-item">
+                            <div class="skill-name">
+                                <span>Hosting / Emcee</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar-track">
+                                <div class="progress-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT GALLERY -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-images"></i> Project Gallery</h3>
+                    <div class="project-gallery">
+                        <div class="project-item" data-project="Social Media Campaign">
+                            <i class="fab fa-instagram"></i>
+                            <div class="project-overlay">Social Media Campaign</div>
+                        </div>
+                        <div class="project-item" data-project="Video Edit">
+                            <i class="fas fa-video"></i>
+                            <div class="project-overlay">Video Edit</div>
+                        </div>
+                        <div class="project-item" data-project="Event Design">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="project-overlay">Event Design</div>
+                        </div>
+                        <div class="project-item" data-project="Canva Design">
+                            <i class="fas fa-paint-brush"></i>
+                            <div class="project-overlay">Canva Design</div>
+                        </div>
+                        <div class="project-item" data-project="Thumbnail">
+                            <i class="fas fa-image"></i>
+                            <div class="project-overlay">Thumbnail</div>
+                        </div>
+                        <div class="project-item" data-project="Brand Identity">
+                            <i class="fas fa-vector-square"></i>
+                            <div class="project-overlay">Brand Identity</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -948,9 +1376,11 @@
             const darkBtn = document.getElementById('darkBtn');
             const aboutText = document.getElementById('aboutText');
             const readMoreBtn = document.getElementById('readMoreBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
             let isExpanded = false;
+            let animationsStarted = false;
 
-            // Theme functions
+            // ---------- THEME FUNCTIONS ----------
             function setTheme(theme) {
                 if (theme === 'dark') {
                     body.classList.add('dark');
@@ -992,7 +1422,7 @@
 
             loadTheme();
 
-            // Profile image fallback
+            // ---------- PROFILE IMAGE FALLBACK ----------
             const profileImg = document.getElementById('profileImage');
             const fallbackIcon = document.querySelector('.fallback-icon');
             
@@ -1011,6 +1441,48 @@
                 });
             }
 
+            // ---------- TYPING ANIMATION ----------
+            const typingText = document.getElementById('typingText');
+            const phrases = [
+                'MBBS student · 4th year',
+                'Marketing & Branding Expert',
+                'Content Creator & Editor',
+                'Event Manager',
+                'Creative Thinker'
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 80;
+
+            function typeEffect() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 40;
+                } else {
+                    typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 80;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isDeleting = true;
+                    typingSpeed = 2000; // Pause at end
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typingSpeed = 500; // Pause before next
+                }
+
+                setTimeout(typeEffect, typingSpeed);
+            }
+
+            // Start typing animation after page load
+            setTimeout(typeEffect, 1000);
+
             // ---------- ABOUT ME COLLAPSIBLE LOGIC ----------
             function toggleAbout(expand) {
                 isExpanded = expand !== undefined ? expand : !isExpanded;
@@ -1024,30 +1496,149 @@
                 }
             }
 
-            // Read More button click handler (for mobile/tablet)
             readMoreBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 toggleAbout();
             });
 
-            // For desktop: hover behavior is handled by CSS
-            // But we need to sync the button state if user hovers on desktop
-            // and then clicks on mobile (when resizing)
-            
-            // Handle window resize - reset expansion if going to desktop
             let resizeTimer;
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(function() {
-                    // If on desktop (hover capable) and expanded via click, collapse
                     if (window.matchMedia('(hover: hover) and (min-width: 851px)').matches && isExpanded) {
                         toggleAbout(false);
                     }
                 }, 300);
             });
 
-            // Initialize - ensure collapsed on load
             toggleAbout(false);
+
+            // ---------- ANIMATED STATISTICS COUNTERS ----------
+            function animateCounters() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const duration = 2000;
+                    const stepTime = 20;
+                    const steps = duration / stepTime;
+                    const increment = target / steps;
+                    let current = 0;
+                    
+                    const counter = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            stat.textContent = target;
+                            clearInterval(counter);
+                        } else {
+                            stat.textContent = Math.floor(current);
+                        }
+                    }, stepTime);
+                });
+            }
+
+            // ---------- SKILL PROGRESS BARS ----------
+            function animateProgressBars() {
+                const progressBars = document.querySelectorAll('.progress-bar-fill');
+                
+                progressBars.forEach((bar, index) => {
+                    const width = parseInt(bar.getAttribute('data-width'));
+                    setTimeout(() => {
+                        bar.style.width = width + '%';
+                    }, index * 200);
+                });
+            }
+
+            // ---------- INTERSECTION OBSERVER FOR ANIMATIONS ----------
+            function startAnimations() {
+                if (animationsStarted) return;
+                animationsStarted = true;
+                
+                animateCounters();
+                animateProgressBars();
+            }
+
+            // Use Intersection Observer to trigger animations when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animationsStarted) {
+                        startAnimations();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            // Observe the skills section
+            const skillsSection = document.querySelector('.skills-section');
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+
+            // Also start animations if already visible (fallback)
+            setTimeout(() => {
+                if (!animationsStarted && skillsSection) {
+                    const rect = skillsSection.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        startAnimations();
+                    }
+                }
+            }, 1000);
+
+            // ---------- PROJECT GALLERY INTERACTION ----------
+            const projectItems = document.querySelectorAll('.project-item');
+            projectItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const projectName = this.getAttribute('data-project');
+                    alert('🖼️ Project: ' + projectName + '\n\nThis is a demo. Replace with your actual project details!');
+                });
+            });
+
+            // ---------- DOWNLOAD CV BUTTON ----------
+            downloadBtn.addEventListener('click', function() {
+                alert('📄 CV Download\n\nThis is a demo feature. In production, this would download your actual CV PDF.');
+                
+                // Simulate download with a simple blob
+                const cvContent = `
+                    PRASAD SHEJOLE
+                    MBBS Student · 4th Year
+                    
+                    Contact: prasad.shejole@medmail.com
+                    Phone: +91 98765 12345 | +7 987 654 3210
+                    
+                    About:
+                    Dedicated 4th-year MBBS student with expertise in digital marketing, 
+                    content creation, and event management.
+                    
+                    Skills:
+                    - Social Media Marketing: Instagram, LinkedIn
+                    - Video Editing: CapCut (Pro)
+                    - Design: Canva (Expert)
+                    - Event Management
+                    
+                    Education:
+                    - MBBS (2023-2029) - Russia
+                    - Pre-medical (2020-2022)
+                    - Digital Marketing Certification
+                `;
+                
+                const blob = new Blob([cvContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Prasad_Shejole_CV.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+            // ---------- KEYBOARD ACCESSIBILITY ----------
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (isExpanded) {
+                        toggleAbout(false);
+                    }
+                }
+            });
 
         })();
     </script>
