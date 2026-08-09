@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -261,7 +260,7 @@
             transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* ---------- PROJECT GALLERY ---------- */
+        /* ---------- PROJECT GALLERY - POPUP PREVIEW ---------- */
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -273,7 +272,7 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            cursor: pointer;
+            cursor: default;
             aspect-ratio: 1/1;
             background: linear-gradient(135deg, #d9e6f2, #e9edf2);
             display: flex;
@@ -288,10 +287,16 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
         .project-item video {
             background: #000;
+        }
+
+        .project-item:hover img,
+        .project-item:hover video {
+            transform: scale(1.08);
         }
 
         .project-item .project-icon {
@@ -300,11 +305,6 @@
             color: #0b6e4f;
             opacity: 0.3;
             pointer-events: none;
-        }
-
-        .project-item:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .project-item .project-overlay {
@@ -324,6 +324,65 @@
 
         .project-item:hover .project-overlay {
             transform: translateY(0);
+        }
+
+        /* ---------- POPUP PREVIEW (on hover) ---------- */
+        .project-preview-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            max-width: 80vw;
+            max-height: 80vh;
+            background: rgba(0,0,0,0.9);
+            border-radius: 20px;
+            z-index: 9999;
+            padding: 1rem;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-preview-popup.active {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+        }
+
+        .project-preview-popup img,
+        .project-preview-popup video {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .project-preview-popup .preview-title {
+            color: white;
+            text-align: center;
+            padding: 0.8rem 0 0.3rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .project-preview-popup .preview-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .project-preview-popup .preview-close:hover {
+            transform: rotate(90deg);
         }
 
         /* Coming Soon overlay */
@@ -863,6 +922,10 @@
             color: #79c0ff;
         }
 
+        body.dark .project-preview-popup {
+            background: rgba(0,0,0,0.95);
+        }
+
         .cv-footer {
             margin-top: 2rem;
             padding-top: 1rem;
@@ -1091,6 +1154,17 @@
                 padding: 0.5rem 1rem;
                 width: 100%;
                 justify-content: center;
+            }
+
+            .project-preview-popup {
+                max-width: 95vw;
+                max-height: 95vh;
+                padding: 0.5rem;
+            }
+
+            .project-preview-popup img,
+            .project-preview-popup video {
+                max-height: 60vh;
             }
         }
 
@@ -1384,53 +1458,59 @@
                     </div>
                 </div>
 
-                <!-- PROJECT GALLERY - WITH YOUR IMAGES AND VIDEOS -->
+                <!-- PROJECT GALLERY - HOVER PREVIEW -->
                 <div class="skill-category">
                     <h3><i class="fas fa-images"></i> Project Gallery</h3>
                     <div class="project-gallery" id="projectGallery">
                         <!-- Project 1: Social Media Campaign - IMG_003 -->
-                        <div class="project-item" data-project="Social Media Campaign">
+                        <div class="project-item" data-project="Social Media Campaign" data-type="image" data-src="IMG_003.jpg">
                             <img src="IMG_003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
                             <div class="project-overlay">Social Media Campaign</div>
                         </div>
                         
                         <!-- Project 2: Video Edit - vid_004 -->
-                        <div class="project-item" data-project="Video Edit">
+                        <div class="project-item" data-project="Video Edit" data-type="video" data-src="vid_004.mp4">
                             <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
                             <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
                             <div class="project-overlay">Video Edit</div>
                         </div>
                         
                         <!-- Project 3: Event Design - vid_008 -->
-                        <div class="project-item" data-project="Event Design">
+                        <div class="project-item" data-project="Event Design" data-type="video" data-src="vid_008.mp4">
                             <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
                             <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
                             <div class="project-overlay">Event Design</div>
                         </div>
                         
                         <!-- Project 4: Canva Design - ahilyanagar -->
-                        <div class="project-item" data-project="Canva Design">
+                        <div class="project-item" data-project="Canva Design" data-type="image" data-src="ahilyanagar.jpg">
                             <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-icon" style="display:none;"><i class="fas fa-paint-brush"></i></div>
                             <div class="project-overlay">Canva Design</div>
                         </div>
                         
                         <!-- Project 5: Thumbnail - img_0061 -->
-                        <div class="project-item" data-project="Thumbnail">
+                        <div class="project-item" data-project="Thumbnail" data-type="image" data-src="img_0061.jpg">
                             <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
                             <div class="project-overlay">Thumbnail</div>
                         </div>
                         
                         <!-- Project 6: Brand Identity - COMING SOON -->
-                        <div class="project-item coming-soon" data-project="Brand Identity">
+                        <div class="project-item coming-soon" data-project="Brand Identity" data-type="coming-soon">
                             <div class="project-icon"><i class="fas fa-vector-square"></i></div>
                             <div class="project-overlay">Brand Identity</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- HOVER PREVIEW POPUP -->
+        <div class="project-preview-popup" id="previewPopup">
+            <button class="preview-close" id="previewClose">&times;</button>
+            <div id="previewContent"></div>
         </div>
 
         <!-- footer -->
@@ -1448,8 +1528,12 @@
             const aboutText = document.getElementById('aboutText');
             const readMoreBtn = document.getElementById('readMoreBtn');
             const downloadBtn = document.getElementById('downloadBtn');
+            const previewPopup = document.getElementById('previewPopup');
+            const previewContent = document.getElementById('previewContent');
+            const previewClose = document.getElementById('previewClose');
             let isExpanded = false;
             let animationsStarted = false;
+            let previewTimeout = null;
 
             // ---------- THEME FUNCTIONS ----------
             function setTheme(theme) {
@@ -1650,21 +1734,68 @@
                 }
             }, 1000);
 
-            // ---------- PROJECT GALLERY INTERACTION ----------
+            // ---------- PROJECT GALLERY - HOVER PREVIEW ----------
             const projectItems = document.querySelectorAll('.project-item');
+            
             projectItems.forEach(item => {
-                item.addEventListener('click', function() {
+                item.addEventListener('mouseenter', function(e) {
                     const projectName = this.getAttribute('data-project');
+                    const projectType = this.getAttribute('data-type');
+                    const projectSrc = this.getAttribute('data-src');
                     const isComingSoon = this.classList.contains('coming-soon');
                     
-                    if (isComingSoon) {
-                        alert('🚀 ' + projectName + '\n\nComing Soon! Exciting things are on the way.');
-                    } else {
-                        alert('🖼️ Project: ' + projectName + '\n\nClick to view full project details.\n(Replace this alert with your actual project showcase!)');
+                    // Clear any existing timeout
+                    if (previewTimeout) {
+                        clearTimeout(previewTimeout);
+                        previewTimeout = null;
                     }
+                    
+                    // Close any existing preview
+                    closePreview();
+                    
+                    // Show preview after short delay
+                    previewTimeout = setTimeout(() => {
+                        if (isComingSoon) {
+                            previewContent.innerHTML = `
+                                <div style="text-align:center; color:white; padding: 3rem 2rem;">
+                                    <i class="fas fa-vector-square" style="font-size: 4rem; opacity: 0.5; display:block; margin-bottom: 1rem;"></i>
+                                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${projectName}</div>
+                                    <div style="font-size: 0.9rem; opacity: 0.7;">Coming Soon! Exciting things are on the way.</div>
+                                </div>
+                            `;
+                        } else if (projectType === 'image') {
+                            previewContent.innerHTML = `
+                                <img src="${projectSrc}" alt="${projectName}">
+                                <div class="preview-title">${projectName}</div>
+                            `;
+                        } else if (projectType === 'video') {
+                            previewContent.innerHTML = `
+                                <video src="${projectSrc}" autoplay muted loop playsinline></video>
+                                <div class="preview-title">${projectName}</div>
+                            `;
+                        }
+                        
+                        previewPopup.classList.add('active');
+                    }, 400);
                 });
 
-                // Handle video hover play/pause
+                item.addEventListener('mouseleave', function() {
+                    if (previewTimeout) {
+                        clearTimeout(previewTimeout);
+                        previewTimeout = null;
+                    }
+                    
+                    // Close preview after short delay (allows moving to popup)
+                    setTimeout(() => {
+                        // Check if mouse is over popup
+                        const isOverPopup = previewPopup.matches(':hover');
+                        if (!isOverPopup) {
+                            closePreview();
+                        }
+                    }, 200);
+                });
+
+                // Handle video hover play/pause in gallery
                 const video = item.querySelector('video');
                 if (video) {
                     item.addEventListener('mouseenter', function() {
@@ -1675,6 +1806,54 @@
                         video.currentTime = 0;
                     });
                 }
+            });
+
+            // ---------- PREVIEW POPUP CONTROLS ----------
+            function closePreview() {
+                previewPopup.classList.remove('active');
+                // Clear content after animation
+                setTimeout(() => {
+                    if (!previewPopup.classList.contains('active')) {
+                        previewContent.innerHTML = '';
+                    }
+                }, 300);
+            }
+
+            previewClose.addEventListener('click', closePreview);
+
+            // Close on click outside content
+            previewPopup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePreview();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePreview();
+                    if (isExpanded) {
+                        toggleAbout(false);
+                    }
+                }
+            });
+
+            // Prevent popup from closing when hovering over it
+            previewPopup.addEventListener('mouseenter', function() {
+                if (previewTimeout) {
+                    clearTimeout(previewTimeout);
+                    previewTimeout = null;
+                }
+            });
+
+            previewPopup.addEventListener('mouseleave', function() {
+                // Don't close immediately, allow moving back to project
+                setTimeout(() => {
+                    const isOverProject = document.querySelector('.project-item:hover');
+                    if (!isOverProject) {
+                        closePreview();
+                    }
+                }, 300);
             });
 
             // ---------- PDF DOWNLOAD CV BUTTON ----------
@@ -1777,6 +1956,7 @@
             // ---------- KEYBOARD ACCESSIBILITY ----------
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
+                    closePreview();
                     if (isExpanded) {
                         toggleAbout(false);
                     }
