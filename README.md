@@ -596,10 +596,10 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasadshejole@gmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadev-in</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @_that_awkwardpause</div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +79960848472</div>
                 </div>
             </div>
 
@@ -609,7 +609,6 @@
                     <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
                     <div class="skill-tags">
                         <span class="skill-tag highlight"><i class="fab fa-instagram"></i> Instagram strategy</span>
-                        <span class="skill-tag highlight"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
                         <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & insights</span>
                         <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
                         <span class="skill-tag"><i class="fas fa-hashtag"></i> Hashtag research</span>
