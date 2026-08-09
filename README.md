@@ -485,7 +485,7 @@
         <div class="cv-header">
             <h1>
                 <i class="fas fa-user-graduate"></i>
-                Riya Sharma · CV
+                Prasad Shejole · CV
             </h1>
             <div class="theme-controls">
                 <span class="theme-label"><i class="fas fa-palette"></i> Theme</span>
@@ -503,9 +503,9 @@
                 <div class="avatar-badge">
                     <div class="avatar-icon"><i class="fas fa-user-md"></i></div>
                     <div>
-                        <h2>Riya Sharma</h2>
+                        <h2>Prasad Shejole</h2>
                         <div class="subhead">
-                            <i class="fas fa-graduation-cap"></i> MBBS student · 2nd year
+                            <i class="fas fa-graduation-cap"></i> MBBS student · 4th year
                             <span style="margin:0 0.3rem;">·</span>
                             <i class="fas fa-bullhorn"></i> marketing · editing
                         </div>
@@ -514,23 +514,23 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-                    <p>MBBS student with a creative edge. I blend medical knowledge with digital marketing, content creation, and event management. I believe in building a brand that connects health with modern communication.</p>
+                    <p>I am a 4th year MBBS student, pursuing my degree in Russia. But this page is not for that — this page introduces my creative side to you, the side that most of the people are deprived from.</p>
                 </div>
 
                 <div class="info-block">
                     <h3><i class="fas fa-university"></i> Education</h3>
                     <ul>
-                        <li><i class="fas fa-graduation-cap"></i> MBBS · 2024 – present</li>
-                        <li><i class="fas fa-flask"></i> Pre-medical · 2021 – 2024</li>
-                        <li><i class="fas fa-certificate"></i> Digital marketing certification</li>
+                        <li><i class="fas fa-graduation-cap"></i> MBBS · 2023 – 2029</li>
+                        <li><i class="fas fa-flask"></i> Pre-medical · 2020 – 2022</li>
+                        <li><i class="fas fa-certificate"></i> Digital marketing</li>
                     </ul>
                 </div>
 
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> riya.sharma@medmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/riyamedia</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @riya.creates</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
                     <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
                 </div>
             </div>
@@ -595,7 +595,7 @@
         <!-- footer -->
         <div class="cv-footer">
             <span><i class="fas fa-palette"></i> Switch theme · light / dark</span>
-            <span><i class="fas fa-graduation-cap"></i> MBBS · marketing · editing · events</span>
+            <span><i class="fas fa-graduation-cap"></i> MBBS · 4th year · marketing · editing · events</span>
         </div>
     </div>
 
