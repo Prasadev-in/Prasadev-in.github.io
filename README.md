@@ -1,4 +1,4 @@
-# 👋 Hello, I'm [Your Name]
+# 👋 Hello, I'm [Prasad Shejole]
 
 Welcome to my personal website repository!  
 This project contains the source code for my portfolio website where I showcase my work, skills, and experience.
@@ -22,9 +22,9 @@ This website is designed to introduce myself, display my projects, and provide a
 
 ## 🛠️ Technologies Used
 
-- HTML
-- CSS
-- JavaScript
+- Canva
+- capcut
+- vn
 - [Framework/Library]
 - [Other Tools]
 
