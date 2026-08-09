@@ -2,8 +2,8 @@
 ## ~~WHO AM I~~?
 # 👋 Hello, I'm [Your Name]
 
-Welcome to my personal website repository!  
-This project contains the source code for my portfolio website where I showcase my work, skills, and experience.
+Welcome to side of me which you would have never seen!  
+This website contains my portfolio website where I showcase my work, skills, and experience.
 
 ## 🌎 Website
 
@@ -24,9 +24,9 @@ This website is designed to introduce myself, display my projects, and provide a
 
 ## 🛠️ Technologies Used
 
-- HTML
-- CSS
-- JavaScript
+- Canva
+- Capcut
+- instagram
 - [Framework/Library]
 - [Other Tools]
 
@@ -94,9 +94,9 @@ Contributions, suggestions, and feedback are welcome!
 **Your Name**
 
 - Portfolio: [your-website-link]
-- GitHub: [your-github-link]
+- GitHub: [prasadev-in.github.io]
 - LinkedIn: [your-linkedin-link]
-- Email: [your-email]
+- Email: [prasadshejole@gmail.com]
 
 ## 📄 License
 
