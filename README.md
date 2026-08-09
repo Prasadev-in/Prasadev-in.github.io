@@ -58,7 +58,7 @@ Contributions, suggestions, and feedback are welcome!
 
 - Portfolio: [_that_awkwardpause]
 - GitHub: [prasadev-in.github.io]
-- LinkedIn: []
+- LinkedIn: [Prasad Shejole]
 - Email: [prasadshejole@gmail.com]
 
 ## 📄 License
