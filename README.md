@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,6 +6,8 @@
     <title>Prasad Shejole · MBBS Student · Marketing & Events</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- html2pdf library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         /* ---------- reset & base ---------- */
         * {
@@ -282,6 +285,20 @@
             border: 1px solid #e9edf2;
         }
 
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-item .project-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: #0b6e4f;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
         .project-item:hover {
             transform: scale(1.04);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -323,6 +340,8 @@
             text-decoration: none;
             font-family: inherit;
             margin-top: 0.3rem;
+            width: 100%;
+            justify-content: center;
         }
 
         .download-btn:hover {
@@ -333,6 +352,12 @@
 
         .download-btn i {
             font-size: 0.9rem;
+        }
+
+        .download-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
 
         /* ---------- grid: left (profile) + right (skills) ---------- */
@@ -773,6 +798,10 @@
             color: #58a6ff;
         }
 
+        body.dark .project-item .project-icon {
+            color: #58a6ff;
+        }
+
         body.dark .download-btn {
             background: #58a6ff;
             color: #0d1117;
@@ -1152,11 +1181,11 @@
                             <span class="stat-label">Projects</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-count="10+">0</span>
+                            <span class="stat-number" data-count="25">0</span>
                             <span class="stat-label">Events Managed</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" data-count="30+">0</span>
+                            <span class="stat-number" data-count="50">0</span>
                             <span class="stat-label">Videos Edited</span>
                         </div>
                     </div>
@@ -1172,11 +1201,11 @@
                     </ul>
                 </div>
 
-                <!-- DOWNLOAD CV BUTTON -->
+                <!-- DOWNLOAD CV BUTTON - PDF -->
                 <div class="info-block">
                     <h3><i class="fas fa-download"></i> Resume</h3>
                     <button class="download-btn" id="downloadBtn">
-                        <i class="fas fa-file-pdf"></i> Download CV
+                        <i class="fas fa-file-pdf"></i> Download CV (PDF)
                     </button>
                 </div>
 
@@ -1328,32 +1357,44 @@
                     </div>
                 </div>
 
-                <!-- PROJECT GALLERY -->
+                <!-- PROJECT GALLERY - IMAGE READY -->
                 <div class="skill-category">
                     <h3><i class="fas fa-images"></i> Project Gallery</h3>
-                    <div class="project-gallery">
+                    <div class="project-gallery" id="projectGallery">
+                        <!-- Project 1 -->
                         <div class="project-item" data-project="Social Media Campaign">
-                            <i class="fab fa-instagram"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Social+Media" alt="Social Media Campaign" loading="lazy">
                             <div class="project-overlay">Social Media Campaign</div>
                         </div>
+                        <!-- Project 2 -->
                         <div class="project-item" data-project="Video Edit">
-                            <i class="fas fa-video"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Video+Edit" alt="Video Edit" loading="lazy">
                             <div class="project-overlay">Video Edit</div>
                         </div>
+                        <!-- Project 3 -->
                         <div class="project-item" data-project="Event Design">
-                            <i class="fas fa-calendar-alt"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Event+Design" alt="Event Design" loading="lazy">
                             <div class="project-overlay">Event Design</div>
                         </div>
+                        <!-- Project 4 -->
                         <div class="project-item" data-project="Canva Design">
-                            <i class="fas fa-paint-brush"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Canva+Design" alt="Canva Design" loading="lazy">
                             <div class="project-overlay">Canva Design</div>
                         </div>
+                        <!-- Project 5 -->
                         <div class="project-item" data-project="Thumbnail">
-                            <i class="fas fa-image"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Thumbnail" alt="Thumbnail" loading="lazy">
                             <div class="project-overlay">Thumbnail</div>
                         </div>
+                        <!-- Project 6 -->
                         <div class="project-item" data-project="Brand Identity">
-                            <i class="fas fa-vector-square"></i>
+                            <!-- Replace src with your image path -->
+                            <img src="https://via.placeholder.com/200/0b6e4f/ffffff?text=Brand+Identity" alt="Brand Identity" loading="lazy">
                             <div class="project-overlay">Brand Identity</div>
                         </div>
                     </div>
@@ -1469,17 +1510,16 @@
 
                 if (!isDeleting && charIndex === currentPhrase.length) {
                     isDeleting = true;
-                    typingSpeed = 2000; // Pause at end
+                    typingSpeed = 2000;
                 } else if (isDeleting && charIndex === 0) {
                     isDeleting = false;
                     phraseIndex = (phraseIndex + 1) % phrases.length;
-                    typingSpeed = 500; // Pause before next
+                    typingSpeed = 500;
                 }
 
                 setTimeout(typeEffect, typingSpeed);
             }
 
-            // Start typing animation after page load
             setTimeout(typeEffect, 1000);
 
             // ---------- ABOUT ME COLLAPSIBLE LOGIC ----------
@@ -1557,7 +1597,6 @@
                 animateProgressBars();
             }
 
-            // Use Intersection Observer to trigger animations when visible
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !animationsStarted) {
@@ -1566,13 +1605,11 @@
                 });
             }, { threshold: 0.3 });
 
-            // Observe the skills section
             const skillsSection = document.querySelector('.skills-section');
             if (skillsSection) {
                 observer.observe(skillsSection);
             }
 
-            // Also start animations if already visible (fallback)
             setTimeout(() => {
                 if (!animationsStarted && skillsSection) {
                     const rect = skillsSection.getBoundingClientRect();
@@ -1591,43 +1628,103 @@
                 });
             });
 
-            // ---------- DOWNLOAD CV BUTTON ----------
+            // ---------- PDF DOWNLOAD CV BUTTON ----------
             downloadBtn.addEventListener('click', function() {
-                alert('📄 CV Download\n\nThis is a demo feature. In production, this would download your actual CV PDF.');
-                
-                // Simulate download with a simple blob
-                const cvContent = `
-                    PRASAD SHEJOLE
-                    MBBS Student · 4th Year
-                    
-                    Contact: prasad.shejole@medmail.com
-                    Phone: +91 98765 12345 | +7 987 654 3210
-                    
-                    About:
-                    Dedicated 4th-year MBBS student with expertise in digital marketing, 
-                    content creation, and event management.
-                    
-                    Skills:
-                    - Social Media Marketing: Instagram, LinkedIn
-                    - Video Editing: CapCut (Pro)
-                    - Design: Canva (Expert)
-                    - Event Management
-                    
-                    Education:
-                    - MBBS (2023-2029) - Russia
-                    - Pre-medical (2020-2022)
-                    - Digital Marketing Certification
+                const btn = this;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+
+                // Create a clean CV content for PDF
+                const cvContent = document.createElement('div');
+                cvContent.style.cssText = `
+                    font-family: 'Inter', Arial, sans-serif;
+                    max-width: 800px;
+                    margin: 0 auto;
+                    padding: 40px;
+                    background: white;
+                    color: #1e293b;
                 `;
                 
-                const blob = new Blob([cvContent], { type: 'text/plain' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'Prasad_Shejole_CV.txt';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                cvContent.innerHTML = `
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h1 style="color: #0b6e4f; font-size: 28px; margin-bottom: 5px;">Prasad Shejole</h1>
+                        <p style="color: #475569; font-size: 16px; margin: 5px 0;">
+                            <i class="fas fa-graduation-cap"></i> MBBS Student · 4th Year
+                        </p>
+                        <p style="color: #475569; font-size: 14px;">
+                            <i class="fas fa-bullhorn"></i> Marketing &bull; Editing &bull; Event Management
+                        </p>
+                    </div>
+
+                    <hr style="border: 1px solid #e9edf2; margin: 20px 0;">
+
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #0b6e4f; font-size: 18px; margin-bottom: 10px;">About Me</h3>
+                        <p style="color: #1e293b; line-height: 1.6; font-size: 14px;">
+                            A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #0b6e4f; font-size: 18px; margin-bottom: 10px;">Education</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 5px 0; font-size: 14px;"><strong>MBBS</strong> · 2023 – 2029</li>
+                            <li style="padding: 5px 0; font-size: 14px;"><strong>Pre-medical</strong> · 2020 – 2022</li>
+                            <li style="padding: 5px 0; font-size: 14px;"><strong>Digital Marketing</strong> · Certification</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #0b6e4f; font-size: 18px; margin-bottom: 10px;">Skills</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Instagram Strategy</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">LinkedIn Branding</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">CapCut Pro</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Canva Expert</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Video Editing</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Event Management</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Thumbnail Design</span>
+                            <span style="background: #e9edf2; padding: 5px 12px; border-radius: 20px; font-size: 13px;">Brand Identity</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <h3 style="color: #0b6e4f; font-size: 18px; margin-bottom: 10px;">Quick Stats</h3>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; text-align: center;">
+                            <div><strong style="font-size: 22px; color: #0b6e4f;">4</strong><br><span style="font-size: 12px; color: #475569;">MBBS Year</span></div>
+                            <div><strong style="font-size: 22px; color: #0b6e4f;">15</strong><br><span style="font-size: 12px; color: #475569;">Projects</span></div>
+                            <div><strong style="font-size: 22px; color: #0b6e4f;">25</strong><br><span style="font-size: 12px; color: #475569;">Events Managed</span></div>
+                            <div><strong style="font-size: 22px; color: #0b6e4f;">50</strong><br><span style="font-size: 12px; color: #475569;">Videos Edited</span></div>
+                        </div>
+                    </div>
+
+                    <hr style="border: 1px solid #e9edf2; margin: 20px 0;">
+
+                    <div style="text-align: center; color: #475569; font-size: 13px;">
+                        <p><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 98765 12345 | +7 987 654 3210</p>
+                        <p><i class="fab fa-github"></i> github.com/prasadmedia</p>
+                    </div>
+                `;
+
+                // Use html2pdf to generate PDF
+                const opt = {
+                    margin: 10,
+                    filename: 'Prasad_Shejole_CV.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                html2pdf().set(opt).from(cvContent).save().then(function() {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download CV (PDF)';
+                }).catch(function(err) {
+                    console.error('PDF generation error:', err);
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download CV (PDF)';
+                    alert('Failed to generate PDF. Please try again.');
+                });
             });
 
             // ---------- KEYBOARD ACCESSIBILITY ----------
