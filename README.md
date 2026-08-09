@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: 1rem;
             background: #f2f5f9;
             color: #1e293b;
             transition: background 0.3s ease, color 0.3s ease;
@@ -33,7 +33,7 @@
             background: #ffffff;
             border-radius: 40px;
             box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.18);
-            padding: 2.8rem 3rem;
+            padding: 2rem 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
             transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
@@ -45,14 +45,14 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem 0.8rem;
-            margin-bottom: 2.8rem;
-            padding-bottom: 1.4rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid #e2e8f0;
             transition: border-color 0.3s ease;
         }
 
         .cv-header h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 650;
             letter-spacing: -0.02em;
             display: flex;
@@ -61,8 +61,8 @@
         }
 
         .cv-header h1 i {
-            color: #0b6e4f;
-            font-size: 2.1rem;
+            color: #dc2626;
+            font-size: 2rem;
             transition: color 0.3s ease;
         }
 
@@ -94,26 +94,26 @@
         .theme-btn {
             border: none;
             background: transparent;
-            padding: 0.5rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: #1e293b;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.3rem;
             transition: all 0.2s ease;
         }
 
         .theme-btn i {
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .theme-btn.active {
             background: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            color: #0b6e4f;
+            color: #dc2626;
         }
 
         .theme-btn:hover:not(.active) {
@@ -124,7 +124,7 @@
         .cv-grid {
             display: grid;
             grid-template-columns: 1fr 1.6fr;
-            gap: 2.5rem;
+            gap: 1.8rem;
             margin-top: 0.4rem;
         }
 
@@ -132,7 +132,7 @@
         .profile-section {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .avatar-badge {
@@ -144,15 +144,15 @@
 
         /* PROFILE IMAGE STYLES */
         .profile-image-container {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #0b6e4f;
+            border: 3px solid #dc2626;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             flex-shrink: 0;
             transition: all 0.3s ease;
-            background: #d9e6f2;
+            background: #fee2e2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -170,18 +170,18 @@
         }
 
         .profile-image-container .fallback-icon {
-            font-size: 2.8rem;
-            color: #0b6e4f;
+            font-size: 2.5rem;
+            color: #dc2626;
         }
 
         .avatar-badge h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
         .subhead {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #475569;
             margin-top: 0.1rem;
             font-weight: 450;
@@ -193,32 +193,32 @@
         }
 
         .subhead i {
-            color: #0b6e4f;
+            color: #dc2626;
             transition: color 0.3s ease;
         }
 
         .info-block {
             background: #f8fafc;
-            padding: 1.4rem 1.5rem;
-            border-radius: 24px;
+            padding: 1.2rem 1.2rem;
+            border-radius: 20px;
             border: 1px solid #e9edf2;
             transition: all 0.3s ease;
         }
 
         .info-block h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.7rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #0b6e4f;
+            color: #dc2626;
             transition: color 0.3s ease;
         }
 
         .info-block p,
         .info-block li {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
             color: #1e293b;
             transition: color 0.3s ease;
@@ -230,7 +230,7 @@
         }
 
         .info-block ul li {
-            padding: 0.35rem 0;
+            padding: 0.3rem 0;
             display: flex;
             align-items: center;
             gap: 0.6rem;
@@ -238,8 +238,8 @@
 
         .info-block ul li i {
             width: 1.4rem;
-            color: #0b6e4f;
-            font-size: 1rem;
+            color: #dc2626;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
@@ -247,12 +247,12 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            padding: 0.4rem 0;
+            padding: 0.3rem 0;
         }
 
         .contact-item i {
             width: 1.6rem;
-            color: #0b6e4f;
+            color: #dc2626;
             transition: color 0.3s ease;
         }
 
@@ -260,39 +260,39 @@
         .skills-section {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .skill-category {
             background: #f8fafc;
-            padding: 1.4rem 1.5rem;
-            border-radius: 24px;
+            padding: 1.2rem 1.2rem;
+            border-radius: 20px;
             border: 1px solid #e9edf2;
             transition: all 0.3s ease;
         }
 
         .skill-category h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #0b6e4f;
+            color: #dc2626;
             transition: color 0.3s ease;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem 0.8rem;
+            gap: 0.5rem 0.6rem;
         }
 
         .skill-tag {
             background: #e9edf2;
-            padding: 0.3rem 1rem;
+            padding: 0.25rem 0.8rem;
             border-radius: 30px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: #1e293b;
             display: inline-flex;
@@ -303,14 +303,14 @@
         }
 
         .skill-tag i {
-            color: #0b6e4f;
-            font-size: 0.8rem;
+            color: #dc2626;
+            font-size: 0.75rem;
             transition: color 0.3s ease;
         }
 
         .skill-tag.highlight {
-            background: #d9e6f2;
-            border-color: #b6ccdd;
+            background: #fee2e2;
+            border-color: #fca5a5;
         }
 
         .repo-showcase {
@@ -319,15 +319,15 @@
 
         .repo-showcase .mini-repo {
             background: #f1f5f9;
-            padding: 0.8rem 1.2rem;
-            border-radius: 20px;
+            padding: 0.7rem 1rem;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 0.5rem 1rem;
             border: 1px solid #e2e8f0;
-            margin-top: 0.6rem;
+            margin-top: 0.5rem;
             transition: all 0.3s ease;
         }
 
@@ -335,42 +335,46 @@
         .repo-thumb {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
         .repo-thumb-image {
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
             object-fit: cover;
             border: 1px solid #e2e8f0;
             flex-shrink: 0;
-            background: #d9e6f2;
+            background: #fee2e2;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: #0b6e4f;
+            font-size: 1rem;
+            color: #dc2626;
         }
 
         .repo-thumb-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
+        }
+
+        .mini-repo span {
+            font-size: 0.85rem;
         }
 
         .mini-repo span i {
             margin-right: 0.4rem;
-            color: #0b6e4f;
+            color: #dc2626;
             transition: color 0.3s ease;
         }
 
         .mini-repo a {
-            color: #0b6e4f;
+            color: #dc2626;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: color 0.3s ease;
         }
 
@@ -378,7 +382,7 @@
             margin-right: 0.2rem;
         }
 
-        /* ---------- DARK THEME ---------- */
+        /* ---------- DARK THEME (Keep colors as they were) ---------- */
         body.dark {
             background: #0d1117;
             color: #e6edf3;
@@ -485,6 +489,10 @@
             color: #58a6ff;
         }
 
+        body.dark .mini-repo span i {
+            color: #58a6ff;
+        }
+
         body.dark .cv-footer {
             border-top-color: #30363d;
             color: #8b949e;
@@ -492,14 +500,14 @@
 
         /* small footer */
         .cv-footer {
-            margin-top: 2.8rem;
-            padding-top: 1.4rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
             border-top: 1px solid #e2e8f0;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 0.5rem;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #475569;
             transition: all 0.3s ease;
         }
@@ -508,35 +516,237 @@
             margin-right: 0.3rem;
         }
 
-        /* responsive */
-        @media (max-width: 850px) {
+        /* ---------- IMPROVED MOBILE RESPONSIVENESS ---------- */
+        @media (max-width: 1024px) {
             .cv-card {
-                padding: 2rem 1.5rem;
+                padding: 1.8rem 1.5rem;
             }
             .cv-grid {
-                grid-template-columns: 1fr;
-                gap: 1.8rem;
-            }
-            .cv-header h1 {
-                font-size: 1.7rem;
+                gap: 1.5rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .cv-header {
-                flex-direction: column;
-                align-items: stretch;
+        @media (max-width: 850px) {
+            .cv-card {
+                padding: 1.5rem 1.2rem;
+                border-radius: 28px;
             }
-            .theme-controls {
-                justify-content: flex-start;
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            .avatar-badge {
-                flex-direction: column;
-                align-items: flex-start;
+            .cv-header h1 {
+                font-size: 1.5rem;
+            }
+            .cv-header h1 i {
+                font-size: 1.6rem;
             }
             .profile-image-container {
                 width: 70px;
                 height: 70px;
+            }
+            .avatar-badge h2 {
+                font-size: 1.4rem;
+            }
+            .subhead {
+                font-size: 0.85rem;
+            }
+            .info-block {
+                padding: 1rem;
+            }
+            .skill-category {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            
+            .cv-card {
+                padding: 1.2rem 0.8rem;
+                border-radius: 24px;
+                box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+            }
+            
+            .cv-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.8rem;
+            }
+            
+            .cv-header h1 {
+                font-size: 1.3rem;
+                justify-content: center;
+            }
+            
+            .cv-header h1 i {
+                font-size: 1.3rem;
+            }
+            
+            .theme-controls {
+                justify-content: center;
+            }
+            
+            .theme-label {
+                font-size: 0.8rem;
+            }
+            
+            .theme-btn {
+                padding: 0.35rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .theme-btn i {
+                font-size: 0.8rem;
+            }
+            
+            .cv-grid {
+                gap: 1.2rem;
+            }
+            
+            .profile-section {
+                gap: 1.2rem;
+            }
+            
+            .avatar-badge {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.6rem;
+            }
+            
+            .profile-image-container {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .profile-image-container .fallback-icon {
+                font-size: 2.8rem;
+            }
+            
+            .avatar-badge h2 {
+                font-size: 1.5rem;
+            }
+            
+            .subhead {
+                justify-content: center;
+                font-size: 0.85rem;
+            }
+            
+            .info-block {
+                padding: 0.9rem;
+                border-radius: 16px;
+            }
+            
+            .info-block h3 {
+                font-size: 0.95rem;
+            }
+            
+            .info-block p,
+            .info-block li {
+                font-size: 0.85rem;
+            }
+            
+            .skills-section {
+                gap: 1.2rem;
+            }
+            
+            .skill-category {
+                padding: 0.9rem;
+                border-radius: 16px;
+            }
+            
+            .skill-category h3 {
+                font-size: 0.95rem;
+            }
+            
+            .skill-tag {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.7rem;
+            }
+            
+            .skill-tag i {
+                font-size: 0.7rem;
+            }
+            
+            .repo-showcase .mini-repo {
+                padding: 0.6rem 0.8rem;
+                border-radius: 14px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            
+            .repo-thumb {
+                width: 100%;
+            }
+            
+            .repo-thumb-image {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+            
+            .mini-repo span {
+                font-size: 0.8rem;
+            }
+            
+            .mini-repo a {
+                font-size: 0.75rem;
+                align-self: flex-start;
+            }
+            
+            .cv-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.4rem;
+                margin-top: 1.5rem;
+                padding-top: 0.8rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .cv-card {
+                padding: 1rem 0.6rem;
+                border-radius: 20px;
+            }
+            
+            .cv-header h1 {
+                font-size: 1.1rem;
+            }
+            
+            .profile-image-container {
+                width: 75px;
+                height: 75px;
+            }
+            
+            .avatar-badge h2 {
+                font-size: 1.3rem;
+            }
+            
+            .subhead {
+                font-size: 0.75rem;
+            }
+            
+            .info-block h3,
+            .skill-category h3 {
+                font-size: 0.85rem;
+            }
+            
+            .info-block p,
+            .info-block li {
+                font-size: 0.8rem;
+            }
+            
+            .skill-tag {
+                font-size: 0.7rem;
+                padding: 0.15rem 0.6rem;
             }
         }
     </style>
@@ -596,10 +806,10 @@
 
                 <div class="info-block">
                     <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasadshejole@gmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadev-in</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @_that_awkwardpause</div>
-                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +79960848472</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
+                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 98765 12345</div>
                 </div>
             </div>
 
@@ -609,6 +819,7 @@
                     <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
                     <div class="skill-tags">
                         <span class="skill-tag highlight"><i class="fab fa-instagram"></i> Instagram strategy</span>
+                        <span class="skill-tag highlight"><i class="fab fa-linkedin"></i> LinkedIn branding</span>
                         <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & insights</span>
                         <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
                         <span class="skill-tag"><i class="fas fa-hashtag"></i> Hashtag research</span>
@@ -647,7 +858,7 @@
                     <div class="mini-repo">
                         <div class="repo-thumb">
                             <div class="repo-thumb-image">
-                                <i class="fas fa-bullhorn" style="font-size: 1.2rem;"></i>
+                                <i class="fas fa-bullhorn" style="font-size: 1rem;"></i>
                             </div>
                             <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
                         </div>
@@ -657,7 +868,7 @@
                     <div class="mini-repo">
                         <div class="repo-thumb">
                             <div class="repo-thumb-image">
-                                <i class="fas fa-video" style="font-size: 1.2rem;"></i>
+                                <i class="fas fa-video" style="font-size: 1rem;"></i>
                             </div>
                             <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
                         </div>
@@ -667,7 +878,7 @@
                     <div class="mini-repo">
                         <div class="repo-thumb">
                             <div class="repo-thumb-image">
-                                <i class="fas fa-calendar-alt" style="font-size: 1.2rem;"></i>
+                                <i class="fas fa-calendar-alt" style="font-size: 1rem;"></i>
                             </div>
                             <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
                         </div>
