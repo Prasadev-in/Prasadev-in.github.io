@@ -563,9 +563,9 @@
             <!-- LEFT: about, education, contact -->
             <div class="profile-section">
                 <div class="avatar-badge">
-                    <!-- PROFILE IMAGE - Replace the src with your image URL -->
+                    <!-- PROFILE IMAGE - Using your uploaded image -->
                     <div class="profile-image-container">
-                        <img src="https://via.placeholder.com/90/0b6e4f/ffffff?text=P" alt="Prasad Shejole" id="profileImage">
+                        <img src="IMG-20260809-WA0001.jpg" alt="Prasad Shejole" id="profileImage">
                         <!-- Fallback icon shows if image fails to load -->
                         <div class="fallback-icon" style="display: none;"><i class="fas fa-user-md"></i></div>
                     </div>
@@ -641,15 +641,14 @@
                     </div>
                 </div>
 
-                <!-- GitHub repository showcase with image thumbnails -->
+                <!-- GitHub repository showcase -->
                 <div class="skill-category repo-showcase">
                     <h3><i class="fab fa-github"></i> Featured GitHub repos</h3>
                     
                     <div class="mini-repo">
                         <div class="repo-thumb">
-                            <!-- REPO THUMBNAIL 1 - Replace src with your image -->
                             <div class="repo-thumb-image">
-                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=S" alt="Social Media Toolkit">
+                                <i class="fas fa-bullhorn" style="font-size: 1.2rem;"></i>
                             </div>
                             <span><i class="fas fa-bullhorn"></i> social-media-toolkit</span>
                         </div>
@@ -658,9 +657,8 @@
                     
                     <div class="mini-repo">
                         <div class="repo-thumb">
-                            <!-- REPO THUMBNAIL 2 - Replace src with your image -->
                             <div class="repo-thumb-image">
-                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=E" alt="Edit Templates">
+                                <i class="fas fa-video" style="font-size: 1.2rem;"></i>
                             </div>
                             <span><i class="fas fa-video"></i> edit-templates · CapCut/Canva</span>
                         </div>
@@ -669,9 +667,8 @@
                     
                     <div class="mini-repo">
                         <div class="repo-thumb">
-                            <!-- REPO THUMBNAIL 3 - Replace src with your image -->
                             <div class="repo-thumb-image">
-                                <img src="https://via.placeholder.com/45/0b6e4f/ffffff?text=E" alt="Event Manager">
+                                <i class="fas fa-calendar-alt" style="font-size: 1.2rem;"></i>
                             </div>
                             <span><i class="fas fa-calendar-alt"></i> event-manager · open source</span>
                         </div>
