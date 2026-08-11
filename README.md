@@ -1112,15 +1112,15 @@
                                 <span class="label">MBBS Year</span>
                             </div>
                             <div class="stat-card">
-                                <span class="number" data-count="15">0</span>
+                                <span class="number" data-count="5">0</span>
                                 <span class="label">Projects</span>
                             </div>
                             <div class="stat-card">
-                                <span class="number" data-count="25">0</span>
+                                <span class="number" data-count="10">0</span>
                                 <span class="label">Events Managed</span>
                             </div>
                             <div class="stat-card">
-                                <span class="number" data-count="50">0</span>
+                                <span class="number" data-count="20">0</span>
                                 <span class="label">Videos Edited</span>
                             </div>
                         </div>
