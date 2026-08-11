@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +53,7 @@
             align-items: center;
             gap: 0.8rem;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .site-logo i {
@@ -1349,7 +1351,7 @@
                 <div class="projects-page-content">
                     <h3 class="section-title"><i class="fas fa-images"></i> Project Gallery</h3>
                     <div class="projects-grid">
-                        <!-- Project 1: Social Media Campaign -->
+                        <!-- Project 1: Social Media Campaign - IMG-20260809-WA0003.jpg -->
                         <div class="project-card" data-project="Social Media Campaign">
                             <div class="project-media">
                                 <img src="IMG-20260809-WA0003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'">
@@ -1360,7 +1362,7 @@
                             </div>
                         </div>
 
-                        <!-- Project 2: Video Edit -->
+                        <!-- Project 2: Video Edit - vid_004 -->
                         <div class="project-card" data-project="Video Edit">
                             <div class="project-media">
                                 <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
@@ -1371,7 +1373,7 @@
                             </div>
                         </div>
 
-                        <!-- Project 3: Event Design -->
+                        <!-- Project 3: Event Design - vid_008 -->
                         <div class="project-card" data-project="Event Design">
                             <div class="project-media">
                                 <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
@@ -1382,7 +1384,7 @@
                             </div>
                         </div>
 
-                        <!-- Project 4: Canva Design -->
+                        <!-- Project 4: Canva Design - ahilyanagar -->
                         <div class="project-card" data-project="Canva Design">
                             <div class="project-media">
                                 <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'">
@@ -1393,7 +1395,7 @@
                             </div>
                         </div>
 
-                        <!-- Project 5: Thumbnail -->
+                        <!-- Project 5: Thumbnail - img_0061 -->
                         <div class="project-card" data-project="Thumbnail">
                             <div class="project-media">
                                 <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'">
