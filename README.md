@@ -1352,7 +1352,7 @@
                         <!-- Project 1: Social Media Campaign -->
                         <div class="project-card" data-project="Social Media Campaign">
                             <div class="project-media">
-                                <img src="IMG_003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'">
+                                <img src="IMG-20260809-WA0003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'">
                             </div>
                             <div class="project-info">
                                 <h4>Social Media Campaign</h4>
