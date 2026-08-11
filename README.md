@@ -1,14 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prasad Shejole · MBBS Student · Marketing & Events</title>
+    <title>Prasad Shejole · Portfolio</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- html2pdf library for PDF generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        /* ---------- reset & base ---------- */
+        /* ---------- RESET & BASE ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -22,228 +23,434 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
             background: #f2f5f9;
             color: #1e293b;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-        /* main card – CV container */
-        .cv-card {
-            max-width: 1150px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 40px;
-            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.18);
-            padding: 2rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        /* ---------- FULL-WIDTH WEBSITE LAYOUT ---------- */
+        .website-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            min-height: 100vh;
         }
 
-        /* ---------- BACKGROUND WITH MEDICAL & ARTISTIC ELEMENTS ---------- */
-        .cv-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4.5 12.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M12.5 8.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M8.5 12.5v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M4 4c0 0 2-1 8-1s8 1 8 1'/%3E%3Cpath d='M4 20c0 0 2 1 8 1s8-1 8-1'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M8 6c0 0-1 2-1 6s1 6 1 6'/%3E%3Cpath d='M16 6c0 0 1 2 1 6s-1 6-1 6'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.06'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%230b6e4f' stroke-width='0.5' opacity='0.07'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.5 7.5'/%3E%3Cpath d='M13.5 6.5l4 4'/%3E%3C/svg%3E");
-            background-size: 180px 180px, 200px 200px, 160px 160px, 140px 140px, 220px 220px, 150px 150px;
-            background-position: 
-                10% 15%, 
-                85% 10%, 
-                50% 80%, 
-                5% 70%, 
-                90% 75%, 
-                45% 25%;
-            background-repeat: no-repeat;
-            pointer-events: none;
-            z-index: 0;
-            border-radius: 40px;
-        }
-
-        .cv-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ---------- header / theme toggle ---------- */
-        .cv-header {
+        /* ---------- HEADER / NAVIGATION ---------- */
+        .site-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem 0.8rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e2e8f0;
+            gap: 1rem 1.5rem;
+            padding: 1rem 0 1.5rem 0;
+            border-bottom: 2px solid #e2e8f0;
             transition: border-color 0.3s ease;
         }
 
-        .cv-header h1 {
-            font-size: 1.8rem;
-            font-weight: 650;
-            letter-spacing: -0.02em;
+        .site-logo {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            color: #0b6e4f;
-            transition: color 0.3s ease;
+            gap: 0.8rem;
+            text-decoration: none;
         }
 
-        .cv-header h1 i {
-            color: #0b6e4f;
+        .site-logo i {
             font-size: 2rem;
-            transition: color 0.3s ease;
-        }
-
-        .theme-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .theme-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #475569;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            transition: color 0.3s ease;
-        }
-
-        .theme-toggle-group {
-            background: #e9edf2;
-            border-radius: 40px;
-            padding: 0.25rem;
-            display: flex;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-            transition: background 0.3s ease;
-        }
-
-        .theme-btn {
-            border: none;
-            background: transparent;
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #1e293b;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            transition: all 0.2s ease;
-        }
-
-        .theme-btn i {
-            font-size: 0.9rem;
-        }
-
-        .theme-btn.active {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             color: #0b6e4f;
-        }
-
-        .theme-btn:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.6);
-        }
-
-        /* ---------- TYPING ANIMATION ---------- */
-        .typing-container {
-            display: inline-block;
-            font-size: 0.95rem;
-            font-weight: 450;
-            color: #475569;
             transition: color 0.3s ease;
-            min-height: 1.5em;
         }
 
-        .typing-text {
-            display: inline;
-            border-right: 2px solid #0b6e4f;
-            padding-right: 4px;
-            animation: blink 0.8s step-end infinite;
-            transition: border-color 0.3s ease;
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        /* ---------- ANIMATED STATISTICS COUNTERS ---------- */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 0.8rem 0.5rem;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 16px;
-            border: 1px solid #e9edf2;
-            transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-number {
+        .site-logo h1 {
             font-size: 1.6rem;
             font-weight: 700;
             color: #0b6e4f;
             transition: color 0.3s ease;
-            display: block;
-            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
-        .stat-label {
-            font-size: 0.7rem;
+        .site-logo span {
+            font-weight: 400;
             color: #475569;
-            margin-top: 0.2rem;
-            display: block;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
 
-        /* ---------- SKILL PROGRESS BARS ---------- */
-        .skill-progress {
-            margin-top: 0.2rem;
+        /* Navigation */
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .skill-progress-item {
+        .nav-tabs {
+            display: flex;
+            gap: 0.3rem;
+            background: #e9edf2;
+            padding: 0.25rem;
+            border-radius: 40px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-tab {
+            padding: 0.5rem 1.2rem;
+            border: none;
+            background: transparent;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .nav-tab:hover {
+            color: #0b6e4f;
+        }
+
+        .nav-tab.active {
+            background: #ffffff;
+            color: #0b6e4f;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .theme-toggle {
+            background: #e9edf2;
+            border: none;
+            border-radius: 40px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #475569;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .theme-toggle:hover {
+            background: #d1d5db;
+        }
+
+        /* ---------- PAGE CONTENT ---------- */
+        .page-content {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ---------- HOME PAGE ---------- */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Left Column */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #0b6e4f;
+            margin-bottom: 1rem;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card .tagline {
+            font-size: 1rem;
+            color: #475569;
+            margin: 0.3rem 0 0.8rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card .tagline i {
+            color: #0b6e4f;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card .bio {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #1e293b;
+            transition: color 0.3s ease;
+        }
+
+        /* Stats Section */
+        .stats-grid-home {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 0.7rem;
+            color: #475569;
+            transition: color 0.3s ease;
+        }
+
+        /* Right Column */
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0b6e4f;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .skill-group {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.2rem;
+            border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+        }
+
+        .skill-group h4 {
+            font-size: 0.85rem;
+            color: #0b6e4f;
             margin-bottom: 0.6rem;
+            transition: color 0.3s ease;
         }
 
-        .skill-progress-item .skill-name {
+        .skill-group .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-group .skill-tag {
+            background: #e9edf2;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #1e293b;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .skill-group .skill-tag i {
+            color: #0b6e4f;
+            margin-right: 0.2rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Download Button */
+        .download-btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: #0b6e4f;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            margin-top: 0.3rem;
+        }
+
+        .download-btn-home:hover {
+            background: #095a3f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(11, 110, 79, 0.25);
+        }
+
+        .download-btn-home:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ---------- ABOUT PAGE ---------- */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content .profile-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content .profile-card .bio {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .education-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .edu-item {
+            background: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #e9edf2;
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
-            font-weight: 500;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .edu-item:hover {
+            border-color: #0b6e4f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .edu-item .edu-name {
+            font-weight: 600;
+            color: #0b6e4f;
+            transition: color 0.3s ease;
+        }
+
+        .edu-item .edu-date {
+            color: #475569;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .edu-item .edu-desc {
+            width: 100%;
+            font-size: 0.85rem;
+            color: #475569;
+            transition: color 0.3s ease;
+        }
+
+        /* ---------- SKILLS PAGE ---------- */
+        .skills-page-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skills-full-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .skill-full-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+        }
+
+        .skill-full-card:hover {
+            border-color: #0b6e4f;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-full-card h4 {
+            color: #0b6e4f;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .skill-bar-item {
+            margin-bottom: 0.7rem;
+        }
+
+        .skill-bar-item .skill-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
             color: #1e293b;
             margin-bottom: 0.15rem;
             transition: color 0.3s ease;
         }
 
-        .progress-bar-track {
+        .skill-bar-track {
             width: 100%;
             height: 6px;
             background: #e9edf2;
@@ -252,7 +459,7 @@
             transition: background 0.3s ease;
         }
 
-        .progress-bar-fill {
+        .skill-bar-fill {
             height: 100%;
             border-radius: 10px;
             background: linear-gradient(90deg, #0b6e4f, #0f8b63);
@@ -260,490 +467,149 @@
             transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* ---------- PROJECT GALLERY - POPUP PREVIEW ---------- */
-        .project-gallery {
+        /* ---------- PROJECTS PAGE ---------- */
+        .projects-page-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem;
-            margin-top: 0.5rem;
+            gap: 1.2rem;
         }
 
-        .project-item {
-            position: relative;
-            border-radius: 12px;
+        .project-card {
+            background: #ffffff;
+            border-radius: 16px;
             overflow: hidden;
-            cursor: default;
-            aspect-ratio: 1/1;
-            background: linear-gradient(135deg, #d9e6f2, #e9edf2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
             border: 1px solid #e9edf2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
-        .project-item img,
-        .project-item video {
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: #0b6e4f;
+        }
+
+        .project-card .project-media {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background: #e9edf2;
+        }
+
+        .project-card .project-media img,
+        .project-card .project-media video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .project-item video {
-            background: #000;
+        .project-card:hover .project-media img,
+        .project-card:hover .project-media video {
+            transform: scale(1.05);
         }
 
-        .project-item:hover img,
-        .project-item:hover video {
-            transform: scale(1.08);
+        .project-card .project-info {
+            padding: 0.8rem 1rem;
         }
 
-        .project-item .project-icon {
-            position: absolute;
-            font-size: 2rem;
+        .project-card .project-info h4 {
+            font-size: 0.9rem;
             color: #0b6e4f;
+            transition: color 0.3s ease;
+        }
+
+        .project-card .project-info p {
+            font-size: 0.75rem;
+            color: #475569;
+            transition: color 0.3s ease;
+        }
+
+        .project-card.coming-soon {
+            opacity: 0.7;
+        }
+
+        .project-card.coming-soon .project-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #0b6e4f;
+            background: #e9edf2;
+        }
+
+        .project-card.coming-soon .project-media i {
             opacity: 0.3;
-            pointer-events: none;
         }
 
-        .project-item .project-overlay {
+        .project-card .coming-soon-badge {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 0.5rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
             color: white;
-            font-size: 0.6rem;
-            font-weight: 500;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
-
-        .project-item:hover .project-overlay {
-            transform: translateY(0);
-        }
-
-        /* ---------- POPUP PREVIEW (on hover) ---------- */
-        .project-preview-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            max-width: 80vw;
-            max-height: 80vh;
-            background: rgba(0,0,0,0.9);
-            border-radius: 20px;
-            z-index: 9999;
-            padding: 1rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .project-preview-popup.active {
-            display: block;
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            pointer-events: auto;
-        }
-
-        .project-preview-popup img,
-        .project-preview-popup video {
-            max-width: 100%;
-            max-height: 70vh;
+            padding: 0.2rem 0.6rem;
             border-radius: 12px;
-            display: block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- CONTACT PAGE ---------- */
+        .contact-page-content {
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        .project-preview-popup .preview-title {
-            color: white;
-            text-align: center;
-            padding: 0.8rem 0 0.3rem 0;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .project-preview-popup .preview-close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            transition: transform 0.3s ease;
-        }
-
-        .project-preview-popup .preview-close:hover {
-            transform: rotate(90deg);
-        }
-
-        /* Coming Soon overlay */
-        .project-item.coming-soon {
-            position: relative;
-        }
-
-        .project-item.coming-soon::after {
-            content: 'COMING SOON';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 0.8rem;
-            font-weight: 700;
-            background: rgba(0,0,0,0.6);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            letter-spacing: 2px;
-        }
-
-        .project-item.coming-soon .project-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        }
-
-        /* ---------- DOWNLOAD CV BUTTON ---------- */
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: #0b6e4f;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
+        .contact-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid #e9edf2;
             transition: all 0.3s ease;
-            text-decoration: none;
-            font-family: inherit;
-            margin-top: 0.3rem;
-            width: 100%;
-            justify-content: center;
         }
 
-        .download-btn:hover {
-            background: #095a3f;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(11, 110, 79, 0.25);
-        }
-
-        .download-btn i {
-            font-size: 0.9rem;
-        }
-
-        .download-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* ---------- grid: left (profile) + right (skills) ---------- */
-        .cv-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.6fr;
-            gap: 1.8rem;
-            margin-top: 0.4rem;
-        }
-
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .avatar-badge {
+        .contact-item-large {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 0.2rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e9edf2;
+            transition: border-color 0.3s ease;
         }
 
-        .profile-image-container {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid #0b6e4f;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-            background: #d9e6f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .contact-item-large:last-child {
+            border-bottom: none;
         }
 
-        .profile-image-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .profile-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-image-container .fallback-icon {
-            font-size: 2.5rem;
-            color: #0b6e4f;
-        }
-
-        .avatar-badge h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        .contact-item-large i {
+            width: 2rem;
+            font-size: 1.2rem;
             color: #0b6e4f;
             transition: color 0.3s ease;
         }
 
-        .subhead {
+        .contact-item-large .contact-text {
             font-size: 0.95rem;
-            color: #475569;
-            margin-top: 0.1rem;
-            font-weight: 450;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            transition: color 0.3s ease;
-            min-height: 1.8em;
-        }
-
-        .subhead i {
-            color: #0b6e4f;
-            transition: color 0.3s ease;
-        }
-
-        .info-block {
-            background: rgba(248, 250, 252, 0.9);
-            padding: 1.2rem 1.2rem;
-            border-radius: 20px;
-            border: 1px solid #e9edf2;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(2px);
-        }
-
-        .info-block h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.7rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #0b6e4f;
-            transition: color 0.3s ease;
-        }
-
-        .info-block p,
-        .info-block li {
-            font-size: 0.9rem;
-            line-height: 1.5;
             color: #1e293b;
             transition: color 0.3s ease;
         }
 
-        .info-block ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-block ul li {
-            padding: 0.3rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .info-block ul li i {
-            width: 1.4rem;
-            color: #0b6e4f;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.3rem 0;
-        }
-
-        .contact-item i {
-            width: 1.6rem;
-            color: #0b6e4f;
+        .contact-item-large .contact-label {
+            font-size: 0.75rem;
+            color: #475569;
             transition: color 0.3s ease;
         }
 
         .flag-icon {
-            font-size: 1.2rem;
-            margin-right: 0.2rem;
-        }
-
-        /* ---------- ABOUT ME COLLAPSIBLE STYLES ---------- */
-        .about-text-wrapper {
-            position: relative;
-            overflow: hidden;
-            max-height: 4.5em;
-            transition: max-height 0.4s ease;
-            cursor: pointer;
-        }
-
-        .about-text-wrapper.expanded {
-            max-height: 500px;
-        }
-
-        .about-text-wrapper p {
-            margin: 0;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #1e293b;
-            transition: color 0.3s ease;
-        }
-
-        .about-text-wrapper:not(.expanded)::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2.5em;
-            background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.95));
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .read-more-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #0b6e4f;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            padding: 0.3rem 0;
-            margin-top: 0.2rem;
-            transition: color 0.3s ease;
-            font-family: inherit;
-        }
-
-        .read-more-btn:hover {
-            color: #095a3f;
-            text-decoration: underline;
-        }
-
-        .read-more-btn i {
-            margin-left: 0.3rem;
-            font-size: 0.75rem;
-        }
-
-        /* Desktop hover behavior */
-        @media (hover: hover) and (min-width: 851px) {
-            .about-text-wrapper {
-                max-height: 4.5em;
-                transition: max-height 0.5s ease;
-            }
-            
-            .about-text-wrapper:hover {
-                max-height: 500px;
-            }
-            
-            .about-text-wrapper:hover::after {
-                opacity: 0;
-            }
-            
-            .read-more-btn {
-                display: none !important;
-            }
-        }
-
-        /* Tablet & Mobile */
-        @media (max-width: 850px), (hover: none) {
-            .about-text-wrapper {
-                max-height: 4.5em;
-                cursor: default;
-            }
-            
-            .about-text-wrapper.expanded {
-                max-height: 500px;
-            }
-            
-            .about-text-wrapper:not(.expanded)::after {
-                background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.95));
-            }
-            
-            .read-more-btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.3rem;
-            }
-        }
-
-        .skills-section {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            background: rgba(248, 250, 252, 0.9);
-            padding: 1.2rem 1.2rem;
-            border-radius: 20px;
-            border: 1px solid #e9edf2;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(2px);
-        }
-
-        .skill-category h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #0b6e4f;
-            transition: color 0.3s ease;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem 0.6rem;
-        }
-
-        .skill-tag {
-            background: #e9edf2;
-            padding: 0.3rem 0.9rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #1e293b;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            border: 1px solid #d1d5db;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .skill-tag i {
-            color: #0b6e4f;
-            font-size: 0.75rem;
-            transition: color 0.3s ease;
-        }
-
-        .skill-tag.highlight {
-            background: #e9edf2;
-            border-color: #d1d5db;
+            font-size: 1.4rem;
+            margin-right: 0.3rem;
         }
 
         /* ---------- DARK THEME ---------- */
@@ -752,938 +618,963 @@
             color: #e6edf3;
         }
 
-        body.dark .cv-card {
-            background: #161b22;
-            border-color: #30363d;
-            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
-        }
-
-        body.dark .cv-card::before {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M4.5 12.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M12.5 8.5c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z'/%3E%3Cpath d='M8.5 12.5v4c0 2.2 1.8 4 4 4s4-1.8 4-4v-4'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M4 4c0 0 2-1 8-1s8 1 8 1'/%3E%3Cpath d='M4 20c0 0 2 1 8 1s8-1 8-1'/%3E%3Cpath d='M12 3v18'/%3E%3Cpath d='M8 6c0 0-1 2-1 6s1 6 1 6'/%3E%3Cpath d='M16 6c0 0 1 2 1 6s-1 6-1 6'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.06'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.05'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 24 24' fill='none' stroke='%2358a6ff' stroke-width='0.5' opacity='0.05'%3E%3Cpath d='M12 19l7-7 3 3-7 7-3-3z'/%3E%3Cpath d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'/%3E%3Cpath d='M2 2l7.5 7.5'/%3E%3Cpath d='M13.5 6.5l4 4'/%3E%3C/svg%3E");
-        }
-
-        body.dark .cv-header {
+        body.dark .site-header {
             border-bottom-color: #30363d;
         }
 
-        body.dark .cv-header h1 {
+        body.dark .site-logo h1 {
             color: #58a6ff;
         }
 
-        body.dark .cv-header h1 i {
+        body.dark .site-logo i {
             color: #58a6ff;
         }
 
-        body.dark .theme-label {
+        body.dark .site-logo span {
             color: #8b949e;
         }
 
-        body.dark .theme-toggle-group {
+        body.dark .nav-tabs {
             background: #21262d;
         }
 
-        body.dark .theme-btn {
-            color: #b1bac4;
+        body.dark .nav-tab {
+            color: #8b949e;
         }
 
-        body.dark .theme-btn.active {
+        body.dark .nav-tab:hover {
+            color: #58a6ff;
+        }
+
+        body.dark .nav-tab.active {
             background: #30363d;
             color: #58a6ff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        body.dark .theme-btn:hover:not(.active) {
-            background: #2a3038;
+        body.dark .theme-toggle {
+            background: #21262d;
+            color: #8b949e;
         }
 
-        body.dark .info-block,
-        body.dark .skill-category {
-            background: rgba(28, 33, 40, 0.9);
+        body.dark .theme-toggle:hover {
+            background: #30363d;
+        }
+
+        body.dark .profile-card,
+        body.dark .skill-group,
+        body.dark .stat-card,
+        body.dark .edu-item,
+        body.dark .skill-full-card,
+        body.dark .project-card,
+        body.dark .contact-card {
+            background: #161b22;
             border-color: #30363d;
-            backdrop-filter: blur(2px);
         }
 
-        body.dark .info-block h3,
-        body.dark .skill-category h3 {
+        body.dark .profile-card h2 {
             color: #58a6ff;
         }
 
-        body.dark .info-block p,
-        body.dark .info-block li,
-        body.dark .contact-item,
-        body.dark .subhead,
-        body.dark .stat-label,
-        body.dark .skill-progress-item .skill-name {
+        body.dark .profile-card .tagline {
+            color: #8b949e;
+        }
+
+        body.dark .profile-card .tagline i {
+            color: #58a6ff;
+        }
+
+        body.dark .profile-card .bio {
             color: #c9d1d9;
         }
 
-        body.dark .info-block ul li i,
-        body.dark .contact-item i {
+        body.dark .stat-card .number {
             color: #58a6ff;
         }
 
-        body.dark .avatar-badge h2 {
-            color: #58a6ff;
-        }
-
-        body.dark .skill-tag {
-            background: #30363d;
-            color: #e6edf3;
-            border-color: #40464f;
-        }
-
-        body.dark .skill-tag.highlight {
-            background: #30363d;
-            border-color: #40464f;
-        }
-
-        body.dark .skill-tag i {
-            color: #58a6ff;
-        }
-
-        body.dark .profile-image-container {
-            border-color: #58a6ff;
-            background: #21262d;
-        }
-
-        body.dark .profile-image-container .fallback-icon {
-            color: #58a6ff;
-        }
-
-        body.dark .cv-footer {
-            border-top-color: #30363d;
+        body.dark .stat-card .label {
             color: #8b949e;
         }
 
-        body.dark .stat-item {
-            background: rgba(33, 38, 45, 0.5);
-            border-color: #30363d;
-        }
-
-        body.dark .stat-number {
+        body.dark .section-title {
             color: #58a6ff;
         }
 
-        body.dark .progress-bar-track {
+        body.dark .skill-group h4 {
+            color: #58a6ff;
+        }
+
+        body.dark .skill-group .skill-tag {
+            background: #30363d;
+            color: #e6edf3;
+        }
+
+        body.dark .skill-group .skill-tag i {
+            color: #58a6ff;
+        }
+
+        body.dark .edu-item .edu-name {
+            color: #58a6ff;
+        }
+
+        body.dark .edu-item .edu-date,
+        body.dark .edu-item .edu-desc {
+            color: #8b949e;
+        }
+
+        body.dark .skill-full-card h4 {
+            color: #58a6ff;
+        }
+
+        body.dark .skill-bar-item .skill-label {
+            color: #c9d1d9;
+        }
+
+        body.dark .skill-bar-track {
             background: #30363d;
         }
 
-        body.dark .progress-bar-fill {
+        body.dark .skill-bar-fill {
             background: linear-gradient(90deg, #58a6ff, #79c0ff);
         }
 
-        body.dark .project-item {
-            background: linear-gradient(135deg, #21262d, #30363d);
-            border-color: #30363d;
+        body.dark .project-card .project-info h4 {
             color: #58a6ff;
         }
 
-        body.dark .project-item .project-icon {
+        body.dark .project-card .project-info p {
+            color: #8b949e;
+        }
+
+        body.dark .project-card.coming-soon .project-media {
+            background: #21262d;
             color: #58a6ff;
         }
 
-        body.dark .download-btn {
+        body.dark .contact-item-large {
+            border-bottom-color: #30363d;
+        }
+
+        body.dark .contact-item-large i {
+            color: #58a6ff;
+        }
+
+        body.dark .contact-item-large .contact-text {
+            color: #c9d1d9;
+        }
+
+        body.dark .contact-item-large .contact-label {
+            color: #8b949e;
+        }
+
+        body.dark .download-btn-home {
             background: #58a6ff;
             color: #0d1117;
         }
 
-        body.dark .download-btn:hover {
+        body.dark .download-btn-home:hover {
             background: #79c0ff;
             box-shadow: 0 6px 16px rgba(88, 166, 255, 0.25);
         }
 
-        body.dark .typing-text {
-            border-color: #58a6ff;
-        }
-
-        body.dark .typing-container {
-            color: #8b949e;
-        }
-
-        body.dark .about-text-wrapper p {
-            color: #c9d1d9;
-        }
-        
-        body.dark .about-text-wrapper:not(.expanded)::after {
-            background: linear-gradient(to bottom, transparent, rgba(28, 33, 40, 0.95));
-        }
-        
-        body.dark .read-more-btn {
-            color: #58a6ff;
-        }
-        
-        body.dark .read-more-btn:hover {
-            color: #79c0ff;
-        }
-
-        body.dark .project-preview-popup {
-            background: rgba(0,0,0,0.95);
-        }
-
-        .cv-footer {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #e2e8f0;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            color: #475569;
-            transition: all 0.3s ease;
-        }
-
-        .cv-footer i {
-            margin-right: 0.3rem;
-        }
-
         /* ---------- RESPONSIVE ---------- */
         @media (max-width: 1024px) {
-            .cv-card {
-                padding: 1.8rem 1.5rem;
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-            .cv-grid {
-                gap: 1.5rem;
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
             }
-            .stats-grid {
+
+            .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .project-gallery {
-                grid-template-columns: repeat(2, 1fr);
+
+            .skills-full-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 850px) {
-            .cv-card {
-                padding: 1.5rem 1.2rem;
-                border-radius: 28px;
+            .website-wrapper {
+                padding: 1rem 1.2rem;
             }
-            .cv-grid {
+
+            .site-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+            }
+
+            .site-logo {
+                justify-content: center;
+            }
+
+            .site-nav {
+                justify-content: center;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 0.2rem;
+            }
+
+            .nav-tab {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+                flex: 1;
+                text-align: center;
+                min-width: 60px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .skills-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
-            .cv-header h1 {
+
+            .stats-grid-home {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-left {
+                order: 2;
+            }
+
+            .hero-right {
+                order: 1;
+            }
+
+            .profile-avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .profile-card h2 {
                 font-size: 1.5rem;
-            }
-            .cv-header h1 i {
-                font-size: 1.6rem;
-            }
-            .profile-image-container {
-                width: 70px;
-                height: 70px;
-            }
-            .avatar-badge h2 {
-                font-size: 1.4rem;
-            }
-            .subhead {
-                font-size: 0.85rem;
-            }
-            .info-block {
-                padding: 1rem;
-            }
-            .skill-category {
-                padding: 1rem;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .project-gallery {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 600px) {
-            body {
+            .website-wrapper {
                 padding: 0.8rem;
             }
-            
-            .cv-card {
-                padding: 1.2rem 0.8rem;
-                border-radius: 24px;
-                box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
-            }
-            
-            .cv-header {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.8rem;
-                margin-bottom: 1.5rem;
-                padding-bottom: 0.8rem;
-            }
-            
-            .cv-header h1 {
-                font-size: 1.3rem;
-                justify-content: center;
-            }
-            
-            .cv-header h1 i {
-                font-size: 1.3rem;
-            }
-            
-            .theme-controls {
-                justify-content: center;
-            }
-            
-            .theme-label {
-                font-size: 0.8rem;
-            }
-            
-            .theme-btn {
-                padding: 0.35rem 0.8rem;
-                font-size: 0.75rem;
-            }
-            
-            .theme-btn i {
-                font-size: 0.8rem;
-            }
-            
-            .cv-grid {
-                gap: 1.2rem;
-            }
-            
-            .profile-section {
-                gap: 1.2rem;
-            }
-            
-            .avatar-badge {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 0.6rem;
-            }
-            
-            .profile-image-container {
-                width: 90px;
-                height: 90px;
-            }
-            
-            .profile-image-container .fallback-icon {
-                font-size: 2.8rem;
-            }
-            
-            .avatar-badge h2 {
-                font-size: 1.5rem;
-            }
-            
-            .subhead {
-                justify-content: center;
-                font-size: 0.85rem;
-            }
-            
-            .info-block {
-                padding: 0.9rem;
-                border-radius: 16px;
-            }
-            
-            .info-block h3 {
-                font-size: 0.95rem;
-            }
-            
-            .info-block p,
-            .info-block li {
-                font-size: 0.85rem;
-            }
-            
-            .skills-section {
-                gap: 1.2rem;
-            }
-            
-            .skill-category {
-                padding: 0.9rem;
-                border-radius: 16px;
-            }
-            
-            .skill-category h3 {
-                font-size: 0.95rem;
-            }
-            
-            .skill-tag {
-                font-size: 0.75rem;
-                padding: 0.25rem 0.7rem;
-                white-space: normal;
-            }
-            
-            .skill-tag i {
-                font-size: 0.7rem;
-            }
-            
-            .cv-footer {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 0.4rem;
-                margin-top: 1.5rem;
-                padding-top: 0.8rem;
-                font-size: 0.7rem;
-            }
-            
-            .read-more-btn {
-                font-size: 0.8rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.6rem;
-            }
-            
-            .stat-number {
+
+            .site-logo h1 {
                 font-size: 1.2rem;
             }
-            
-            .stat-label {
-                font-size: 0.6rem;
+
+            .site-logo span {
+                font-size: 0.7rem;
             }
-            
-            .project-gallery {
-                grid-template-columns: repeat(2, 1fr);
+
+            .nav-tab {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.6rem;
+                min-width: 50px;
+            }
+
+            .profile-card {
+                padding: 1.2rem;
+            }
+
+            .profile-card h2 {
+                font-size: 1.3rem;
+            }
+
+            .profile-card .bio {
+                font-size: 0.85rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
                 gap: 0.6rem;
             }
-            
-            .project-item {
-                font-size: 1.5rem;
-            }
-            
-            .download-btn {
+
+            .project-card .project-info h4 {
                 font-size: 0.75rem;
-                padding: 0.5rem 1rem;
+            }
+
+            .project-card .project-info p {
+                font-size: 0.65rem;
+            }
+
+            .stat-card .number {
+                font-size: 1.4rem;
+            }
+
+            .stat-card .label {
+                font-size: 0.6rem;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+            }
+
+            .contact-item-large .contact-text {
+                font-size: 0.85rem;
+            }
+
+            .download-btn-home {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
                 width: 100%;
                 justify-content: center;
             }
 
-            .project-preview-popup {
-                max-width: 95vw;
-                max-height: 95vh;
-                padding: 0.5rem;
+            .edu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
             }
 
-            .project-preview-popup img,
-            .project-preview-popup video {
-                max-height: 60vh;
+            .edu-item .edu-name {
+                font-size: 0.9rem;
+            }
+
+            .edu-item .edu-date {
+                font-size: 0.75rem;
+            }
+
+            .edu-item .edu-desc {
+                font-size: 0.75rem;
+            }
+
+            .page-content {
+                padding: 1.5rem 0;
+            }
+
+            .theme-toggle {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
+            .skill-full-card {
+                padding: 1rem;
+            }
+
+            .skill-full-card h4 {
+                font-size: 0.85rem;
+            }
+
+            .skill-bar-item .skill-label {
+                font-size: 0.7rem;
             }
         }
 
         @media (max-width: 400px) {
-            .cv-card {
-                padding: 1rem 0.6rem;
-                border-radius: 20px;
+            .website-wrapper {
+                padding: 0.5rem;
             }
-            
-            .cv-header h1 {
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+
+            .project-card .project-info {
+                padding: 0.5rem 0.6rem;
+            }
+
+            .project-card .project-info h4 {
+                font-size: 0.65rem;
+            }
+
+            .project-card .project-info p {
+                font-size: 0.55rem;
+            }
+
+            .nav-tab {
+                font-size: 0.55rem;
+                padding: 0.25rem 0.4rem;
+                min-width: 40px;
+            }
+
+            .profile-card {
+                padding: 0.8rem;
+            }
+
+            .profile-avatar {
+                width: 60px;
+                height: 60px;
+            }
+
+            .profile-card h2 {
                 font-size: 1.1rem;
             }
-            
-            .profile-image-container {
-                width: 75px;
-                height: 75px;
+
+            .stat-card .number {
+                font-size: 1.2rem;
             }
-            
-            .avatar-badge h2 {
-                font-size: 1.3rem;
-            }
-            
-            .subhead {
-                font-size: 0.75rem;
-            }
-            
-            .info-block h3,
-            .skill-category h3 {
-                font-size: 0.85rem;
-            }
-            
-            .info-block p,
-            .info-block li {
-                font-size: 0.8rem;
-            }
-            
-            .skill-tag {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.6rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.4rem;
-            }
-            
-            .project-gallery {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.4rem;
+
+            .stat-card {
+                padding: 0.6rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="cv-card" id="cvContainer">
-        <!-- header with theme switcher -->
-        <div class="cv-header">
-            <h1>
+    <div class="website-wrapper">
+        <!-- HEADER -->
+        <header class="site-header">
+            <a href="#" class="site-logo" onclick="switchPage('home')">
                 <i class="fas fa-user-graduate"></i>
-                Prasad Shejole · CV
-            </h1>
-            <div class="theme-controls">
-                <span class="theme-label"><i class="fas fa-palette"></i> Theme</span>
-                <div class="theme-toggle-group" role="group">
-                    <button class="theme-btn active" data-theme="light" id="lightBtn"><i class="fas fa-sun"></i> Light</button>
-                    <button class="theme-btn" data-theme="dark" id="darkBtn"><i class="fas fa-moon"></i> Dark</button>
+                <div>
+                    <h1>Prasad Shejole</h1>
+                    <span>Portfolio</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- main grid: profile + skills -->
-        <div class="cv-grid">
-            <!-- LEFT: profile, about, stats, education, contact -->
-            <div class="profile-section">
-                <div class="avatar-badge">
-                    <div class="profile-image-container">
-                        <img src="IMG-20260809-WA0001.jpg" alt="Prasad Shejole" id="profileImage">
-                        <div class="fallback-icon" style="display: none;"><i class="fas fa-user-md"></i></div>
-                    </div>
-                    
-                    <div>
-                        <h2>Prasad Shejole</h2>
-                        <div class="subhead">
-                            <i class="fas fa-graduation-cap"></i> 
-                            <span class="typing-container">
-                                <span class="typing-text" id="typingText">MBBS student · 4th year</span>
-                            </span>
-                            <span style="margin:0 0.3rem;">·</span>
-                            <i class="fas fa-bullhorn"></i> marketing · editing
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ABOUT ME - COLLAPSIBLE SECTION -->
-                <div class="info-block">
-                    <h3><i class="fas fa-user-astronaut"></i> About me</h3>
-                    <div class="about-text-wrapper" id="aboutText">
-                        <p>A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.</p>
-                    </div>
-                    <button class="read-more-btn" id="readMoreBtn">
-                        Read More <i class="fas fa-chevron-down"></i>
+            </a>
+            <nav class="site-nav">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-page="home" onclick="switchPage('home')">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <button class="nav-tab" data-page="about" onclick="switchPage('about')">
+                        <i class="fas fa-user"></i> About
+                    </button>
+                    <button class="nav-tab" data-page="skills" onclick="switchPage('skills')">
+                        <i class="fas fa-code"></i> Skills
+                    </button>
+                    <button class="nav-tab" data-page="projects" onclick="switchPage('projects')">
+                        <i class="fas fa-images"></i> Projects
+                    </button>
+                    <button class="nav-tab" data-page="contact" onclick="switchPage('contact')">
+                        <i class="fas fa-envelope"></i> Contact
                     </button>
                 </div>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </header>
 
-                <!-- ANIMATED STATISTICS COUNTERS -->
-                <div class="info-block">
-                    <h3><i class="fas fa-chart-line"></i> Quick Stats</h3>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="4">0</span>
-                            <span class="stat-label">MBBS Year</span>
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <!-- ==================== HOME PAGE ==================== -->
+            <div class="page active" id="page-home">
+                <div class="hero-section">
+                    <!-- Left Column -->
+                    <div class="hero-left">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <img src="IMG-20260809-WA0001.jpg" alt="Prasad Shejole" id="profileImage">
+                            </div>
+                            <h2>Prasad Shejole</h2>
+                            <div class="tagline">
+                                <i class="fas fa-graduation-cap"></i> MBBS Student · 4th Year
+                            </div>
+                            <p class="bio">
+                                A dedicated 4th-year MBBS student with a passion for digital media, content creation, and strategic communication. Bridging the gap between medicine and modern media.
+                            </p>
+                            <button class="download-btn-home" id="downloadBtn">
+                                <i class="fas fa-file-pdf"></i> Download CV (PDF)
+                            </button>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="15">0</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="25">0</span>
-                            <span class="stat-label">Events Managed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="50">0</span>
-                            <span class="stat-label">Videos Edited</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- EDUCATION -->
-                <div class="info-block">
-                    <h3><i class="fas fa-university"></i> Education</h3>
-                    <ul>
-                        <li><i class="fas fa-graduation-cap"></i> MBBS · 2023 – 2029</li>
-                        <li><i class="fas fa-flask"></i> Pre-medical · 2020 – 2022</li>
-                        <li><i class="fas fa-certificate"></i> Digital marketing</li>
-                    </ul>
-                </div>
-
-                <!-- DOWNLOAD CV BUTTON - PDF -->
-                <div class="info-block">
-                    <h3><i class="fas fa-download"></i> Resume</h3>
-                    <button class="download-btn" id="downloadBtn">
-                        <i class="fas fa-file-pdf"></i> Download CV (PDF)
-                    </button>
-                </div>
-
-                <!-- CONTACT SECTION -->
-                <div class="info-block">
-                    <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <div class="contact-item"><i class="fas fa-envelope"></i> prasad.shejole@medmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/prasadmedia</div>
-                    <div class="contact-item"><i class="fab fa-instagram"></i> @prasad.creates</div>
-                    <div class="contact-item">
-                        <span class="flag-icon">🇮🇳</span>
-                        <i class="fas fa-phone-alt"></i> +91 98765 12345
-                    </div>
-                    <div class="contact-item">
-                        <span class="flag-icon">🇷🇺</span>
-                        <i class="fas fa-phone-alt"></i> +7 987 654 3210
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT: skills with progress bars + project gallery -->
-            <div class="skills-section">
-                <!-- Social Media Marketing with Progress Bars -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-bullhorn"></i> Social media marketing</h3>
-                    <div class="skill-progress">
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Instagram Strategy</span>
-                                <span>90%</span>
+                        <div class="stats-grid-home">
+                            <div class="stat-card">
+                                <span class="number" data-count="4">0</span>
+                                <span class="label">MBBS Year</span>
                             </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="90"></div>
+                            <div class="stat-card">
+                                <span class="number" data-count="15">0</span>
+                                <span class="label">Projects</span>
                             </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>LinkedIn Branding</span>
-                                <span>85%</span>
+                            <div class="stat-card">
+                                <span class="number" data-count="25">0</span>
+                                <span class="label">Events Managed</span>
                             </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Analytics & Insights</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Community Engagement</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="80"></div>
+                            <div class="stat-card">
+                                <span class="number" data-count="50">0</span>
+                                <span class="label">Videos Edited</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Editing & Content Creation with Progress Bars -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-pen-fancy"></i> Editing & content creation</h3>
-                    <div class="skill-progress">
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>CapCut (Pro)</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Canva (Expert)</span>
-                                <span>92%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="92"></div>
+                    <!-- Right Column - Skills Overview -->
+                    <div class="hero-right">
+                        <div>
+                            <h3 class="section-title"><i class="fas fa-bullhorn"></i> Social Media Marketing</h3>
+                            <div class="skill-group">
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fab fa-instagram"></i> Instagram Strategy</span>
+                                    <span class="skill-tag"><i class="fab fa-linkedin"></i> LinkedIn Branding</span>
+                                    <span class="skill-tag"><i class="fas fa-chart-line"></i> Analytics & Insights</span>
+                                    <span class="skill-tag"><i class="fas fa-ad"></i> Meta Ads</span>
+                                    <span class="skill-tag"><i class="fas fa-people-arrows"></i> Community Engagement</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Video Editing</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Thumbnail Design</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="88"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Event Management with Progress Bars -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-calendar-check"></i> Event management</h3>
-                    <div class="skill-progress">
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Planning & Logistics</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Team Coordination</span>
-                                <span>82%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="82"></div>
+                        <div>
+                            <h3 class="section-title"><i class="fas fa-pen-fancy"></i> Editing & Content Creation</h3>
+                            <div class="skill-group">
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fas fa-video"></i> CapCut Pro</span>
+                                    <span class="skill-tag"><i class="fas fa-paint-brush"></i> Canva Expert</span>
+                                    <span class="skill-tag"><i class="fas fa-cut"></i> Video Editing</span>
+                                    <span class="skill-tag"><i class="fas fa-image"></i> Thumbnail Design</span>
+                                    <span class="skill-tag"><i class="fas fa-film"></i> Reels / Shorts</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Timeline Execution</span>
-                                <span>78%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="78"></div>
-                            </div>
-                        </div>
-                        <div class="skill-progress-item">
-                            <div class="skill-name">
-                                <span>Hosting / Emcee</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress-bar-track">
-                                <div class="progress-bar-fill" data-width="80"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- PROJECT GALLERY - HOVER PREVIEW -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-images"></i> Project Gallery</h3>
-                    <div class="project-gallery" id="projectGallery">
-                        <!-- Project 1: Social Media Campaign - IMG_003 -->
-                        <div class="project-item" data-project="Social Media Campaign" data-type="image" data-src="IMG_003.jpg">
-                            <img src="IMG_003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
-                            <div class="project-overlay">Social Media Campaign</div>
-                        </div>
-                        
-                        <!-- Project 2: Video Edit - vid_004 -->
-                        <div class="project-item" data-project="Video Edit" data-type="video" data-src="vid_004.mp4">
-                            <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
-                            <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
-                            <div class="project-overlay">Video Edit</div>
-                        </div>
-                        
-                        <!-- Project 3: Event Design - vid_008 -->
-                        <div class="project-item" data-project="Event Design" data-type="video" data-src="vid_008.mp4">
-                            <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
-                            <div class="project-icon" style="display:none;"><i class="fas fa-video"></i></div>
-                            <div class="project-overlay">Event Design</div>
-                        </div>
-                        
-                        <!-- Project 4: Canva Design - ahilyanagar -->
-                        <div class="project-item" data-project="Canva Design" data-type="image" data-src="ahilyanagar.jpg">
-                            <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-icon" style="display:none;"><i class="fas fa-paint-brush"></i></div>
-                            <div class="project-overlay">Canva Design</div>
-                        </div>
-                        
-                        <!-- Project 5: Thumbnail - img_0061 -->
-                        <div class="project-item" data-project="Thumbnail" data-type="image" data-src="img_0061.jpg">
-                            <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-icon" style="display:none;"><i class="fas fa-image"></i></div>
-                            <div class="project-overlay">Thumbnail</div>
-                        </div>
-                        
-                        <!-- Project 6: Brand Identity - COMING SOON -->
-                        <div class="project-item coming-soon" data-project="Brand Identity" data-type="coming-soon">
-                            <div class="project-icon"><i class="fas fa-vector-square"></i></div>
-                            <div class="project-overlay">Brand Identity</div>
+                        <div>
+                            <h3 class="section-title"><i class="fas fa-calendar-check"></i> Event Management</h3>
+                            <div class="skill-group">
+                                <div class="skill-tags">
+                                    <span class="skill-tag"><i class="fas fa-tasks"></i> Planning & Logistics</span>
+                                    <span class="skill-tag"><i class="fas fa-users"></i> Team Coordination</span>
+                                    <span class="skill-tag"><i class="fas fa-handshake"></i> Vendor Management</span>
+                                    <span class="skill-tag"><i class="fas fa-trophy"></i> Medical Conferences</span>
+                                    <span class="skill-tag"><i class="fas fa-microphone"></i> Hosting / Emcee</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- ==================== ABOUT PAGE ==================== -->
+            <div class="page" id="page-about">
+                <div class="about-content">
+                    <div class="profile-card">
+                        <h2>About Me</h2>
+                        <p class="bio" style="font-size: 1rem; line-height: 1.8;">
+                            A dedicated 4th-year MBBS student currently pursuing medical education in Russia, with a strong passion for digital media, content creation, and strategic communication. While my academic journey focuses on healthcare, I actively cultivate expertise in social media marketing, video editing, graphic design, and event management. This portfolio highlights my creative endeavors and professional skills beyond the clinical realm, showcasing a well-rounded individual capable of bridging the gap between medicine and modern media.
+                        </p>
+                    </div>
+
+                    <h3 class="section-title"><i class="fas fa-university"></i> Education</h3>
+                    <div class="education-timeline">
+                        <div class="edu-item">
+                            <span class="edu-name">MBBS</span>
+                            <span class="edu-date">2023 – 2029</span>
+                            <span class="edu-desc">Pursuing medical education in Russia</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-name">Pre-medical</span>
+                            <span class="edu-date">2020 – 2022</span>
+                            <span class="edu-desc">Foundation in medical sciences</span>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-name">Digital Marketing</span>
+                            <span class="edu-date">Certification</span>
+                            <span class="edu-desc">Specialized in social media strategy and content creation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== SKILLS PAGE ==================== -->
+            <div class="page" id="page-skills">
+                <div class="skills-page-content">
+                    <h3 class="section-title"><i class="fas fa-code"></i> Skills & Expertise</h3>
+                    <div class="skills-full-grid">
+                        <!-- Social Media Marketing -->
+                        <div class="skill-full-card">
+                            <h4><i class="fas fa-bullhorn"></i> Social Media Marketing</h4>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Instagram Strategy</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>LinkedIn Branding</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Analytics & Insights</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Community Engagement</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Editing & Content Creation -->
+                        <div class="skill-full-card">
+                            <h4><i class="fas fa-pen-fancy"></i> Editing & Content Creation</h4>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>CapCut (Pro)</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Canva (Expert)</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Video Editing</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Thumbnail Design</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="88"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Event Management -->
+                        <div class="skill-full-card">
+                            <h4><i class="fas fa-calendar-check"></i> Event Management</h4>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Planning & Logistics</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Team Coordination</span>
+                                    <span>82%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="82"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Timeline Execution</span>
+                                    <span>78%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="78"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Hosting / Emcee</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Skills -->
+                        <div class="skill-full-card">
+                            <h4><i class="fas fa-tools"></i> Additional Skills</h4>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Content Strategy</span>
+                                    <span>82%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="82"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Brand Identity</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Social Media Ads</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-label">
+                                    <span>Photography</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PROJECTS PAGE ==================== -->
+            <div class="page" id="page-projects">
+                <div class="projects-page-content">
+                    <h3 class="section-title"><i class="fas fa-images"></i> Project Gallery</h3>
+                    <div class="projects-grid">
+                        <!-- Project 1: Social Media Campaign -->
+                        <div class="project-card" data-project="Social Media Campaign">
+                            <div class="project-media">
+                                <img src="IMG_003.jpg" alt="Social Media Campaign" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                            <div class="project-info">
+                                <h4>Social Media Campaign</h4>
+                                <p>Instagram marketing campaign design</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Video Edit -->
+                        <div class="project-card" data-project="Video Edit">
+                            <div class="project-media">
+                                <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
+                            </div>
+                            <div class="project-info">
+                                <h4>Video Edit</h4>
+                                <p>Professional video editing with CapCut</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Event Design -->
+                        <div class="project-card" data-project="Event Design">
+                            <div class="project-media">
+                                <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
+                            </div>
+                            <div class="project-info">
+                                <h4>Event Design</h4>
+                                <p>Event planning and visual design</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Canva Design -->
+                        <div class="project-card" data-project="Canva Design">
+                            <div class="project-media">
+                                <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                            <div class="project-info">
+                                <h4>Canva Design</h4>
+                                <p>Graphic design using Canva</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: Thumbnail -->
+                        <div class="project-card" data-project="Thumbnail">
+                            <div class="project-media">
+                                <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                            <div class="project-info">
+                                <h4>Thumbnail Design</h4>
+                                <p>YouTube thumbnail creation</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 6: Brand Identity - Coming Soon -->
+                        <div class="project-card coming-soon">
+                            <div class="project-media">
+                                <i class="fas fa-vector-square"></i>
+                            </div>
+                            <div class="coming-soon-badge">COMING SOON</div>
+                            <div class="project-info">
+                                <h4>Brand Identity</h4>
+                                <p>Exciting things are on the way</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== CONTACT PAGE ==================== -->
+            <div class="page" id="page-contact">
+                <div class="contact-page-content">
+                    <h3 class="section-title"><i class="fas fa-address-card"></i> Get in Touch</h3>
+                    <div class="contact-card">
+                        <div class="contact-item-large">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <div class="contact-text">prasad.shejole@medmail.com</div>
+                                <div class="contact-label">Email</div>
+                            </div>
+                        </div>
+                        <div class="contact-item-large">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <div class="contact-text">github.com/prasadmedia</div>
+                                <div class="contact-label">GitHub</div>
+                            </div>
+                        </div>
+                        <div class="contact-item-large">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <div class="contact-text">@prasad.creates</div>
+                                <div class="contact-label">Instagram</div>
+                            </div>
+                        </div>
+                        <div class="contact-item-large">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <div class="contact-text">
+                                    <span class="flag-icon">🇮🇳</span> +91 98765 12345
+                                </div>
+                                <div class="contact-label">India</div>
+                            </div>
+                        </div>
+                        <div class="contact-item-large">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <div class="contact-text">
+                                    <span class="flag-icon">🇷🇺</span> +7 987 654 3210
+                                </div>
+                                <div class="contact-label">Russia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- HOVER PREVIEW POPUP -->
-        <div class="project-preview-popup" id="previewPopup">
-            <button class="preview-close" id="previewClose">&times;</button>
-            <div id="previewContent"></div>
-        </div>
-
-        <!-- footer -->
-        <div class="cv-footer">
-            <span><i class="fas fa-palette"></i> Switch theme · light / dark</span>
-            <span><i class="fas fa-graduation-cap"></i> MBBS · 4th year · marketing · editing · events</span>
-        </div>
+        <!-- FOOTER -->
+        <footer style="padding: 1.5rem 0 0.5rem 0; border-top: 1px solid #e2e8f0; text-align: center; font-size: 0.8rem; color: #475569; transition: all 0.3s ease;">
+            <p>© 2026 Prasad Shejole · MBBS Student · Marketing &amp; Editing</p>
+        </footer>
     </div>
 
     <script>
         (function() {
-            const body = document.body;
-            const lightBtn = document.getElementById('lightBtn');
-            const darkBtn = document.getElementById('darkBtn');
-            const aboutText = document.getElementById('aboutText');
-            const readMoreBtn = document.getElementById('readMoreBtn');
-            const downloadBtn = document.getElementById('downloadBtn');
-            const previewPopup = document.getElementById('previewPopup');
-            const previewContent = document.getElementById('previewContent');
-            const previewClose = document.getElementById('previewClose');
-            let isExpanded = false;
-            let animationsStarted = false;
-            let previewTimeout = null;
+            // ---------- PAGE SWITCHING ----------
+            window.switchPage = function(page) {
+                // Hide all pages
+                document.querySelectorAll('.page').forEach(p => {
+                    p.classList.remove('active');
+                });
+                
+                // Show selected page
+                const targetPage = document.getElementById('page-' + page);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+                
+                // Update nav tabs
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('data-page') === page) {
+                        tab.classList.add('active');
+                    }
+                });
+                
+                // Trigger animations for new page
+                setTimeout(() => {
+                    animateCounters();
+                    animateProgressBars();
+                }, 300);
+            };
 
-            // ---------- THEME FUNCTIONS ----------
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    body.classList.add('dark');
-                    body.classList.remove('light');
-                    lightBtn.classList.remove('active');
-                    darkBtn.classList.add('active');
-                } else {
+            // ---------- THEME TOGGLE ----------
+            window.toggleTheme = function() {
+                const body = document.body;
+                const themeToggle = document.getElementById('themeToggle');
+                
+                if (body.classList.contains('dark')) {
                     body.classList.remove('dark');
                     body.classList.add('light');
-                    darkBtn.classList.remove('active');
-                    lightBtn.classList.add('active');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                    try {
+                        localStorage.setItem('theme-pref', 'light');
+                    } catch (e) {}
+                } else {
+                    body.classList.remove('light');
+                    body.classList.add('dark');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                    try {
+                        localStorage.setItem('theme-pref', 'dark');
+                    } catch (e) {}
                 }
+            };
 
-                try {
-                    localStorage.setItem('cv-theme-pref', theme);
-                } catch (e) {}
-            }
-
+            // Load saved theme
             function loadTheme() {
+                const body = document.body;
+                const themeToggle = document.getElementById('themeToggle');
                 let saved = 'light';
+                
                 try {
-                    const stored = localStorage.getItem('cv-theme-pref');
+                    const stored = localStorage.getItem('theme-pref');
                     if (stored === 'dark' || stored === 'light') {
                         saved = stored;
                     }
                 } catch (e) {}
-                setTheme(saved);
-            }
-
-            lightBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                setTheme('light');
-            });
-
-            darkBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                setTheme('dark');
-            });
-
-            loadTheme();
-
-            // ---------- PROFILE IMAGE FALLBACK ----------
-            const profileImg = document.getElementById('profileImage');
-            const fallbackIcon = document.querySelector('.fallback-icon');
-            
-            if (profileImg) {
-                profileImg.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    if (fallbackIcon) {
-                        fallbackIcon.style.display = 'flex';
-                    }
-                });
                 
-                profileImg.addEventListener('load', function() {
-                    if (fallbackIcon) {
-                        fallbackIcon.style.display = 'none';
-                    }
-                });
-            }
-
-            // ---------- TYPING ANIMATION ----------
-            const typingText = document.getElementById('typingText');
-            const phrases = [
-                'MBBS student · 4th year',
-                'Marketing & Branding Expert',
-                'Content Creator & Editor',
-                'Event Manager',
-                'Creative Thinker'
-            ];
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let typingSpeed = 80;
-
-            function typeEffect() {
-                const currentPhrase = phrases[phraseIndex];
-                
-                if (isDeleting) {
-                    typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-                    charIndex--;
-                    typingSpeed = 40;
+                if (saved === 'dark') {
+                    body.classList.add('dark');
+                    body.classList.remove('light');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
                 } else {
-                    typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-                    charIndex++;
-                    typingSpeed = 80;
-                }
-
-                if (!isDeleting && charIndex === currentPhrase.length) {
-                    isDeleting = true;
-                    typingSpeed = 2000;
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    typingSpeed = 500;
-                }
-
-                setTimeout(typeEffect, typingSpeed);
-            }
-
-            setTimeout(typeEffect, 1000);
-
-            // ---------- ABOUT ME COLLAPSIBLE LOGIC ----------
-            function toggleAbout(expand) {
-                isExpanded = expand !== undefined ? expand : !isExpanded;
-                
-                if (isExpanded) {
-                    aboutText.classList.add('expanded');
-                    readMoreBtn.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
-                } else {
-                    aboutText.classList.remove('expanded');
-                    readMoreBtn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                    body.classList.remove('dark');
+                    body.classList.add('light');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
                 }
             }
 
-            readMoreBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleAbout();
-            });
-
-            let resizeTimer;
-            window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {
-                    if (window.matchMedia('(hover: hover) and (min-width: 851px)').matches && isExpanded) {
-                        toggleAbout(false);
-                    }
-                }, 300);
-            });
-
-            toggleAbout(false);
-
-            // ---------- ANIMATED STATISTICS COUNTERS ----------
+            // ---------- ANIMATED COUNTERS ----------
             function animateCounters() {
-                const statNumbers = document.querySelectorAll('.stat-number');
+                const statNumbers = document.querySelectorAll('.stat-card .number, .stat-number');
                 
                 statNumbers.forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-count'));
+                    if (!target || target === 0) return;
+                    
                     const duration = 2000;
                     const stepTime = 20;
                     const steps = duration / stepTime;
                     const increment = target / steps;
                     let current = 0;
                     
-                    const counter = setInterval(() => {
+                    // Clear any existing interval
+                    if (stat._interval) {
+                        clearInterval(stat._interval);
+                    }
+                    
+                    stat._interval = setInterval(() => {
                         current += increment;
                         if (current >= target) {
                             stat.textContent = target;
-                            clearInterval(counter);
+                            clearInterval(stat._interval);
                         } else {
                             stat.textContent = Math.floor(current);
                         }
@@ -1693,171 +1584,42 @@
 
             // ---------- SKILL PROGRESS BARS ----------
             function animateProgressBars() {
-                const progressBars = document.querySelectorAll('.progress-bar-fill');
+                const progressBars = document.querySelectorAll('.skill-bar-fill');
                 
                 progressBars.forEach((bar, index) => {
                     const width = parseInt(bar.getAttribute('data-width'));
+                    if (!width) return;
+                    
                     setTimeout(() => {
                         bar.style.width = width + '%';
                     }, index * 200);
                 });
             }
 
-            // ---------- INTERSECTION OBSERVER FOR ANIMATIONS ----------
-            function startAnimations() {
-                if (animationsStarted) return;
-                animationsStarted = true;
-                
-                animateCounters();
-                animateProgressBars();
-            }
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !animationsStarted) {
-                        startAnimations();
-                    }
+            // ---------- PROJECT CARD INTERACTION ----------
+            document.querySelectorAll('.project-card:not(.coming-soon)').forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectName = this.querySelector('.project-info h4')?.textContent || 'Project';
+                    alert('🖼️ Project: ' + projectName + '\n\nClick to view full project details.\n(Replace this with your actual project showcase!)');
                 });
-            }, { threshold: 0.3 });
+            });
 
-            const skillsSection = document.querySelector('.skills-section');
-            if (skillsSection) {
-                observer.observe(skillsSection);
-            }
-
-            setTimeout(() => {
-                if (!animationsStarted && skillsSection) {
-                    const rect = skillsSection.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        startAnimations();
-                    }
-                }
-            }, 1000);
-
-            // ---------- PROJECT GALLERY - HOVER PREVIEW ----------
-            const projectItems = document.querySelectorAll('.project-item');
-            
-            projectItems.forEach(item => {
-                item.addEventListener('mouseenter', function(e) {
-                    const projectName = this.getAttribute('data-project');
-                    const projectType = this.getAttribute('data-type');
-                    const projectSrc = this.getAttribute('data-src');
-                    const isComingSoon = this.classList.contains('coming-soon');
-                    
-                    // Clear any existing timeout
-                    if (previewTimeout) {
-                        clearTimeout(previewTimeout);
-                        previewTimeout = null;
-                    }
-                    
-                    // Close any existing preview
-                    closePreview();
-                    
-                    // Show preview after short delay
-                    previewTimeout = setTimeout(() => {
-                        if (isComingSoon) {
-                            previewContent.innerHTML = `
-                                <div style="text-align:center; color:white; padding: 3rem 2rem;">
-                                    <i class="fas fa-vector-square" style="font-size: 4rem; opacity: 0.5; display:block; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${projectName}</div>
-                                    <div style="font-size: 0.9rem; opacity: 0.7;">Coming Soon! Exciting things are on the way.</div>
-                                </div>
-                            `;
-                        } else if (projectType === 'image') {
-                            previewContent.innerHTML = `
-                                <img src="${projectSrc}" alt="${projectName}">
-                                <div class="preview-title">${projectName}</div>
-                            `;
-                        } else if (projectType === 'video') {
-                            previewContent.innerHTML = `
-                                <video src="${projectSrc}" autoplay muted loop playsinline></video>
-                                <div class="preview-title">${projectName}</div>
-                            `;
-                        }
-                        
-                        previewPopup.classList.add('active');
-                    }, 400);
-                });
-
-                item.addEventListener('mouseleave', function() {
-                    if (previewTimeout) {
-                        clearTimeout(previewTimeout);
-                        previewTimeout = null;
-                    }
-                    
-                    // Close preview after short delay (allows moving to popup)
-                    setTimeout(() => {
-                        // Check if mouse is over popup
-                        const isOverPopup = previewPopup.matches(':hover');
-                        if (!isOverPopup) {
-                            closePreview();
-                        }
-                    }, 200);
-                });
-
-                // Handle video hover play/pause in gallery
-                const video = item.querySelector('video');
-                if (video) {
-                    item.addEventListener('mouseenter', function() {
+            // Video hover play/pause
+            document.querySelectorAll('.project-card video').forEach(video => {
+                const card = video.closest('.project-card');
+                if (card) {
+                    card.addEventListener('mouseenter', function() {
                         video.play();
                     });
-                    item.addEventListener('mouseleave', function() {
+                    card.addEventListener('mouseleave', function() {
                         video.pause();
                         video.currentTime = 0;
                     });
                 }
             });
 
-            // ---------- PREVIEW POPUP CONTROLS ----------
-            function closePreview() {
-                previewPopup.classList.remove('active');
-                // Clear content after animation
-                setTimeout(() => {
-                    if (!previewPopup.classList.contains('active')) {
-                        previewContent.innerHTML = '';
-                    }
-                }, 300);
-            }
-
-            previewClose.addEventListener('click', closePreview);
-
-            // Close on click outside content
-            previewPopup.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closePreview();
-                }
-            });
-
-            // Close on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closePreview();
-                    if (isExpanded) {
-                        toggleAbout(false);
-                    }
-                }
-            });
-
-            // Prevent popup from closing when hovering over it
-            previewPopup.addEventListener('mouseenter', function() {
-                if (previewTimeout) {
-                    clearTimeout(previewTimeout);
-                    previewTimeout = null;
-                }
-            });
-
-            previewPopup.addEventListener('mouseleave', function() {
-                // Don't close immediately, allow moving back to project
-                setTimeout(() => {
-                    const isOverProject = document.querySelector('.project-item:hover');
-                    if (!isOverProject) {
-                        closePreview();
-                    }
-                }, 300);
-            });
-
-            // ---------- PDF DOWNLOAD CV BUTTON ----------
-            downloadBtn.addEventListener('click', function() {
+            // ---------- PDF DOWNLOAD ----------
+            document.getElementById('downloadBtn')?.addEventListener('click', function() {
                 const btn = this;
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
@@ -1953,13 +1715,22 @@
                 });
             });
 
-            // ---------- KEYBOARD ACCESSIBILITY ----------
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closePreview();
-                    if (isExpanded) {
-                        toggleAbout(false);
-                    }
+            // ---------- INITIALIZATION ----------
+            loadTheme();
+            
+            // Trigger animations after page load
+            setTimeout(() => {
+                animateCounters();
+                animateProgressBars();
+            }, 500);
+
+            // Re-run animations when page becomes visible
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    setTimeout(() => {
+                        animateCounters();
+                        animateProgressBars();
+                    }, 300);
                 }
             });
 
