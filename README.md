@@ -562,6 +562,28 @@
             letter-spacing: 1px;
         }
 
+        /* PDF Preview - for Canva PDF */
+        .project-card .pdf-preview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #f0f4f8;
+            color: #0b6e4f;
+            font-size: 1rem;
+            gap: 0.5rem;
+        }
+
+        .project-card .pdf-preview i {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .project-card .pdf-preview span {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
         /* ---------- CONTACT PAGE ---------- */
         .contact-page-content {
             max-width: 700px;
@@ -748,6 +770,11 @@
         }
 
         body.dark .project-card.coming-soon .project-media {
+            background: #21262d;
+            color: #58a6ff;
+        }
+
+        body.dark .project-card .pdf-preview {
             background: #21262d;
             color: #58a6ff;
         }
@@ -1362,10 +1389,10 @@
                             </div>
                         </div>
 
-                        <!-- Project 2: Video Edit - vid_004 -->
+                        <!-- Project 2: Video Edit - VID-20260809-WA0004.mp4 -->
                         <div class="project-card" data-project="Video Edit">
                             <div class="project-media">
-                                <video src="vid_004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
+                                <video src="VID-20260809-WA0004.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
                             </div>
                             <div class="project-info">
                                 <h4>Video Edit</h4>
@@ -1373,10 +1400,10 @@
                             </div>
                         </div>
 
-                        <!-- Project 3: Event Design - vid_008 -->
+                        <!-- Project 3: Event Design - VID-20251220-WA0008.mp4 -->
                         <div class="project-card" data-project="Event Design">
                             <div class="project-media">
-                                <video src="vid_008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
+                                <video src="VID-20251220-WA0008.mp4" muted loop playsinline loading="lazy" onerror="this.style.display='none'"></video>
                             </div>
                             <div class="project-info">
                                 <h4>Event Design</h4>
@@ -1384,10 +1411,11 @@
                             </div>
                         </div>
 
-                        <!-- Project 4: Canva Design - ahilyanagar -->
+                        <!-- Project 4: Canva Design - AHILYANAGAR_20260725_163154_0000 (1).pdf -->
                         <div class="project-card" data-project="Canva Design">
-                            <div class="project-media">
-                                <img src="ahilyanagar.jpg" alt="Canva Design" loading="lazy" onerror="this.style.display='none'">
+                            <div class="project-media pdf-preview">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>PDF Document</span>
                             </div>
                             <div class="project-info">
                                 <h4>Canva Design</h4>
@@ -1395,10 +1423,10 @@
                             </div>
                         </div>
 
-                        <!-- Project 5: Thumbnail - img_0061 -->
+                        <!-- Project 5: Thumbnail - IMG-20250920-WA0061.jpg -->
                         <div class="project-card" data-project="Thumbnail">
                             <div class="project-media">
-                                <img src="img_0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'">
+                                <img src="IMG-20250920-WA0061.jpg" alt="Thumbnail" loading="lazy" onerror="this.style.display='none'">
                             </div>
                             <div class="project-info">
                                 <h4>Thumbnail Design</h4>
@@ -1601,7 +1629,14 @@
             document.querySelectorAll('.project-card:not(.coming-soon)').forEach(card => {
                 card.addEventListener('click', function() {
                     const projectName = this.querySelector('.project-info h4')?.textContent || 'Project';
-                    alert('🖼️ Project: ' + projectName + '\n\nClick to view full project details.\n(Replace this with your actual project showcase!)');
+                    
+                    // Check if it's a PDF
+                    const isPDF = this.querySelector('.pdf-preview');
+                    if (isPDF) {
+                        alert('📄 Project: ' + projectName + '\n\nThis is a PDF document. Click to view or download.\n(Replace this with your actual PDF viewer!)');
+                    } else {
+                        alert('🖼️ Project: ' + projectName + '\n\nClick to view full project details.\n(Replace this with your actual project showcase!)');
+                    }
                 });
             });
 
