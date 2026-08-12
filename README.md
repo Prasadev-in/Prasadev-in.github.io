@@ -1361,10 +1361,10 @@
                             <div class="skill-bar-item">
                                 <div class="skill-label">
                                     <span>Photography</span>
-                                    <span>65%</span>
+                                    <span>85%</span>
                                 </div>
                                 <div class="skill-bar-track">
-                                    <div class="skill-bar-fill" data-width="65"></div>
+                                    <div class="skill-bar-fill" data-width="85"></div>
                                 </div>
                             </div>
                         </div>
