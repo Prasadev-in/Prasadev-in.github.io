@@ -2081,7 +2081,7 @@
                     <div class="skill-bar-item">
                         <div class="skill-label">
                             <span>CapCut (Pro)</span>
-                            <span>95%</span>
+                            <span>90%</span>
                         </div>
                         <div class="skill-bar-track">
                             <div class="skill-bar-fill" data-width="95"></div>
@@ -2091,7 +2091,7 @@
                     <div class="skill-bar-item">
                         <div class="skill-label">
                             <span>Canva (Expert)</span>
-                            <span>92%</span>
+                            <span>90%</span>
                         </div>
                         <div class="skill-bar-track">
                             <div class="skill-bar-fill" data-width="92"></div>
@@ -2215,7 +2215,7 @@
                     <div class="skill-bar-item">
                         <div class="skill-label">
                             <span>Photography</span>
-                            <span>65%</span>
+                            <span>85%</span>
                         </div>
                         <div class="skill-bar-track">
                             <div class="skill-bar-fill" data-width="65"></div>
@@ -2427,7 +2427,7 @@
 
                     <div>
                         <div class="contact-text">
-                            prasad.shejole@medmail.com
+                            prasadshejole@gmail.com
                         </div>
 
                         <div class="contact-label">
@@ -2444,7 +2444,7 @@
 
                     <div>
                         <div class="contact-text">
-                            github.com/prasadmedia
+                            github.com/prasadev-in
                         </div>
 
                         <div class="contact-label">
@@ -2461,7 +2461,7 @@
 
                     <div>
                         <div class="contact-text">
-                            @prasad.creates
+                            @_that_awkwardpause
                         </div>
 
                         <div class="contact-label">
@@ -2479,7 +2479,7 @@
                     <div>
                         <div class="contact-text">
                             <span class="flag-icon">🇮🇳</span>
-                            +91 98765 12345
+                            +91 7249756968
                         </div>
 
                         <div class="contact-label">
@@ -2497,7 +2497,7 @@
                     <div>
                         <div class="contact-text">
                             <span class="flag-icon">🇷🇺</span>
-                            +7 987 654 3210
+                            +7 9960848472
                         </div>
 
                         <div class="contact-label">
