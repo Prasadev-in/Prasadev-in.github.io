@@ -1,4 +1,3 @@
-
 /* =========================================================
    PRASAD SHEJOLE PORTFOLIO
    MAIN JAVASCRIPT
