@@ -1,144 +1,135 @@
-/* =========================================================
-   PRASAD SHEJOLE PORTFOLIO
-   MAIN JAVASCRIPT
-========================================================= */
+// ============================================================
+// PRASAD SHEJOLE PORTFOLIO — script.js
+// ============================================================
 
 (function () {
+    "use strict";
 
-    /* =====================================================
-       PAGE SWITCHING
-    ===================================================== */
+    // =========================================================
+    // PAGE SWITCHING
+    // =========================================================
 
     window.switchPage = function (page) {
 
-        // Hide all pages
-        document.querySelectorAll('.page').forEach(function (p) {
-            p.classList.remove('active');
+        // Hide every page
+        document.querySelectorAll(".page").forEach(function (p) {
+            p.classList.remove("active");
         });
 
         // Show selected page
-        const targetPage =
-            document.getElementById('page-' + page);
+        const targetPage = document.getElementById("page-" + page);
 
         if (targetPage) {
-            targetPage.classList.add('active');
+            targetPage.classList.add("active");
         }
 
-        // Update navigation
-        document.querySelectorAll('.nav-tab').forEach(function (tab) {
+        // Update navigation buttons
+        document.querySelectorAll(".nav-tab").forEach(function (tab) {
+            tab.classList.remove("active");
 
-            tab.classList.remove('active');
-
-            if (tab.getAttribute('data-page') === page) {
-                tab.classList.add('active');
+            if (tab.dataset.page === page) {
+                tab.classList.add("active");
             }
-
         });
 
-        // Animate content
+        // Scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Animate elements
         setTimeout(function () {
             resetAndAnimateProgressBars();
             animateCounters();
-        }, 400);
+        }, 300);
     };
 
 
-    /* =====================================================
-       DARK / LIGHT THEME
-    ===================================================== */
+    // =========================================================
+    // DARK / LIGHT THEME
+    // =========================================================
 
     window.toggleTheme = function () {
 
-        const body =
-            document.body;
+        const body = document.body;
+        const themeToggle = document.getElementById("themeToggle");
 
-        const themeToggle =
-            document.getElementById('themeToggle');
+        if (!themeToggle) return;
 
-        if (body.classList.contains('dark')) {
+        if (body.classList.contains("dark")) {
 
-            // Switch to light
-            body.classList.remove('dark');
-            body.classList.add('light');
+            body.classList.remove("dark");
+            body.classList.add("light");
 
             themeToggle.innerHTML =
                 '<i class="fas fa-moon"></i>';
 
             try {
-                localStorage.setItem(
-                    'theme-pref',
-                    'light'
-                );
+                localStorage.setItem("theme-pref", "light");
             } catch (error) {
-                // localStorage unavailable
+                console.log("Theme storage unavailable.");
             }
 
         } else {
 
-            // Switch to dark
-            body.classList.remove('light');
-            body.classList.add('dark');
+            body.classList.remove("light");
+            body.classList.add("dark");
 
             themeToggle.innerHTML =
                 '<i class="fas fa-sun"></i>';
 
             try {
-                localStorage.setItem(
-                    'theme-pref',
-                    'dark'
-                );
+                localStorage.setItem("theme-pref", "dark");
             } catch (error) {
-                // localStorage unavailable
+                console.log("Theme storage unavailable.");
             }
         }
     };
 
 
-    /* =====================================================
-       LOAD SAVED THEME
-    ===================================================== */
+    // =========================================================
+    // LOAD SAVED THEME
+    // =========================================================
 
     function loadTheme() {
 
-        const body =
-            document.body;
+        const body = document.body;
+        const themeToggle = document.getElementById("themeToggle");
 
-        const themeToggle =
-            document.getElementById('themeToggle');
+        if (!themeToggle) return;
 
-        let savedTheme = 'light';
+        let savedTheme = "light";
 
         try {
 
-            const stored =
-                localStorage.getItem(
-                    'theme-pref'
-                );
+            const storedTheme =
+                localStorage.getItem("theme-pref");
 
             if (
-                stored === 'dark' ||
-                stored === 'light'
+                storedTheme === "dark" ||
+                storedTheme === "light"
             ) {
-                savedTheme = stored;
+                savedTheme = storedTheme;
             }
 
         } catch (error) {
-            // localStorage unavailable
+            console.log("Unable to read saved theme.");
         }
 
 
-        if (savedTheme === 'dark') {
+        if (savedTheme === "dark") {
 
-            body.classList.add('dark');
-            body.classList.remove('light');
+            body.classList.add("dark");
+            body.classList.remove("light");
 
             themeToggle.innerHTML =
                 '<i class="fas fa-sun"></i>';
 
         } else {
 
-            body.classList.remove('dark');
-            body.classList.add('light');
+            body.classList.add("light");
+            body.classList.remove("dark");
 
             themeToggle.innerHTML =
                 '<i class="fas fa-moon"></i>';
@@ -146,590 +137,481 @@
     }
 
 
-    /* =====================================================
-       ANIMATED STAT COUNTERS
-    ===================================================== */
+    // =========================================================
+    // ANIMATED STAT COUNTERS
+    // =========================================================
 
     function animateCounters() {
 
-        const statNumbers =
-            document.querySelectorAll(
-                '.stat-card .number'
-            );
+        const counters =
+            document.querySelectorAll(".stat-card .number");
 
-        statNumbers.forEach(function (stat) {
+        counters.forEach(function (counter) {
 
             const target =
-                parseInt(
-                    stat.getAttribute(
-                        'data-count'
-                    )
-                );
+                parseInt(counter.dataset.count, 10);
 
-            if (!target || target === 0) {
-                return;
-            }
-
-
-            // Reset
-            stat.textContent = '0';
-
+            if (isNaN(target)) return;
 
             // Stop previous animation
-            if (stat._interval) {
-                clearInterval(
-                    stat._interval
-                );
+            if (counter._interval) {
+                clearInterval(counter._interval);
             }
 
-
-            const duration = 2000;
-            const stepTime = 20;
-
-            const steps =
-                duration / stepTime;
-
-            const increment =
-                target / steps;
+            counter.textContent = "0";
 
             let current = 0;
 
+            const duration = 1500;
+            const intervalTime = 20;
+            const steps = duration / intervalTime;
 
-            stat._interval =
-                setInterval(function () {
+            const increment = target / steps;
 
-                    current += increment;
+            counter._interval = setInterval(function () {
 
+                current += increment;
 
-                    if (current >= target) {
+                if (current >= target) {
 
-                        stat.textContent =
-                            target;
+                    counter.textContent = target;
 
-                        clearInterval(
-                            stat._interval
-                        );
+                    clearInterval(counter._interval);
 
-                    } else {
+                } else {
 
-                        stat.textContent =
-                            Math.floor(current);
-                    }
+                    counter.textContent =
+                        Math.floor(current);
+                }
 
-                }, stepTime);
-
+            }, intervalTime);
         });
     }
 
 
-    /* =====================================================
-       SKILL PROGRESS BARS
-    ===================================================== */
+    // =========================================================
+    // SKILL BAR ANIMATION
+    // =========================================================
 
     function resetAndAnimateProgressBars() {
 
-        const progressBars =
-            document.querySelectorAll(
-                '.skill-bar-fill'
-            );
+        const bars =
+            document.querySelectorAll(".skill-bar-fill");
 
-
-        // Reset all
-        progressBars.forEach(function (bar) {
-
-            bar.style.width = '0%';
-
+        // Reset
+        bars.forEach(function (bar) {
+            bar.style.width = "0%";
         });
 
-
         // Animate
-        progressBars.forEach(
-            function (bar, index) {
+        bars.forEach(function (bar, index) {
 
-                const width =
-                    parseInt(
-                        bar.getAttribute(
-                            'data-width'
-                        )
-                    );
+            const width =
+                parseInt(bar.dataset.width, 10);
 
-                if (!width || width === 0) {
-                    return;
-                }
+            if (isNaN(width)) return;
 
+            const delay = 100 + index * 100;
 
-                const delay =
-                    100 + (index * 150);
+            setTimeout(function () {
 
+                bar.style.width = width + "%";
 
-                setTimeout(function () {
-
-                    bar.style.width =
-                        width + '%';
-
-                }, delay);
-
-            }
-        );
+            }, delay);
+        });
     }
 
 
-    /* =====================================================
-       PROJECT CARDS
-    ===================================================== */
+    // =========================================================
+    // PROJECT CARD INTERACTION
+    // =========================================================
 
-    document
-        .querySelectorAll(
-            '.project-card:not(.coming-soon)'
-        )
-        .forEach(function (card) {
+    function setupProjectCards() {
 
-            card.addEventListener(
-                'click',
-                function () {
-
-                    const projectName =
-                        this.querySelector(
-                            '.project-info h4'
-                        )?.textContent ||
-                        'Project';
-
-                    const isPDF =
-                        this.querySelector(
-                            '.pdf-preview'
-                        );
-
-
-                    if (isPDF) {
-
-                        alert(
-                            '📄 Project: ' +
-                            projectName +
-                            '\n\n' +
-                            'This is a PDF document. ' +
-                            'Click to view or download.'
-                        );
-
-                    } else {
-
-                        alert(
-                            '🖼️ Project: ' +
-                            projectName +
-                            '\n\n' +
-                            'Click to view full project details.'
-                        );
-                    }
-
-                }
+        const cards =
+            document.querySelectorAll(
+                ".project-card:not(.coming-soon)"
             );
 
+        cards.forEach(function (card) {
+
+            card.addEventListener("click", function () {
+
+                const titleElement =
+                    card.querySelector(".project-info h4");
+
+                const projectName =
+                    titleElement
+                        ? titleElement.textContent
+                        : "Project";
+
+
+                const pdfPreview =
+                    card.querySelector(".pdf-preview");
+
+
+                if (pdfPreview) {
+
+                    alert(
+                        "📄 " +
+                        projectName +
+                        "\n\n" +
+                        "This project is a PDF document."
+                    );
+
+                } else {
+
+                    alert(
+                        "🖼️ " +
+                        projectName +
+                        "\n\n" +
+                        "Project showcase coming soon."
+                    );
+                }
+            });
         });
+    }
 
 
-    /* =====================================================
-       VIDEO HOVER PLAY / PAUSE
-    ===================================================== */
+    // =========================================================
+    // VIDEO HOVER PLAY / PAUSE
+    // =========================================================
 
-    document
-        .querySelectorAll(
-            '.project-card video'
-        )
-        .forEach(function (video) {
+    function setupProjectVideos() {
+
+        const videos =
+            document.querySelectorAll(
+                ".project-card video"
+            );
+
+        videos.forEach(function (video) {
 
             const card =
-                video.closest(
-                    '.project-card'
-                );
+                video.closest(".project-card");
 
-            if (!card) {
-                return;
-            }
+            if (!card) return;
 
 
             // Desktop
             card.addEventListener(
-                'mouseenter',
+                "mouseenter",
                 function () {
 
-                    video.play().catch(
-                        function () {}
-                    );
-
+                    video.play().catch(function () {
+                        // Browser may block autoplay
+                    });
                 }
             );
 
 
             card.addEventListener(
-                'mouseleave',
+                "mouseleave",
                 function () {
 
                     video.pause();
 
-                    video.currentTime = 0;
-
+                    try {
+                        video.currentTime = 0;
+                    } catch (error) {}
                 }
             );
 
+
+            // Mobile tap
+            card.addEventListener(
+                "touchstart",
+                function () {
+
+                    if (video.paused) {
+
+                        video.play().catch(function () {});
+
+                    } else {
+
+                        video.pause();
+                    }
+                },
+                { passive: true }
+            );
         });
+    }
 
 
-    /* =====================================================
-       PDF CV GENERATOR
-    ===================================================== */
+    // =========================================================
+    // CV PDF DOWNLOAD
+    // =========================================================
 
-    const downloadButton =
-        document.getElementById(
-            'downloadBtn'
-        );
+    function setupPDFDownload() {
 
+        const downloadButton =
+            document.getElementById("downloadBtn");
 
-    if (downloadButton) {
+        if (!downloadButton) return;
+
 
         downloadButton.addEventListener(
-            'click',
+            "click",
             function () {
 
-                const btn = this;
+                // Check library
+                if (typeof html2pdf === "undefined") {
 
-                btn.disabled = true;
-
-                btn.innerHTML =
-                    '<i class="fas fa-spinner fa-spin"></i> ' +
-                    'Generating PDF...';
-
-
-                /* -----------------------------------------
-                   CREATE CV CONTAINER
-                ----------------------------------------- */
-
-                const cvContent =
-                    document.createElement(
-                        'div'
+                    alert(
+                        "PDF generator could not be loaded.\n" +
+                        "Please check your internet connection."
                     );
 
+                    return;
+                }
 
-                cvContent.style.cssText = `
+
+                const button = this;
+
+                button.disabled = true;
+
+                button.innerHTML =
+                    '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+
+
+                // =============================================
+                // CREATE CV
+                // =============================================
+
+                const cv = document.createElement("div");
+
+                cv.style.cssText = `
                     font-family: Arial, sans-serif;
-                    max-width: 800px;
-                    margin: 0 auto;
-                    padding: 40px;
-                    background: white;
+                    width: 794px;
+                    padding: 45px;
+                    background: #ffffff;
                     color: #1e293b;
+                    box-sizing: border-box;
                 `;
 
 
-                /* -----------------------------------------
-                   CV CONTENT
-                ----------------------------------------- */
-
-                cvContent.innerHTML = `
+                cv.innerHTML = `
 
                     <div style="
                         text-align:center;
-                        margin-bottom:30px;
+                        margin-bottom:25px;
                     ">
 
                         <h1 style="
                             color:#0b6e4f;
-                            font-size:28px;
-                            margin-bottom:5px;
+                            font-size:30px;
+                            margin:0 0 6px;
                         ">
                             Prasad Shejole
                         </h1>
 
                         <p style="
                             color:#475569;
-                            font-size:16px;
-                            margin:5px 0;
+                            font-size:15px;
+                            margin:5px;
                         ">
                             MBBS Student · 4th Year
                         </p>
 
                         <p style="
                             color:#475569;
-                            font-size:14px;
+                            font-size:13px;
+                            margin:5px;
                         ">
-                            Marketing • Editing • Event Management
+                            Marketing · Editing · Event Management
                         </p>
 
                     </div>
 
 
                     <hr style="
-                        border:1px solid #e9edf2;
+                        border:none;
+                        border-top:1px solid #e2e8f0;
                         margin:20px 0;
                     ">
 
 
-                    <div style="
-                        margin-bottom:20px;
+                    <h2 style="
+                        color:#0b6e4f;
+                        font-size:18px;
+                    ">
+                        About Me
+                    </h2>
+
+                    <p style="
+                        font-size:13px;
+                        line-height:1.7;
+                        color:#334155;
+                    ">
+                        A dedicated 4th-year MBBS student currently
+                        pursuing medical education in Russia, with a
+                        strong passion for digital media, content
+                        creation, and strategic communication.
+                        Alongside medical education, I actively
+                        develop skills in social media marketing,
+                        video editing, graphic design, and event
+                        management.
+                    </p>
+
+
+                    <h2 style="
+                        color:#0b6e4f;
+                        font-size:18px;
+                        margin-top:25px;
+                    ">
+                        Education
+                    </h2>
+
+                    <p style="font-size:13px;">
+                        <strong>MBBS</strong> · 2023 – 2029
+                    </p>
+
+                    <p style="font-size:13px;">
+                        <strong>Pre-medical</strong> · 2020 – 2022
+                    </p>
+
+                    <p style="font-size:13px;">
+                        <strong>Digital Marketing</strong> · Certification
+                    </p>
+
+
+                    <h2 style="
+                        color:#0b6e4f;
+                        font-size:18px;
+                        margin-top:25px;
+                    ">
+                        Skills
+                    </h2>
+
+                    <p style="font-size:13px; line-height:1.8;">
+                        Instagram Strategy · LinkedIn Branding ·
+                        Analytics & Insights · Meta Ads ·
+                        CapCut Pro · Canva · Video Editing ·
+                        Thumbnail Design · Reels / Shorts ·
+                        Event Management · Team Coordination ·
+                        Hosting / Emcee
+                    </p>
+
+
+                    <h2 style="
+                        color:#0b6e4f;
+                        font-size:18px;
+                        margin-top:25px;
+                    ">
+                        Quick Stats
+                    </h2>
+
+                    <table style="
+                        width:100%;
+                        border-collapse:collapse;
+                        text-align:center;
+                        margin-top:10px;
                     ">
 
-                        <h3 style="
-                            color:#0b6e4f;
-                            font-size:18px;
-                            margin-bottom:10px;
-                        ">
-                            About Me
-                        </h3>
+                        <tr>
 
-                        <p style="
-                            color:#1e293b;
-                            line-height:1.6;
-                            font-size:14px;
-                        ">
-                            A dedicated 4th-year MBBS student
-                            currently pursuing medical education
-                            in Russia, with a strong passion for
-                            digital media, content creation, and
-                            strategic communication. While my
-                            academic journey focuses on healthcare,
-                            I actively cultivate expertise in social
-                            media marketing, video editing,
-                            graphic design, and event management.
-                        </p>
-
-                    </div>
-
-
-                    <div style="
-                        margin-bottom:20px;
-                    ">
-
-                        <h3 style="
-                            color:#0b6e4f;
-                            font-size:18px;
-                            margin-bottom:10px;
-                        ">
-                            Education
-                        </h3>
-
-                        <ul style="
-                            list-style:none;
-                            padding:0;
-                        ">
-
-                            <li style="
-                                padding:5px 0;
-                                font-size:14px;
-                            ">
-                                <strong>MBBS</strong>
-                                · 2023 – 2029
-                            </li>
-
-                            <li style="
-                                padding:5px 0;
-                                font-size:14px;
-                            ">
-                                <strong>Pre-medical</strong>
-                                · 2020 – 2022
-                            </li>
-
-                            <li style="
-                                padding:5px 0;
-                                font-size:14px;
-                            ">
-                                <strong>Digital Marketing</strong>
-                                · Certification
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div style="
-                        margin-bottom:20px;
-                    ">
-
-                        <h3 style="
-                            color:#0b6e4f;
-                            font-size:18px;
-                            margin-bottom:10px;
-                        ">
-                            Skills
-                        </h3>
-
-                        <div style="
-                            display:flex;
-                            flex-wrap:wrap;
-                            gap:8px;
-                        ">
-
-                            ${[
-                                'Instagram Strategy',
-                                'LinkedIn Branding',
-                                'CapCut Pro',
-                                'Canva Expert',
-                                'Video Editing',
-                                'Event Management',
-                                'Thumbnail Design',
-                                'Brand Identity'
-                            ].map(function (skill) {
-
-                                return `
-                                    <span style="
-                                        background:#e9edf2;
-                                        padding:5px 12px;
-                                        border-radius:20px;
-                                        font-size:13px;
-                                    ">
-                                        ${skill}
-                                    </span>
-                                `;
-
-                            }).join('')}
-
-                        </div>
-
-                    </div>
-
-
-                    <div style="
-                        margin-bottom:20px;
-                    ">
-
-                        <h3 style="
-                            color:#0b6e4f;
-                            font-size:18px;
-                            margin-bottom:10px;
-                        ">
-                            Quick Stats
-                        </h3>
-
-                        <div style="
-                            display:grid;
-                            grid-template-columns:
-                                repeat(4,1fr);
-                            gap:15px;
-                            text-align:center;
-                        ">
-
-                            <div>
+                            <td style="padding:12px;">
                                 <strong style="
                                     font-size:22px;
                                     color:#0b6e4f;
                                 ">
                                     4
                                 </strong>
-
                                 <br>
-
-                                <span style="
-                                    font-size:12px;
-                                    color:#475569;
-                                ">
+                                <span style="font-size:11px;">
                                     MBBS Year
                                 </span>
-                            </div>
+                            </td>
 
-
-                            <div>
+                            <td style="padding:12px;">
                                 <strong style="
                                     font-size:22px;
                                     color:#0b6e4f;
                                 ">
                                     15
                                 </strong>
-
                                 <br>
-
-                                <span style="
-                                    font-size:12px;
-                                    color:#475569;
-                                ">
+                                <span style="font-size:11px;">
                                     Projects
                                 </span>
-                            </div>
+                            </td>
 
-
-                            <div>
+                            <td style="padding:12px;">
                                 <strong style="
                                     font-size:22px;
                                     color:#0b6e4f;
                                 ">
                                     25
                                 </strong>
-
                                 <br>
-
-                                <span style="
-                                    font-size:12px;
-                                    color:#475569;
-                                ">
+                                <span style="font-size:11px;">
                                     Events Managed
                                 </span>
-                            </div>
+                            </td>
 
-
-                            <div>
+                            <td style="padding:12px;">
                                 <strong style="
                                     font-size:22px;
                                     color:#0b6e4f;
                                 ">
                                     50
                                 </strong>
-
                                 <br>
-
-                                <span style="
-                                    font-size:12px;
-                                    color:#475569;
-                                ">
+                                <span style="font-size:11px;">
                                     Videos Edited
                                 </span>
-                            </div>
+                            </td>
 
-                        </div>
+                        </tr>
 
-                    </div>
+                    </table>
 
 
                     <hr style="
-                        border:1px solid #e9edf2;
-                        margin:20px 0;
+                        border:none;
+                        border-top:1px solid #e2e8f0;
+                        margin:25px 0;
                     ">
 
 
                     <div style="
                         text-align:center;
                         color:#475569;
-                        font-size:13px;
+                        font-size:12px;
+                        line-height:1.8;
                     ">
 
                         <p>
-                            Email:
                             prasad.shejole@medmail.com
                         </p>
 
                         <p>
-                            Phone:
-                            +91 98765 12345 |
+                            +91 98765 12345
+                            &nbsp;|&nbsp;
                             +7 987 654 3210
                         </p>
 
                         <p>
-                            GitHub:
                             github.com/prasadmedia
                         </p>
 
                     </div>
+
                 `;
 
 
-                /* -----------------------------------------
-                   PDF OPTIONS
-                ----------------------------------------- */
+                // =============================================
+                // PDF SETTINGS
+                // =============================================
 
                 const options = {
 
                     margin: 10,
 
                     filename:
-                        'Prasad_Shejole_CV.pdf',
+                        "Prasad_Shejole_CV.pdf",
 
                     image: {
-                        type: 'jpeg',
+                        type: "jpeg",
                         quality: 0.98
                     },
 
@@ -740,82 +622,197 @@
                     },
 
                     jsPDF: {
-                        unit: 'mm',
-                        format: 'a4',
-                        orientation: 'portrait'
+                        unit: "mm",
+                        format: "a4",
+                        orientation: "portrait"
                     }
-
                 };
 
 
-                /* -----------------------------------------
-                   GENERATE PDF
-                ----------------------------------------- */
+                // =============================================
+                // GENERATE
+                // =============================================
 
                 html2pdf()
                     .set(options)
-                    .from(cvContent)
+                    .from(cv)
                     .save()
 
                     .then(function () {
 
-                        btn.disabled = false;
+                        button.disabled = false;
 
-                        btn.innerHTML =
-                            '<i class="fas fa-file-pdf"></i> ' +
-                            'Download CV (PDF)';
-
+                        button.innerHTML =
+                            '<i class="fas fa-file-pdf"></i> Download CV (PDF)';
                     })
 
                     .catch(function (error) {
 
                         console.error(
-                            'PDF generation error:',
+                            "PDF generation error:",
                             error
                         );
 
-                        btn.disabled = false;
+                        button.disabled = false;
 
-                        btn.innerHTML =
-                            '<i class="fas fa-file-pdf"></i> ' +
-                            'Download CV (PDF)';
+                        button.innerHTML =
+                            '<i class="fas fa-file-pdf"></i> Download CV (PDF)';
 
                         alert(
-                            'Failed to generate PDF. ' +
-                            'Please try again.'
+                            "Failed to generate PDF. Please try again."
                         );
-
                     });
-
-            }
-        );
-
+            });
     }
 
 
-    /* =====================================================
-       INITIALIZATION
-    ===================================================== */
+    // =========================================================
+    // PROFILE IMAGE ERROR HANDLING
+    // =========================================================
 
-    loadTheme();
+    function setupImageHandling() {
+
+        const images =
+            document.querySelectorAll("img");
+
+        images.forEach(function (image) {
+
+            image.addEventListener(
+                "error",
+                function () {
+
+                    this.style.display = "none";
+
+                    console.warn(
+                        "Image could not be loaded:",
+                        this.src
+                    );
+                }
+            );
+        });
+    }
 
 
-    // Initial animations
-    setTimeout(function () {
+    // =========================================================
+    // KEYBOARD NAVIGATION
+    // =========================================================
 
-        resetAndAnimateProgressBars();
+    function setupKeyboardNavigation() {
 
-        animateCounters();
+        document.addEventListener(
+            "keydown",
+            function (event) {
 
-    }, 500);
+                // Ignore when typing
+                if (
+                    event.target.tagName === "INPUT" ||
+                    event.target.tagName === "TEXTAREA"
+                ) {
+                    return;
+                }
 
 
-    /* =====================================================
-       TAB / WINDOW VISIBILITY
-    ===================================================== */
+                const pages = [
+                    "home",
+                    "about",
+                    "skills",
+                    "projects",
+                    "contact"
+                ];
+
+
+                const active =
+                    document.querySelector(
+                        ".nav-tab.active"
+                    );
+
+
+                if (!active) return;
+
+
+                const currentPage =
+                    pages.indexOf(active.dataset.page);
+
+
+                // Arrow right
+                if (event.key === "ArrowRight") {
+
+                    const next =
+                        (currentPage + 1) % pages.length;
+
+                    switchPage(pages[next]);
+                }
+
+
+                // Arrow left
+                if (event.key === "ArrowLeft") {
+
+                    const previous =
+                        (currentPage - 1 + pages.length)
+                        % pages.length;
+
+                    switchPage(pages[previous]);
+                }
+            }
+        );
+    }
+
+
+    // =========================================================
+    // INITIALIZATION
+    // =========================================================
+
+    function initialize() {
+
+        loadTheme();
+
+        setupProjectCards();
+
+        setupProjectVideos();
+
+        setupPDFDownload();
+
+        setupImageHandling();
+
+        setupKeyboardNavigation();
+
+
+        // Initial animations
+        setTimeout(function () {
+
+            resetAndAnimateProgressBars();
+
+            animateCounters();
+
+        }, 500);
+    }
+
+
+    // =========================================================
+    // START
+    // =========================================================
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initialize
+        );
+
+    } else {
+
+        initialize();
+    }
+
+
+    // =========================================================
+    // RE-ANIMATE WHEN USER RETURNS TO TAB
+    // =========================================================
 
     document.addEventListener(
-        'visibilitychange',
+        "visibilitychange",
         function () {
 
             if (!document.hidden) {
@@ -827,11 +824,8 @@
                     animateCounters();
 
                 }, 300);
-
             }
-
         }
     );
-
 
 })();
