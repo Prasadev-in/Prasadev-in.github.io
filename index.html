@@ -4,1731 +4,1072 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Prasad Shejole — MBBS Student, Content Creator, Digital Media & Event Management Portfolio">
+    <title>Prasad Shejole | Portfolio</title>
 
-    <title>Prasad Shejole · Portfolio</title>
+    <meta name="description"
+          content="Prasad Shejole — MBBS student, creative editor, digital media enthusiast and event manager.">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Main stylesheet -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-
-    <!-- PDF Generator -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer">
-    </script>
 </head>
 
 <body>
 
-    <!-- =====================================================
-         WEBSITE WRAPPER
-    ====================================================== -->
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
 
-    <div class="website-wrapper">
+<div class="background">
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="grid-background"></div>
+</div>
 
-        <!-- =================================================
-             HEADER
-        ================================================== -->
 
-        <header class="site-header">
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-            <a href="#home"
-               class="site-logo"
-               onclick="switchPage('home'); return false;">
+<header class="navbar">
 
-                <div class="logo-icon">
-                    <i class="fas fa-user-graduate"></i>
+    <a href="#home" class="logo">
+        <span class="logo-mark">P</span>
+
+        <span class="logo-text">
+            PRASAD<span>.</span>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button id="themeToggle" class="icon-button" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <button id="menuToggle" class="menu-button" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section id="home" class="hero section">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            4th Year MBBS Student
+        </div>
+
+        <h1>
+            Medicine
+            <span class="hero-x">×</span>
+            Creativity
+            <br>
+            <span class="gradient-text">Digital Media.</span>
+        </h1>
+
+        <p class="hero-description">
+            I'm Prasad Shejole — an MBBS student who enjoys building,
+            editing, designing, organizing and experimenting beyond
+            the classroom.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                Explore My Work
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <button id="downloadCV" class="btn btn-secondary">
+                <i class="fas fa-file-pdf"></i>
+                Download CV
+            </button>
+
+        </div>
+
+        <div class="hero-socials">
+
+            <a href="#" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Hero visual -->
+
+    <div class="hero-visual">
+
+        <div class="profile-orbit orbit-one"></div>
+        <div class="profile-orbit orbit-two"></div>
+
+        <div class="profile-card-large">
+
+            <div class="profile-image-wrapper">
+
+                <img src="IMG-20260809-WA0001.jpg"
+                     alt="Prasad Shejole"
+                     onerror="this.style.display='none'">
+
+                <div class="image-fallback">
+                    <i class="fas fa-user"></i>
                 </div>
 
-                <div class="logo-text">
-                    <h1>Prasad Shejole</h1>
-                    <span>Portfolio</span>
+            </div>
+
+            <div class="profile-card-info">
+
+                <span>CREATIVE × MEDICAL</span>
+
+                <h3>Prasad Shejole</h3>
+
+                <p>
+                    Student · Creator · Organizer
+                </p>
+
+            </div>
+
+            <div class="floating-tag tag-top">
+                <i class="fas fa-video"></i>
+                Video
+            </div>
+
+            <div class="floating-tag tag-bottom">
+                <i class="fas fa-heartbeat"></i>
+                Medicine
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats-section">
+
+    <div class="stat-box">
+
+        <strong data-count="4">0</strong>
+        <span>MBBS Year</span>
+
+    </div>
+
+    <div class="stat-box">
+
+        <strong data-count="15">0</strong>
+        <span>Projects</span>
+
+    </div>
+
+    <div class="stat-box">
+
+        <strong data-count="25">0</strong>
+        <span>Events Managed</span>
+
+    </div>
+
+    <div class="stat-box">
+
+        <strong data-count="50">0</strong>
+        <span>Videos Edited</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHAT I DO
+========================================================= -->
+
+<section class="section" id="about">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">WHAT I DO</span>
+
+        <h2>
+            Three worlds.
+            <span>One portfolio.</span>
+        </h2>
+
+        <p>
+            My work sits at the intersection of medicine,
+            creativity and communication.
+        </p>
+
+    </div>
+
+
+    <div class="work-grid">
+
+        <article class="work-card medical-card">
+
+            <div class="work-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+
+            <span class="work-number">01</span>
+
+            <h3>Medicine</h3>
+
+            <p>
+                Building a strong medical foundation through
+                MBBS education while exploring better ways
+                to communicate healthcare.
+            </p>
+
+            <div class="work-tags">
+                <span>MBBS</span>
+                <span>Medical Education</span>
+                <span>Healthcare</span>
+            </div>
+
+        </article>
+
+
+        <article class="work-card creative-card">
+
+            <div class="work-icon">
+                <i class="fas fa-wand-magic-sparkles"></i>
+            </div>
+
+            <span class="work-number">02</span>
+
+            <h3>Creative</h3>
+
+            <p>
+                Creating videos, graphics, thumbnails and
+                visual content designed to capture attention
+                and communicate ideas.
+            </p>
+
+            <div class="work-tags">
+                <span>Video Editing</span>
+                <span>Design</span>
+                <span>Photography</span>
+            </div>
+
+        </article>
+
+
+        <article class="work-card strategy-card">
+
+            <div class="work-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+
+            <span class="work-number">03</span>
+
+            <h3>Strategy</h3>
+
+            <p>
+                Combining organization, social media,
+                branding and event management to turn
+                ideas into execution.
+            </p>
+
+            <div class="work-tags">
+                <span>Marketing</span>
+                <span>Events</span>
+                <span>Branding</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MEDICINE × MEDIA
+========================================================= -->
+
+<section class="intersection-section">
+
+    <div class="intersection-content">
+
+        <span class="eyebrow">THE INTERSECTION</span>
+
+        <h2>
+            Where
+            <span>medicine</span>
+            meets
+            <span>media.</span>
+        </h2>
+
+        <p>
+            My medical education gives me a scientific mindset.
+            My creative work gives me another way to communicate
+            ideas, stories and information.
+        </p>
+
+        <div class="intersection-flow">
+
+            <div>
+                <i class="fas fa-brain"></i>
+                <span>Knowledge</span>
+            </div>
+
+            <i class="fas fa-arrow-right"></i>
+
+            <div>
+                <i class="fas fa-comments"></i>
+                <span>Communication</span>
+            </div>
+
+            <i class="fas fa-arrow-right"></i>
+
+            <div>
+                <i class="fas fa-film"></i>
+                <span>Storytelling</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT / TIMELINE
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">MY JOURNEY</span>
+
+        <h2>
+            A little bit of
+            <span>my story.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">2020</div>
+
+            <div class="timeline-content">
+
+                <h3>Pre-medical Foundation</h3>
+
+                <p>
+                    Building a foundation in biology,
+                    chemistry and medical sciences.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">2023</div>
+
+            <div class="timeline-content">
+
+                <h3>Started MBBS</h3>
+
+                <p>
+                    Began the journey toward becoming
+                    a doctor.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">2025</div>
+
+            <div class="timeline-content">
+
+                <h3>Creative Expansion</h3>
+
+                <p>
+                    Started focusing more heavily on
+                    video editing, design and digital media.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item active-timeline">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">2026</div>
+
+            <div class="timeline-content">
+
+                <h3>Medicine × Media</h3>
+
+                <p>
+                    4th-year MBBS student while continuing
+                    creative projects, events and digital work.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section class="section" id="skills">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">SKILLS & TOOLS</span>
+
+        <h2>
+            Things I
+            <span>work with.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="skills-layout">
+
+        <div class="skills-main">
+
+            <div class="skill-category">
+
+                <div class="skill-title">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Social Media Marketing</h3>
+                </div>
+
+                <div class="skill-bars">
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Instagram Strategy</span>
+                            <b>90%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="90"></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div>
+                            <span>LinkedIn Branding</span>
+                            <b>85%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="85"></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Community Engagement</span>
+                            <b>80%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="80"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <div class="skill-title">
+                    <i class="fas fa-pen-fancy"></i>
+                    <h3>Creative Production</h3>
+                </div>
+
+                <div class="skill-bars">
+
+                    <div class="skill-row">
+                        <div>
+                            <span>CapCut</span>
+                            <b>95%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="95"></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Canva</span>
+                            <b>92%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="92"></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Video Editing</span>
+                            <b>85%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="85"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <div class="skill-title">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Event Management</h3>
+                </div>
+
+                <div class="skill-bars">
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Planning & Logistics</span>
+                            <b>85%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="85"></span>
+                        </div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div>
+                            <span>Team Coordination</span>
+                            <b>82%</b>
+                        </div>
+
+                        <div class="bar">
+                            <span data-width="82"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Tools -->
+
+        <aside class="tools-panel">
+
+            <h3>My Toolkit</h3>
+
+            <p>
+                Tools and platforms I use regularly.
+            </p>
+
+            <div class="tool-grid">
+
+                <div class="tool">
+                    <i class="fas fa-mobile-screen"></i>
+                    <span>CapCut</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fas fa-palette"></i>
+                    <span>Canva</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="tool">
+                    <i class="fas fa-camera"></i>
+                    <span>Photography</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section class="section" id="projects">
+
+    <div class="section-heading projects-heading">
+
+        <div>
+
+            <span class="eyebrow">SELECTED WORK</span>
+
+            <h2>
+                Featured
+                <span>projects.</span>
+            </h2>
+
+        </div>
+
+        <div class="project-filters">
+
+            <button class="filter active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter" data-filter="video">
+                Videos
+            </button>
+
+            <button class="filter" data-filter="design">
+                Design
+            </button>
+
+            <button class="filter" data-filter="event">
+                Events
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- Project 1 -->
+
+        <article class="project-card"
+                 data-category="design"
+                 data-title="Social Media Campaign"
+                 data-description="Instagram marketing campaign and visual content design."
+                 data-type="image"
+                 data-src="IMG-20260809-WA0003.jpg">
+
+            <div class="project-media">
+
+                <img src="IMG-20260809-WA0003.jpg"
+                     alt="Social Media Campaign"
+                     loading="lazy">
+
+                <div class="project-overlay">
+                    <span>View Project</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span class="project-category">DESIGN</span>
+                    <h3>Social Media Campaign</h3>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 2 -->
+
+        <article class="project-card"
+                 data-category="video"
+                 data-title="Video Edit"
+                 data-description="Professional short-form video editing and storytelling."
+                 data-type="video"
+                 data-src="VID-20260809-WA0004.mp4">
+
+            <div class="project-media">
+
+                <video src="VID-20260809-WA0004.mp4"
+                       muted
+                       loop
+                       playsinline>
+                </video>
+
+                <div class="project-overlay">
+                    <span>View Project</span>
+                    <i class="fas fa-play"></i>
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span class="project-category">VIDEO</span>
+                    <h3>Video Edit</h3>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 3 -->
+
+        <article class="project-card"
+                 data-category="event"
+                 data-title="Event Design"
+                 data-description="Event planning, coordination and visual design."
+                 data-type="video"
+                 data-src="VID-20251220-WA0008.mp4">
+
+            <div class="project-media">
+
+                <video src="VID-20251220-WA0008.mp4"
+                       muted
+                       loop
+                       playsinline>
+                </video>
+
+                <div class="project-overlay">
+                    <span>View Project</span>
+                    <i class="fas fa-play"></i>
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span class="project-category">EVENT</span>
+                    <h3>Event Design</h3>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 4 -->
+
+        <article class="project-card"
+                 data-category="design"
+                 data-title="Thumbnail Design"
+                 data-description="YouTube thumbnail and visual communication design."
+                 data-type="image"
+                 data-src="IMG-20250920-WA0061.jpg">
+
+            <div class="project-media">
+
+                <img src="IMG-20250920-WA0061.jpg"
+                     alt="Thumbnail Design"
+                     loading="lazy">
+
+                <div class="project-overlay">
+                    <span>View Project</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </div>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span class="project-category">DESIGN</span>
+                    <h3>Thumbnail Design</h3>
+                </div>
+
+                <i class="fas fa-arrow-up-right-from-square"></i>
+
+            </div>
+
+        </article>
+
+
+        <!-- Coming Soon -->
+
+        <article class="project-card coming-project"
+                 data-category="design">
+
+            <div class="project-media">
+
+                <div class="coming-icon">
+                    <i class="fas fa-plus"></i>
+                </div>
+
+                <span class="coming-label">
+                    COMING SOON
+                </span>
+
+            </div>
+
+            <div class="project-info">
+
+                <div>
+                    <span class="project-category">UPCOMING</span>
+                    <h3>New Project</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact-section section" id="contact">
+
+    <div class="contact-inner">
+
+        <div class="contact-copy">
+
+            <span class="eyebrow">GET IN TOUCH</span>
+
+            <h2>
+                Let's create
+                <span>something.</span>
+            </h2>
+
+            <p>
+                Have a project, event, collaboration or simply
+                an idea worth discussing?
+            </p>
+
+            <a href="mailto:prasad.shejole@medmail.com"
+               class="btn btn-primary">
+                Start a Conversation
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="contact-details">
+
+            <a href="mailto:prasad.shejole@medmail.com"
+               class="contact-link">
+
+                <i class="fas fa-envelope"></i>
+
+                <div>
+                    <small>EMAIL</small>
+                    <strong>prasad.shejole@medmail.com</strong>
                 </div>
 
             </a>
 
 
-            <!-- Navigation -->
+            <a href="#" class="contact-link">
 
-            <nav class="site-nav">
+                <i class="fab fa-github"></i>
 
-                <div class="nav-tabs">
-
-                    <button
-                        class="nav-tab active"
-                        data-page="home"
-                        onclick="switchPage('home')">
-
-                        <i class="fas fa-house"></i>
-                        <span>Home</span>
-
-                    </button>
-
-
-                    <button
-                        class="nav-tab"
-                        data-page="about"
-                        onclick="switchPage('about')">
-
-                        <i class="fas fa-user"></i>
-                        <span>About</span>
-
-                    </button>
-
-
-                    <button
-                        class="nav-tab"
-                        data-page="skills"
-                        onclick="switchPage('skills')">
-
-                        <i class="fas fa-code"></i>
-                        <span>Skills</span>
-
-                    </button>
-
-
-                    <button
-                        class="nav-tab"
-                        data-page="projects"
-                        onclick="switchPage('projects')">
-
-                        <i class="fas fa-layer-group"></i>
-                        <span>Projects</span>
-
-                    </button>
-
-
-                    <button
-                        class="nav-tab"
-                        data-page="contact"
-                        onclick="switchPage('contact')">
-
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact</span>
-
-                    </button>
-
+                <div>
+                    <small>GITHUB</small>
+                    <strong>@prasadmedia</strong>
                 </div>
 
+            </a>
 
-                <!-- Theme -->
 
-                <button
-                    class="theme-toggle"
-                    id="themeToggle"
-                    onclick="toggleTheme()"
-                    aria-label="Toggle dark mode">
+            <a href="#" class="contact-link">
 
-                    <i class="fas fa-moon"></i>
+                <i class="fab fa-instagram"></i>
 
-                </button>
-
-            </nav>
-
-        </header>
-
-
-
-        <!-- =================================================
-             MAIN CONTENT
-        ================================================== -->
-
-        <main class="page-content">
-
-
-            <!-- =================================================
-                 HOME
-            ================================================== -->
-
-            <section
-                class="page active"
-                id="page-home">
-
-
-                <!-- HERO -->
-
-                <div class="hero-section">
-
-
-                    <!-- LEFT / PROFILE -->
-
-                    <div class="hero-left">
-
-
-                        <div class="profile-card hero-profile">
-
-                            <div class="profile-top">
-
-                                <div class="profile-avatar">
-
-                                    <img
-                                        src="IMG-20260809-WA0001.jpg"
-                                        alt="Prasad Shejole"
-                                        id="profileImage">
-
-                                </div>
-
-
-                                <div class="profile-status">
-
-                                    <span class="status-dot"></span>
-
-                                    <span>Available for creative projects</span>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="profile-intro">
-
-                                <span class="eyebrow">
-                                    HELLO, I'M
-                                </span>
-
-                                <h2>
-                                    Prasad Shejole
-                                </h2>
-
-                                <p class="tagline">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    MBBS Student · 4th Year
-                                </p>
-
-                                <p class="bio">
-                                    A medical student with a creative side,
-                                    combining medicine, digital media,
-                                    content creation and event management
-                                    to build meaningful experiences.
-                                </p>
-
-                            </div>
-
-
-                            <div class="profile-actions">
-
-                                <button
-                                    class="download-btn-home"
-                                    id="downloadBtn">
-
-                                    <i class="fas fa-file-pdf"></i>
-
-                                    <span>Download CV</span>
-
-                                </button>
-
-
-                                <button
-                                    class="secondary-btn"
-                                    onclick="switchPage('contact')">
-
-                                    <i class="fas fa-paper-plane"></i>
-
-                                    <span>Let's Connect</span>
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- QUICK STATS -->
-
-                        <div class="stats-grid-home">
-
-
-                            <div class="stat-card">
-
-                                <div class="stat-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-
-                                <span
-                                    class="number"
-                                    data-count="4">
-                                    0
-                                </span>
-
-                                <span class="label">
-                                    MBBS Year
-                                </span>
-
-                            </div>
-
-
-                            <div class="stat-card">
-
-                                <div class="stat-icon">
-                                    <i class="fas fa-folder-open"></i>
-                                </div>
-
-                                <span
-                                    class="number"
-                                    data-count="15">
-                                    0
-                                </span>
-
-                                <span class="label">
-                                    Projects
-                                </span>
-
-                            </div>
-
-
-                            <div class="stat-card">
-
-                                <div class="stat-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-
-                                <span
-                                    class="number"
-                                    data-count="25">
-                                    0
-                                </span>
-
-                                <span class="label">
-                                    Events Managed
-                                </span>
-
-                            </div>
-
-
-                            <div class="stat-card">
-
-                                <div class="stat-icon">
-                                    <i class="fas fa-video"></i>
-                                </div>
-
-                                <span
-                                    class="number"
-                                    data-count="50">
-                                    0
-                                </span>
-
-                                <span class="label">
-                                    Videos Edited
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- RIGHT / EXPERTISE -->
-
-                    <div class="hero-right">
-
-
-                        <div class="section-heading">
-
-                            <span class="section-kicker">
-                                WHAT I DO
-                            </span>
-
-                            <h3>
-                                Creative skills beyond medicine.
-                            </h3>
-
-                            <p>
-                                A combination of communication,
-                                creativity and digital execution.
-                            </p>
-
-                        </div>
-
-
-
-                        <!-- SOCIAL MEDIA -->
-
-                        <div class="skill-group featured-skill">
-
-                            <div class="skill-group-header">
-
-                                <div class="skill-group-icon">
-                                    <i class="fas fa-bullhorn"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="skill-number">
-                                        01
-                                    </span>
-
-                                    <h4>
-                                        Social Media Marketing
-                                    </h4>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-tags">
-
-                                <span class="skill-tag">
-                                    <i class="fab fa-instagram"></i>
-                                    Instagram Strategy
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fab fa-linkedin"></i>
-                                    LinkedIn Branding
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-chart-line"></i>
-                                    Analytics
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-ad"></i>
-                                    Meta Ads
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-users"></i>
-                                    Community
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- CONTENT -->
-
-                        <div class="skill-group">
-
-                            <div class="skill-group-header">
-
-                                <div class="skill-group-icon">
-                                    <i class="fas fa-pen-nib"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="skill-number">
-                                        02
-                                    </span>
-
-                                    <h4>
-                                        Editing & Content
-                                    </h4>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-tags">
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-video"></i>
-                                    CapCut Pro
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-palette"></i>
-                                    Canva
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-film"></i>
-                                    Video Editing
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-image"></i>
-                                    Thumbnails
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-mobile-screen"></i>
-                                    Reels / Shorts
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- EVENTS -->
-
-                        <div class="skill-group">
-
-                            <div class="skill-group-header">
-
-                                <div class="skill-group-icon">
-                                    <i class="fas fa-calendar-days"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="skill-number">
-                                        03
-                                    </span>
-
-                                    <h4>
-                                        Event Management
-                                    </h4>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-tags">
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-list-check"></i>
-                                    Planning
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-people-group"></i>
-                                    Team Coordination
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-handshake"></i>
-                                    Vendors
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-trophy"></i>
-                                    Conferences
-                                </span>
-
-                                <span class="skill-tag">
-                                    <i class="fas fa-microphone"></i>
-                                    Hosting
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <div>
+                    <small>INSTAGRAM</small>
+                    <strong>@prasad.creates</strong>
                 </div>
 
-            </section>
+            </a>
 
-
-
-            <!-- =================================================
-                 ABOUT
-            ================================================== -->
-
-            <section
-                class="page"
-                id="page-about">
-
-                <div class="about-content">
-
-
-                    <div class="page-intro">
-
-                        <span class="section-kicker">
-                            ABOUT ME
-                        </span>
-
-                        <h2>
-                            Medicine by profession.
-                            Creativity by passion.
-                        </h2>
-
-                        <p>
-                            A closer look at the person behind
-                            the portfolio.
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-grid">
-
-
-                        <div class="profile-card about-main-card">
-
-                            <div class="about-card-icon">
-                                <i class="fas fa-user"></i>
-                            </div>
-
-                            <h3>
-                                My Story
-                            </h3>
-
-                            <p class="bio">
-
-                                A dedicated 4th-year MBBS student
-                                currently pursuing medical education
-                                in Russia, with a strong passion for
-                                digital media, content creation and
-                                strategic communication.
-
-                            </p>
-
-                            <p class="bio">
-
-                                While my academic journey focuses on
-                                healthcare, I actively develop skills
-                                in social media marketing, video
-                                editing, graphic design and event
-                                management.
-
-                            </p>
-
-                            <p class="bio">
-
-                                My goal is to combine the analytical
-                                mindset of medicine with the creative
-                                thinking required in modern media.
-
-                            </p>
-
-                        </div>
-
-
-
-                        <div class="about-side">
-
-
-                            <div class="info-card">
-
-                                <span class="info-label">
-                                    CURRENTLY
-                                </span>
-
-                                <h3>
-                                    MBBS · 4th Year
-                                </h3>
-
-                                <p>
-                                    Medical education in Russia
-                                </p>
-
-                            </div>
-
-
-                            <div class="info-card">
-
-                                <span class="info-label">
-                                    INTERESTS
-                                </span>
-
-                                <div class="interest-tags">
-
-                                    <span>Medicine</span>
-                                    <span>Photography</span>
-                                    <span>Editing</span>
-                                    <span>Marketing</span>
-                                    <span>Events</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- EDUCATION -->
-
-                    <div class="subsection">
-
-                        <div class="section-title">
-                            <i class="fas fa-graduation-cap"></i>
-                            Education
-                        </div>
-
-
-                        <div class="education-timeline">
-
-
-                            <div class="edu-item">
-
-                                <div class="edu-marker">
-                                    <i class="fas fa-stethoscope"></i>
-                                </div>
-
-                                <div class="edu-content">
-
-                                    <div class="edu-top">
-
-                                        <span class="edu-name">
-                                            MBBS
-                                        </span>
-
-                                        <span class="edu-date">
-                                            2023 – 2029
-                                        </span>
-
-                                    </div>
-
-                                    <p class="edu-desc">
-                                        Pursuing medical education
-                                        in Russia.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="edu-item">
-
-                                <div class="edu-marker">
-                                    <i class="fas fa-book"></i>
-                                </div>
-
-                                <div class="edu-content">
-
-                                    <div class="edu-top">
-
-                                        <span class="edu-name">
-                                            Pre-medical
-                                        </span>
-
-                                        <span class="edu-date">
-                                            2020 – 2022
-                                        </span>
-
-                                    </div>
-
-                                    <p class="edu-desc">
-                                        Foundation in medical sciences.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="edu-item">
-
-                                <div class="edu-marker">
-                                    <i class="fas fa-certificate"></i>
-                                </div>
-
-                                <div class="edu-content">
-
-                                    <div class="edu-top">
-
-                                        <span class="edu-name">
-                                            Digital Marketing
-                                        </span>
-
-                                        <span class="edu-date">
-                                            Certification
-                                        </span>
-
-                                    </div>
-
-                                    <p class="edu-desc">
-                                        Specialized in social media
-                                        strategy and content creation.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =================================================
-                 SKILLS
-            ================================================== -->
-
-            <section
-                class="page"
-                id="page-skills">
-
-                <div class="skills-page-content">
-
-
-                    <div class="page-intro">
-
-                        <span class="section-kicker">
-                            EXPERTISE
-                        </span>
-
-                        <h2>
-                            Skills & Capabilities
-                        </h2>
-
-                        <p>
-                            The tools and abilities I use to turn
-                            ideas into finished work.
-                        </p>
-
-                    </div>
-
-
-                    <div class="skills-full-grid">
-
-
-                        <!-- SOCIAL -->
-
-                        <div class="skill-full-card">
-
-                            <div class="skill-card-top">
-
-                                <div class="skill-card-icon">
-                                    <i class="fas fa-bullhorn"></i>
-                                </div>
-
-                                <div>
-                                    <span>
-                                        01
-                                    </span>
-
-                                    <h4>
-                                        Social Media Marketing
-                                    </h4>
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-bars">
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Instagram Strategy</span>
-                                        <span>90%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="90">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>LinkedIn Branding</span>
-                                        <span>85%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="85">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Analytics & Insights</span>
-                                        <span>75%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="75">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Community Engagement</span>
-                                        <span>80%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="80">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- EDITING -->
-
-                        <div class="skill-full-card">
-
-                            <div class="skill-card-top">
-
-                                <div class="skill-card-icon">
-                                    <i class="fas fa-pen-nib"></i>
-                                </div>
-
-                                <div>
-                                    <span>
-                                        02
-                                    </span>
-
-                                    <h4>
-                                        Editing & Content
-                                    </h4>
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-bars">
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>CapCut</span>
-                                        <span>95%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="95">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Canva</span>
-                                        <span>92%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="92">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Video Editing</span>
-                                        <span>85%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="85">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Thumbnail Design</span>
-                                        <span>88%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="88">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- EVENTS -->
-
-                        <div class="skill-full-card">
-
-                            <div class="skill-card-top">
-
-                                <div class="skill-card-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-
-                                <div>
-                                    <span>
-                                        03
-                                    </span>
-
-                                    <h4>
-                                        Event Management
-                                    </h4>
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-bars">
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Planning & Logistics</span>
-                                        <span>85%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="85">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Team Coordination</span>
-                                        <span>82%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="82">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Timeline Execution</span>
-                                        <span>78%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="78">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Hosting / Emcee</span>
-                                        <span>80%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="80">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- ADDITIONAL -->
-
-                        <div class="skill-full-card">
-
-                            <div class="skill-card-top">
-
-                                <div class="skill-card-icon">
-                                    <i class="fas fa-wand-magic-sparkles"></i>
-                                </div>
-
-                                <div>
-                                    <span>
-                                        04
-                                    </span>
-
-                                    <h4>
-                                        Additional Skills
-                                    </h4>
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-bars">
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Content Strategy</span>
-                                        <span>82%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="82">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Brand Identity</span>
-                                        <span>75%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="75">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Social Media Ads</span>
-                                        <span>70%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="70">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="skill-bar-item">
-
-                                    <div class="skill-label">
-                                        <span>Photography</span>
-                                        <span>85%</span>
-                                    </div>
-
-                                    <div class="skill-bar-track">
-                                        <div
-                                            class="skill-bar-fill"
-                                            data-width="85">
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =================================================
-                 PROJECTS
-            ================================================== -->
-
-            <section
-                class="page"
-                id="page-projects">
-
-                <div class="projects-page-content">
-
-
-                    <div class="page-intro">
-
-                        <span class="section-kicker">
-                            SELECTED WORK
-                        </span>
-
-                        <h2>
-                            Project Gallery
-                        </h2>
-
-                        <p>
-                            A collection of creative work,
-                            campaigns and experiments.
-                        </p>
-
-                    </div>
-
-
-                    <div class="projects-grid">
-
-
-                        <!-- PROJECT 1 -->
-
-                        <article
-                            class="project-card"
-                            data-project="Social Media Campaign">
-
-                            <div class="project-media">
-
-                                <img
-                                    src="IMG-20260809-WA0003.jpg"
-                                    alt="Social Media Campaign"
-                                    loading="lazy"
-                                    onerror="this.style.display='none'">
-
-                                <div class="project-overlay">
-                                    <span>
-                                        <i class="fas fa-arrow-up-right-from-square"></i>
-                                        View Project
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    SOCIAL MEDIA
-                                </span>
-
-                                <h4>
-                                    Social Media Campaign
-                                </h4>
-
-                                <p>
-                                    Instagram marketing campaign
-                                    design and strategy.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-
-
-                        <!-- PROJECT 2 -->
-
-                        <article
-                            class="project-card"
-                            data-project="Video Edit">
-
-                            <div class="project-media">
-
-                                <video
-                                    src="VID-20260809-WA0004.mp4"
-                                    muted
-                                    loop
-                                    playsinline
-                                    preload="metadata"
-                                    onerror="this.style.display='none'">
-                                </video>
-
-                                <div class="project-overlay">
-                                    <span>
-                                        <i class="fas fa-play"></i>
-                                        View Project
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    VIDEO
-                                </span>
-
-                                <h4>
-                                    Video Edit
-                                </h4>
-
-                                <p>
-                                    Professional video editing
-                                    with CapCut.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-
-
-                        <!-- PROJECT 3 -->
-
-                        <article
-                            class="project-card"
-                            data-project="Event Design">
-
-                            <div class="project-media">
-
-                                <video
-                                    src="VID-20251220-WA0008.mp4"
-                                    muted
-                                    loop
-                                    playsinline
-                                    preload="metadata"
-                                    onerror="this.style.display='none'">
-                                </video>
-
-                                <div class="project-overlay">
-                                    <span>
-                                        <i class="fas fa-play"></i>
-                                        View Project
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    EVENTS
-                                </span>
-
-                                <h4>
-                                    Event Design
-                                </h4>
-
-                                <p>
-                                    Event planning and
-                                    visual design.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-
-
-                        <!-- PROJECT 4 -->
-
-                        <article
-                            class="project-card"
-                            data-project="Canva Design">
-
-                            <div class="project-media pdf-preview">
-
-                                <i class="fas fa-file-pdf"></i>
-
-                                <span>
-                                    PDF DOCUMENT
-                                </span>
-
-                                <div class="project-overlay">
-                                    <span>
-                                        <i class="fas fa-eye"></i>
-                                        Open Document
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    GRAPHIC DESIGN
-                                </span>
-
-                                <h4>
-                                    Canva Design
-                                </h4>
-
-                                <p>
-                                    Graphic design created
-                                    using Canva.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-
-
-                        <!-- PROJECT 5 -->
-
-                        <article
-                            class="project-card"
-                            data-project="Thumbnail">
-
-                            <div class="project-media">
-
-                                <img
-                                    src="IMG-20250920-WA0061.jpg"
-                                    alt="Thumbnail Design"
-                                    loading="lazy"
-                                    onerror="this.style.display='none'">
-
-                                <div class="project-overlay">
-                                    <span>
-                                        <i class="fas fa-arrow-up-right-from-square"></i>
-                                        View Project
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    DESIGN
-                                </span>
-
-                                <h4>
-                                    Thumbnail Design
-                                </h4>
-
-                                <p>
-                                    YouTube thumbnail
-                                    creation.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-
-
-                        <!-- PROJECT 6 -->
-
-                        <article
-                            class="project-card coming-soon">
-
-                            <div class="project-media">
-
-                                <div class="coming-soon-icon">
-                                    <i class="fas fa-vector-square"></i>
-                                </div>
-
-                                <span class="coming-soon-text">
-                                    COMING SOON
-                                </span>
-
-                            </div>
-
-                            <div class="project-info">
-
-                                <span class="project-category">
-                                    UPCOMING
-                                </span>
-
-                                <h4>
-                                    Brand Identity
-                                </h4>
-
-                                <p>
-                                    Something exciting
-                                    is on the way.
-                                </p>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =================================================
-                 CONTACT
-            ================================================== -->
-
-            <section
-                class="page"
-                id="page-contact">
-
-                <div class="contact-page-content">
-
-
-                    <div class="page-intro">
-
-                        <span class="section-kicker">
-                            CONTACT
-                        </span>
-
-                        <h2>
-                            Let's create something.
-                        </h2>
-
-                        <p>
-                            Have a project, collaboration or
-                            idea? Get in touch.
-                        </p>
-
-                    </div>
-
-
-                    <div class="contact-layout">
-
-
-                        <!-- CONTACT CARD -->
-
-                        <div class="contact-card">
-
-
-                            <div class="contact-item-large">
-
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="contact-label">
-                                        EMAIL
-                                    </span>
-
-                                    <div class="contact-text">
-                                        prasad.shejole@medmail.com
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="contact-item-large">
-
-                                <div class="contact-icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="contact-label">
-                                        GITHUB
-                                    </span>
-
-                                    <div class="contact-text">
-                                        github.com/prasadmedia
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="contact-item-large">
-
-                                <div class="contact-icon">
-                                    <i class="fab fa-instagram"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="contact-label">
-                                        INSTAGRAM
-                                    </span>
-
-                                    <div class="contact-text">
-                                        @prasad.creates
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="contact-item-large">
-
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="contact-label">
-                                        INDIA
-                                    </span>
-
-                                    <div class="contact-text">
-                                        🇮🇳 +91 98765 12345
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="contact-item-large">
-
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-
-                                <div>
-
-                                    <span class="contact-label">
-                                        RUSSIA
-                                    </span>
-
-                                    <div class="contact-text">
-                                        🇷🇺 +7 987 654 3210
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- CONTACT MESSAGE -->
-
-                        <div class="contact-message-card">
-
-                            <div class="contact-message-icon">
-                                <i class="fas fa-paper-plane"></i>
-                            </div>
-
-                            <h3>
-                                Open to opportunities
-                            </h3>
-
-                            <p>
-                                I'm interested in creative
-                                collaborations, digital media,
-                                event projects and opportunities
-                                where medicine and creativity
-                                can meet.
-                            </p>
-
-                            <button
-                                class="download-btn-home"
-                                onclick="switchPage('projects')">
-
-                                <i class="fas fa-layer-group"></i>
-
-                                View My Work
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-
-        <!-- =================================================
-             FOOTER
-        ================================================== -->
-
-        <footer class="site-footer">
-
-            <div class="footer-left">
-
-                <strong>
-                    Prasad Shejole
-                </strong>
-
-                <span>
-                    · MBBS Student · Marketing & Editing
-                </span>
-
-            </div>
-
-
-            <div class="footer-right">
-
-                <span>
-                    © 2026
-                </span>
-
-                <span class="footer-divider">
-                    •
-                </span>
-
-                <span>
-                    Built with creativity
-                </span>
-
-            </div>
-
-        </footer>
+        </div>
 
     </div>
 
+</section>
+
+</main>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-    <script src="script.js"></script>
+<footer>
+
+    <div class="footer-logo">
+        PRASAD<span>.</span>
+    </div>
+
+    <p>
+        Medicine · Creativity · Digital Media
+    </p>
+
+    <span>
+        © 2026 Prasad Shejole
+    </span>
+
+</footer>
+
+
+<!-- =========================================================
+     PROJECT MODAL
+========================================================= -->
+
+<div id="projectModal" class="modal">
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="modal-close">
+            <i class="fas fa-xmark"></i>
+        </button>
+
+        <div id="modalMedia" class="modal-media"></div>
+
+        <div class="modal-body">
+
+            <span id="modalCategory" class="project-category">
+                PROJECT
+            </span>
+
+            <h2 id="modalTitle">
+                Project
+            </h2>
+
+            <p id="modalDescription">
+                Project description
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
